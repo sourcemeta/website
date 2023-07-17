@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="canonical" href="{{ .Site.BaseURL }}">
+    <meta name="description" content="{{ block "description" . }}{{ .Site.Params.Description }}{{ end }}">
+
+    {{ $style := resources.Get "main.scss" | toCSS (dict "outputStyle" "compressed") }}
+		<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+    <link rel="icon" href="{{ .Site.BaseURL }}favicon.ico" sizes="any">
+    <link rel="icon" href="{{ .Site.BaseURL }}logo.svg" type="image/svg+xml">
+    <link rel="manifest" href="{{ .Site.BaseURL }}manifest.webmanifest">
+    <script defer data-domain="sourcemeta.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+  </head>
+  <body>
+    {{ partial "navigation.html" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="846px" height="601px" viewBox="0 0 846 601" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>hero</title>
+    <defs>
+        <path d="M433,50.008 L432,50 C563.996055,50 671,157.003945 671,289 L670.992,290 L602.99928,290.00085 C602.99976,289.833956 603,289.667006 603,289.5 C603,195.502468 526.935099,119.270845 433.000884,119.00072 L433,50.008 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="239" height="240.00085" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M174,50.008 L173,50 C304.996055,50 412,157.003945 412,289 L411.992,290 L343.99928,290.00085 C343.99976,289.833956 344,289.667006 344,289.5 C344,195.502468 267.935099,119.270845 174.000884,119.00072 L174,50.008 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="239" height="240.00085" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <path d="M174,310.008 L173,310 C304.996055,310 412,417.003945 412,549 L411.992,550 L343.99928,550.00085 C343.99976,549.833956 344,549.667006 344,549.5 C344,455.502468 267.935099,379.270845 174.000884,379.00072 L174,310.008 Z" id="path-5"></path>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="239" height="240.00085" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <path d="M433,310.008 L432,310 C563.996055,310 671,417.003945 671,549 L670.992,550 L602.99928,550.00085 C602.99976,549.833956 603,549.667006 603,549.5 C603,455.502468 526.935099,379.270845 433.000884,379.00072 L433,310.008 Z" id="path-7"></path>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="239" height="240.00085" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="hero" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M423,144 C509.156421,144 579,213.843579 579,300 C579,386.156421 509.156421,456 423,456 C336.843579,456 267,386.156421 267,300 C267,213.843579 336.843579,144 423,144 Z M423.5,156 C343.694854,156 279,220.694854 279,300.5 C279,380.305146 343.694854,445 423.5,445 C503.305146,445 568,380.305146 568,300.5 C568,220.694854 503.305146,156 423.5,156 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+        <use id="Combined-Shape" stroke="#8A8A8A" mask="url(#mask-2)" stroke-width="2" stroke-dasharray="12" xlink:href="#path-1"></use>
+        <use id="Combined-Shape-Copy-2" stroke="#8A8A8A" mask="url(#mask-4)" stroke-width="2" stroke-dasharray="12" transform="translate(292.500000, 170.000425) scale(-1, 1) translate(-292.500000, -170.000425) " xlink:href="#path-3"></use>
+        <use id="Combined-Shape-Copy-4" stroke="#8A8A8A" mask="url(#mask-6)" stroke-width="2" stroke-dasharray="12" transform="translate(292.500000, 430.000425) scale(-1, -1) translate(-292.500000, -430.000425) " xlink:href="#path-5"></use>
+        <use id="Combined-Shape-Copy-6" stroke="#8A8A8A" mask="url(#mask-8)" stroke-width="2" stroke-dasharray="12" transform="translate(551.500000, 430.000425) scale(1, -1) translate(-551.500000, -430.000425) " xlink:href="#path-7"></use>
+        <text id="Producing" transform="translate(273.267767, 155.267767) rotate(-45.000000) translate(-273.267767, -155.267767) " font-family="Avenir-Book, Avenir" font-size="15" font-weight="normal" fill="#BDBDBD">
+            <tspan x="239.105267" y="160.267767">Producing</tspan>
+        </text>
+        <text id="Storing" transform="translate(271.560660, 440.267767) rotate(45.000000) translate(-271.560660, -440.267767) " font-family="Avenir-Book, Avenir" font-size="15" font-weight="normal" fill="#BDBDBD">
+            <tspan x="247.41066" y="445.267767">Storing</tspan>
+        </text>
+        <text id="Transmitting" transform="translate(570.267767, 439.267767) rotate(-45.000000) translate(-570.267767, -439.267767) " font-family="Avenir-Book, Avenir" font-size="15" font-weight="normal" fill="#BDBDBD">
+            <tspan x="528.492767" y="444.267767">Transmitting</tspan>
+        </text>
+        <text id="Computing" transform="translate(574.560660, 160.267767) rotate(45.000000) translate(-574.560660, -160.267767) " font-family="Avenir-Book, Avenir" font-size="15" font-weight="normal" fill="#BDBDBD">
+            <tspan x="536.64816" y="165.267767">Computing</tspan>
+        </text>
+        <path d="M470,21.008 L469,21 C600.996055,21 708,128.003945 708,260 L707.992,261 L639.99928,261.00085 C639.99976,260.833956 640,260.667006 640,260.5 C640,166.502468 563.935099,90.2708452 470.000884,90.0007201 L470,21.008 Z" id="Combined-Shape-Copy" fill="#CECECE"></path>
+        <path d="M139,21.008 L138,21 C269.996055,21 377,128.003945 377,260 L376.992,261 L308.99928,261.00085 C308.99976,260.833956 309,260.667006 309,260.5 C309,166.502468 232.935099,90.2708452 139.000884,90.0007201 L139,21.008 Z" id="Combined-Shape-Copy-3" fill="#CECECE" transform="translate(257.500000, 141.000425) scale(-1, 1) translate(-257.500000, -141.000425) "></path>
+        <path d="M139,336.008 L138,336 C269.996055,336 377,443.003945 377,575 L376.992,576 L308.99928,576.00085 C308.99976,575.833956 309,575.667006 309,575.5 C309,481.502468 232.935099,405.270845 139.000884,405.00072 L139,336.008 Z" id="Combined-Shape-Copy-5" fill="#CECECE" transform="translate(257.500000, 456.000425) scale(-1, -1) translate(-257.500000, -456.000425) "></path>
+        <path d="M470,336.008 L469,336 C600.996055,336 708,443.003945 708,575 L707.992,576 L639.99928,576.00085 C639.99976,575.833956 640,575.667006 640,575.5 C640,481.502468 563.935099,405.270845 470.000884,405.00072 L470,336.008 Z" id="Combined-Shape-Copy-7" fill="#CECECE" transform="translate(588.500000, 456.000425) scale(1, -1) translate(-588.500000, -456.000425) "></path>
+        <g id="logo" transform="translate(352.000000, 216.000000)" fill-rule="nonzero">
+            <g id="Combined-Shape" transform="translate(0.000000, 66.000000)">
+                <g id="path-1-link" fill="#000000">
+                    <polygon id="path-1" points="120.750717 0 135.579714 9.24554081 136 9.91680926 15.5774358 85 0 75.2877068"></polygon>
+                </g>
+                <g id="path-1-link" fill="#FFFFFF">
+                    <polygon id="path-1" points="120.750717 0 135.579714 9.24554081 136 9.91680926 15.5774358 85 0 75.2877068"></polygon>
+                </g>
+            </g>
+            <g id="Combined-Shape-Copy-5" transform="translate(75.000000, 130.500000) scale(-1, 1) translate(-75.000000, -130.500000) translate(7.000000, 88.000000)">
+                <g id="path-3-link" fill="#000000">
+                    <polygon id="path-3" points="120.750717 0 135.579714 9.24554081 136 9.91680926 15.5774358 85 0 75.2877068"></polygon>
+                </g>
+                <g id="path-3-link" fill="#FFFFFF">
+                    <polygon id="path-3" points="120.750717 0 135.579714 9.24554081 136 9.91680926 15.5774358 85 0 75.2877068"></polygon>
+                </g>
+            </g>
+            <g id="Combined-Shape-Copy-4" transform="translate(75.000000, 64.500000) scale(-1, 1) translate(-75.000000, -64.500000) translate(7.000000, 22.000000)">
+                <g id="path-5-link" transform="translate(0.000000, 0.000000)" fill="#000000">
+                    <polygon id="path-5" points="15.5589421 0 136 75.2152951 135.858891 75.4394573 120.549507 85 0 9.71656166"></polygon>
+                </g>
+                <g id="path-5-link" transform="translate(0.000000, 0.000000)" fill="#FFFFFF">
+                    <polygon id="path-5" points="15.5589421 0 136 75.2152951 135.858891 75.4394573 120.549507 85 0 9.71656166"></polygon>
+                </g>
+            </g>
+            <g id="Combined-Shape">
+                <g id="path-7-link" transform="translate(0.000000, -0.000000)" fill="#000000">
+                    <polygon id="path-7" points="15.5589421 0 136 75.2152951 135.858891 75.4394573 120.549507 85 0 9.71656166"></polygon>
+                </g>
+                <g id="path-7-link" transform="translate(0.000000, -0.000000)" fill="#FFFFFF">
+                    <polygon id="path-7" points="15.5589421 0 136 75.2152951 135.858891 75.4394573 120.549507 85 0 9.71656166"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,8 @@
+languageCode = 'en-us'
+title = 'Sourcemeta'
+staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
+
+[Params]
+description = 'Sourcemeta'
+github = 'https://github.com/sourcemeta'
+email = 'hello@sourcemeta.com'
