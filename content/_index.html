@@ -4,18 +4,30 @@ title = "Home"
 
 <div class="bg-dark text-light mb-5" data-bs-theme="dark" id="jumbotron">
   <div class="container py-4 py-md-5">
-    <div class="row align-items-center mb-5">
-      <div class="col-12 col-lg-7 col-xxl-7">
+    <div class="row mb-5 pb-5">
+      <div class="col-0 col-md-1"></div>
+      <div class="col-12 col-md-10 text-center">
         <h1 class="display-2 fw-bold">Data Technology Research</h1>
-        <p class="lead mb-4"><b>Sourcemeta</b> is a London-based open-source incubator of high-efficiency foundational technologies that address the four facets of data: <i>producing, computing, storing, and transmitting.</i></p>
-        <a href="{{<github>}}" class="btn btn-outline-secondary">
-          <i class="bi bi-github me-1"></i>
-          Follow us on GitHub
-        </a>
+        <p class="lead mb-4"><b>Sourcemeta</b> is a London-based open-source incubator of high-efficiency data technologies</p>
+
+        <div class="d-flex justify-content-center flex-column flex-md-row">
+          <a href="{{<github>}}" class="btn btn-outline-secondary mx-1 my-2">
+            <i class="bi bi-github me-1"></i>
+            Follow us on GitHub
+          </a>
+
+          <a href="https://github.com/sponsors/sourcemeta" class="btn btn-outline-secondary mx-1 my-2">
+            <i class="bi bi-currency-pound me-1"></i>
+            Help fund our work
+          </a>
+
+          <a href="mailto:{{ .Site.Params.Email }}" class="btn btn-outline-secondary mx-1 my-2">
+            <i class="bi bi-chat me-1"></i>
+            Reach out
+          </a>
+        </div>
       </div>
-      <div class="d-none d-lg-block col-lg-5 col-xxl-5">
-        <img src="hero.svg" class="img-fluid" alt="The four facets of data: producing, computing, storing, and transmitting">
-      </div>
+      <div class="col-0 col-md-1"></div>
     </div>
   </div>
 </div>
