@@ -1,25 +1,81 @@
 <footer class="border-top py-3 mt-5">
-  <div class="container text-center">
-    <div class="d-flex flex-wrap justify-content-between align-items-center flex-column flex-md-row">
-      <p class="col-12 col-md-4 mb-0 text-muted text-md-start">© 2020-{{ dateFormat "2006" now }} <a class="text-decoration-none text-dark" href="{{ .Site.BaseURL }}">Sourcemeta Ltd</a></p>
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-12 col-lg-6 align-items-center mb-4 mb-md-5 mb-lg-0">
+        <a class="text-decoration-none text-dark d-flex justify-content-center justify-content-lg-start align-items-center" href="{{ .Site.BaseURL }}">
+          <img src="{{ .Site.BaseURL }}logo.svg" alt="{{ .Site.Title }} logo" class="rounded-circle me-2" width="30" height="30">
+          © {{ dateFormat "2006" now }} Sourcemeta Ltd
+        </a>
+      </div>
 
-      <a href="{{ .Site.BaseURL }}" class="col-12 col-md-4 d-flex align-items-center justify-content-center my-3 my-md-0 me-md-auto link-dark text-decoration-none">
-        <img src="{{ .Site.BaseURL }}logo.svg" alt="{{ .Site.Title }} logo" class="rounded-circle" width="40" height="40">
-      </a>
+      <div class="col-4 col-lg-2 d-flex">
+        <div class="mx-auto mx-lg-0">
+          <h6 class="mb-3">Projects</h6>
+          <ul class="list-unstyled">
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="https://www.jsonbinpack.org">
+                <small>JSON BinPack</small>
+              </a>
+            </li>
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="https://jsontoolkit.sourcemeta.com">
+                <small>JSON Toolkit</small>
+              </a>
+            </li>
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="https://alterschema.sourcemeta.com">
+                <small>Alterschema</small>
+              </a>
+            </li>
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="https://www.learnjsonschema.com">
+                <small>Learn JSON Schema</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-      <ul class="nav col-12 col-md-4 justify-content-center justify-content-md-end">
-        <li class="nav-item">
-          <a class="nav-link px-2 text-muted" target="_blank" href="{{ .Site.Params.GitHub }}">
-            <i class="bi bi-github me-1"></i> GitHub
-          </a>
-        </li>
+      <div class="col-4 col-lg-2 d-flex">
+        <div class="mx-auto mx-lg-0">
+          <h6 class="mb-3">Open Source</h6>
+          <ul class="list-unstyled">
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" href="{{ ref . "contributing" }}">
+                <small>Contributing</small>
+              </a>
+            </li>
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" href="{{ ref . "code-of-conduct" }}">
+                <small>Code of Conduct</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-        <li class="nav-item">
-          <a class="nav-link px-2 text-muted" target="_blank" href="{{ .Site.Params.Email }}">
-            <i class="bi bi-envelope me-1"></i> Contact
-          </a>
-        </li>
-      </ul>
+      <div class="col-4 col-lg-2 d-flex">
+        <div class="mx-auto mx-lg-0">
+          <h6 class="mb-3">Links</h6>
+          <ul class="list-unstyled">
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="{{ .Site.Params.GitHub }}">
+                <small>GitHub</small>
+              </a>
+            </li>
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="{{ .Site.Params.Email }}">
+                <small>Contact</small>
+              </a>
+            </li>
+            <li class="my-1">
+              <a class="text-muted text-decoration-none" target="_blank" href="https://github.com/sponsors/sourcemeta">
+                <small>Donate</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
