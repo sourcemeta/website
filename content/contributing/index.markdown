@@ -39,3 +39,15 @@ account to the contributor.
 The contributor grants Sourcemeta the right to re-license the contributions,
 including any derivative works, under other licenses as Sourcemeta deems
 appropriate.
+
+Resources
+---------
+
+Most of our software is written in C++, relies on the CMake build system, and
+targets macOS, Windows, and GNU/Linux. If you are looking to contribute, you
+might find the following resources handy:
+
+- (Book) [The C++ Programming Language](https://stroustrup.com/4th.html)
+- (Book) [Professional CMake](https://crascit.com/professional-cmake/)
+- (Website) [Compiler Explorer](https://godbolt.org)
+- (Website) [C++ Insights](https://cppinsights.io)
