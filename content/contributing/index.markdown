@@ -53,7 +53,7 @@ might find the following resources handy:
 - (Book) [Professional CMake](https://crascit.com/professional-cmake/)
 - (Website) [Compiler Explorer](https://godbolt.org)
 - (Website) [C++ Insights](https://cppinsights.io)
-- (Specification) [Itanium C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/)
+- (Specification) [Itanium C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/abi.html)
 
 ### macOS
 
