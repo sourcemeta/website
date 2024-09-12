@@ -104,8 +104,8 @@ called [`machoview`](https://formulae.brew.sh/cask/machoview)_.
 (Website) [**Apple Developer macOS Performance
 Tools**](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/PerformanceOverview/PerformanceTools/PerformanceTools.html).
 _A guide to the various utilities included in macOS for system and performance
-analysis, such as `vm_stat`, `leaks`, `malloc_history`, and `heap`. While these
-tools can be useful, for C++ development we recommend learning
+analysis, such as `vm_stat(1)`, `leaks(1)`, `malloc_history(1)`, and `heap(1)`.
+While these tools can be useful, for C++ development we recommend learning
 [DTrace](https://dtrace.org/about/) and
 [Instruments](https://help.apple.com/instruments/mac/10.0/) instead_.
 
@@ -152,6 +152,11 @@ Volume III: Security & Insecurity](https://www.amazon.com/dp/0991055535)**.
 _The industry standard book trilogy describing the internals of Apple operating
 systems_.
 
+(Standard) [**DWARF Debugging Information Format
+v4**](https://dwarfstd.org/doc/DWARF4.pdf). _The underlying format used by
+`*.dSYM` debugging symbols on Apple platforms. It can help understanding the
+human-readable output of `dwarfdump(1)`_.
+
 ### C
 
 (Code) [**XNU C Standard
@@ -177,9 +182,3 @@ doesn't publicly document. Also see [Exploring macOS private
 frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
 a post that teaches techniques for exploring private macOS Objective-C
 frameworks using the RuntimeBrowser application and other tools._
-
-
-
-
-
-
