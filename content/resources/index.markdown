@@ -70,9 +70,9 @@ implementation of the `std` namespace, which you can use to understand how
 built-in containers, algorithms, and utilities are implemented. Pro Tip: you
 can compile a program against a custom build of the standard library, allowing
 you to better step through and profile non-template-related standard library
-usage.  See [this
-post](https://www.jviotti.com/2022/05/05/debugging-the-cxx-standard-library-on-macos.html)
-for how to do it on macOS_.
+usage. Also see [Debugging the C++ standard library on
+macOS](https://www.jviotti.com/2022/05/05/debugging-the-cxx-standard-library-on-macos.html),
+a post discussing how to do it on macOS_.
 
 ### macOS
 
@@ -117,7 +117,11 @@ tricks that apply to software engineering_.
 disassembler desktop application for macOS with deep understanding of Apple
 frameworks and Mach-O. While Hopper offers a license, the time-boxed free
 version is enough for most cases. The paid version unlocks an LLDB frontend
-that can be particularly useful for stepping through assembly code_.
+that can be particularly useful for stepping through assembly code_. Also see
+[Exploring macOS private
+frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
+a post that teaches techniques for exploring private macOS Objective-C
+frameworks using the Hopper application and other tools._
 
 ### C
 
@@ -140,7 +144,10 @@ based platforms like macOS and GNU/Linux_.
 unmaintained, but still working, native macOS and iOS application to browser
 public and private Objective-C frameworks that ship with macOS and iOS. Can be
 useful if you need to understand and potentially use private APIs that Apple
-doesn't publicly document_.
+doesn't publicly document. Also see [Exploring macOS private
+frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
+a post that teaches techniques for exploring private macOS Objective-C
+frameworks using the RuntimeBrowser application and other tools._
 
 
 
