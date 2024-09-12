@@ -76,6 +76,18 @@ a post discussing how to do it on macOS_.
 
 ### macOS
 
+(Application) [**Xcode
+Instruments**](https://help.apple.com/instruments/mac/current/#/dev7b09c84f5).
+_The de-facto profiling and performance analysis tool for Apple platforms
+(largely a frontend to [DTrace](https://dtrace.org/about/)), which comes as a
+standalone desktop application shipped as part of the Xcode package. See
+[Using Xcode Instruments for C++ CPU
+profiling](https://www.jviotti.com/2024/01/29/using-xcode-instruments-for-cpp-cpu-profiling.html)
+and [Emitting Signposts to Instruments on macOS using
+C++](https://www.jviotti.com/2022/02/21/emitting-signposts-to-instruments-on-macos-using-cpp.html)
+for more detailed information on using Instruments for C++ performance
+analysis._
+
 (Specification) [**Mach-O File Format
 Reference**](https://github.com/aidansteele/osx-abi-macho-file-format-reference/blob/master/Mach-O_File_Format.pdf).
 _The original Apple reference documentation for the Mach-O binary format, to
