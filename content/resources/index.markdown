@@ -144,6 +144,14 @@ that Apple Silicon adopts. Also see
 Language](https://link.springer.com/book/10.1007/978-1-4842-5881-1) popular
 book to Apple Silicon._
 
+(Book) **[MacOS and iOS Internals, Volume I: User
+Mode](https://www.amazon.com/MacOS-iOS-Internals-User-Mode/dp/099105556X),
+[MacOS and iOS Internals, Volume II: Kernel
+Mode](https://www.amazon.com/dp/0991055578), and [MacOS and iOS Internals,
+Volume III: Security & Insecurity](https://www.amazon.com/dp/0991055535)**.
+_The industry standard book trilogy describing the internals of Apple operating
+systems_.
+
 ### C
 
 (Code) [**XNU C Standard
