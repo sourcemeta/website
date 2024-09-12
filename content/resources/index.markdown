@@ -123,6 +123,15 @@ frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-framework
 a post that teaches techniques for exploring private macOS Objective-C
 frameworks using the Hopper application and other tools._
 
+(Specification) [**Arm Instruction Set Reference Guide Version
+1.0**](https://developer.arm.com/documentation/100076/0100). _A
+freely-available and searchable reference document for the ARM instruction set
+that Apple Silicon adopts. Also see
+[HelloSilicon](https://github.com/below/HelloSilicon), an adaptation of the
+[Programming with 64-Bit ARM Assembly
+Language](https://link.springer.com/book/10.1007/978-1-4842-5881-1) popular
+book to Apple Silicon._
+
 ### C
 
 (Code) [**XNU C Standard
