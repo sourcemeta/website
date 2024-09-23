@@ -107,7 +107,10 @@ _A guide to the various utilities included in macOS for system and performance
 analysis, such as `vm_stat(1)`, `leaks(1)`, `malloc_history(1)`, and `heap(1)`.
 While these tools can be useful, for C++ development we recommend learning
 [DTrace](https://dtrace.org/about/) and
-[Instruments](https://help.apple.com/instruments/mac/10.0/) instead_.
+[Instruments](https://help.apple.com/instruments/mac/10.0/) instead. If you are
+looking for general information about the CPU and caches available on your
+systems, try `sysctl -a hw machdep.cpu` and `lstopo(1)` from
+[`hwloc`](https://formulae.brew.sh/formula/hwloc)._
 
 (Book) [**DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and
 FreeBSD**](https://www.amazon.com/gp/product/0132091518). _The best resource to
