@@ -109,7 +109,7 @@ While these tools can be useful, for C++ development we recommend learning
 [DTrace](https://dtrace.org/about/) and
 [Instruments](https://help.apple.com/instruments/mac/10.0/) instead. If you are
 looking for general information about the CPU and caches available on your
-systems, try `sysctl -a hw machdep.cpu` and `lstopo(1)` from
+system, try `sysctl -a hw machdep.cpu` and `lstopo(1)` from
 [`hwloc`](https://formulae.brew.sh/formula/hwloc)._
 
 (Book) [**DTrace: Dynamic Tracing in Oracle Solaris, Mac OS X and
