@@ -1,0 +1,11 @@
+<figure class="border px-3 py-3 shadow-sm bg-light">
+  <blockquote class="blockquote d-flex align-items-start">
+    <a href="https://www.linkedin.com/in/{{ .Get "linkedIn" }}/">
+      <img src="{{ .Get "linkedIn" }}.jpeg" class="me-3 border border-dark-subtle" alt="{{ .Get "author" }}" width="50" height="50">
+    </a>
+    <p class="fw-light">{{ .Inner }}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer mt-1 mb-0">
+    <a class="text-dark" href="{{ .Get "url" }}">{{ .Get "author" }}</a>, {{ .Get "jobTitle" }}
+  </figcaption>
+</figure>

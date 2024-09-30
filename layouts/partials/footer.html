@@ -3,40 +3,12 @@
     <div class="row">
       <div class="col-12 col-lg-6 align-items-center mb-4 mb-md-5 mb-lg-0">
         <a class="text-decoration-none text-dark d-flex justify-content-center justify-content-lg-start align-items-center" href="{{ .Site.BaseURL }}">
-          <img src="{{ .Site.BaseURL }}logo.svg" alt="{{ .Site.Title }} logo" class="rounded-circle me-2" width="30" height="30">
+          <img src="{{ .Site.BaseURL }}logo.svg" alt="{{ .Site.Title }} logo" class="me-2" width="30" height="30">
           © {{ dateFormat "2006" now }} Sourcemeta Ltd
         </a>
       </div>
 
-      <div class="col-4 col-lg-2 d-flex">
-        <div class="mx-auto mx-lg-0">
-          <h6 class="mb-3">Projects</h6>
-          <ul class="list-unstyled">
-            <li class="my-1">
-              <a class="text-muted text-decoration-none" target="_blank" href="https://jsonbinpack.sourcemeta.com">
-                <small>JSON BinPack</small>
-              </a>
-            </li>
-            <li class="my-1">
-              <a class="text-muted text-decoration-none" target="_blank" href="https://jsontoolkit.sourcemeta.com">
-                <small>JSON Toolkit</small>
-              </a>
-            </li>
-            <li class="my-1">
-              <a class="text-muted text-decoration-none" target="_blank" href="https://alterschema.sourcemeta.com">
-                <small>Alterschema</small>
-              </a>
-            </li>
-            <li class="my-1">
-              <a class="text-muted text-decoration-none" target="_blank" href="https://hydra.sourcemeta.com">
-                <small>Hydra</small>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-4 col-lg-2 d-flex">
+      <div class="col-6 col-lg-3 d-flex">
         <div class="mx-auto mx-lg-0">
           <h6 class="mb-3">Open Source</h6>
           <ul class="list-unstyled">
@@ -59,7 +31,7 @@
         </div>
       </div>
 
-      <div class="col-4 col-lg-2 d-flex">
+      <div class="col-6 col-lg-3 d-flex">
         <div class="mx-auto mx-lg-0">
           <h6 class="mb-3">Links</h6>
           <ul class="list-unstyled">
@@ -71,11 +43,6 @@
             <li class="my-1">
               <a class="text-muted text-decoration-none" target="_blank" href="{{ .Site.Params.Email }}">
                 <small>Contact</small>
-              </a>
-            </li>
-            <li class="my-1">
-              <a class="text-muted text-decoration-none" target="_blank" href="https://github.com/sponsors/sourcemeta">
-                <small>Donate</small>
               </a>
             </li>
           </ul>

@@ -1,21 +1,14 @@
-<nav class="navbar navbar-expand bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand my-2">
   <div class="container">
     <a class="navbar-brand" href="{{ .Site.BaseURL }}">
-      <img class="me-1 align-middle" src="{{ .Site.BaseURL }}logo.svg" alt="{{ .Site.Title }} logo" height="40">
-      <span class="h4 align-middle d-none d-md-inline">{{ .Site.Title }}</span>
+      <img class="me-2 align-middle" src="{{ .Site.BaseURL }}logo.svg" alt="Sourcemeta logo" height="35">
+      <span class="align-middle fw-light">Sourcemeta</span>
     </a>
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" target="_blank" href="{{ .Site.Params.GitHub }}">
-            <i class="bi bi-github me-1"></i> GitHub
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mailto:{{ .Site.Params.Email }}">
-            <i class="bi bi-envelope me-1"></i> Contact
-          </a>
+          <a class="btn btn-dark font-monospace" href="mailto:{{ .Site.Params.Email }}" role="button">Get in touch</a>
         </li>
       </ul>
     </div>

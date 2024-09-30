@@ -2,96 +2,101 @@
 title = "Home"
 +++
 
-<div class="bg-dark text-light mb-5" data-bs-theme="dark" id="jumbotron">
+<div class="border-top border-bottom" id="jumbotron">
   <div class="container py-4 py-md-5">
-    <div class="row mb-5 pb-3 pb-md-4">
-      <div class="col-0 col-md-1"></div>
-      <div class="col-12 col-md-10 text-center">
-        <h1 class="display-2 fw-bold">Data Technology Research</h1>
-        <p class="lead mb-4"><b>Sourcemeta</b> is a London-based open-source incubator of high-efficiency data technologies</p>
-
-        <div class="d-flex justify-content-center flex-column flex-md-row">
-          <a href="{{<github>}}" class="btn btn-outline-secondary mx-1 my-2">
-            <i class="bi bi-github me-1"></i>
-            Follow us on GitHub
-          </a>
-
-          <a href="mailto:{{<email>}}" class="btn btn-outline-secondary mx-1 my-2">
-            <i class="bi bi-chat me-1"></i>
-            Reach out
-          </a>
-
-          <a href="https://github.com/sponsors/sourcemeta" class="btn btn-outline-secondary mx-1 my-2"> <i class="bi bi-currency-pound me-1"></i>
-            Help fund our work
-          </a>
-        </div>
+    <div class="row">
+      <div class="col-12 col-xl-6">
+        <h1 class="display-3 fw-bold">Inefficient software is <span class="text-gradient-metal">expensive</span> to operate, and harmful to our planet</h1>
+        <p class="lead fw-lighter">Reduce data transfer costs, save on cloud compute bills, and outperform your competition with our <b>award-winning</b> high-performance software components</p>
       </div>
-      <div class="col-0 col-md-1"></div>
+      <div class="col-12 col-xl-6 ps-xl-5 pt-4 pt-md-5 pt-xl-0">
+        {{<quote author="Jon Thomason" jobTitle="VP & GM, Software Platforms, Qualcomm"
+            url="https://www.forbes.com/sites/barrycollins/2021/05/21/outrageous-data-costs-are-holding-robots-back/"
+            linkedIn="jonthomason">}}
+          The outrageous cost of mobile data is holding back developments in robotics
+        {{</quote>}}
+
+        {{<quote author="Bill Galloway" jobTitle="ex CTO at Pivot3"
+            url="https://www.forbes.com/councils/forbestechcouncil/2020/01/17/the-speed-of-light-cost-of-bandwidth-and-big-data-whats-really-driving-computing-to-the-edge/"
+            linkedIn="billgalloway58">}}
+          Even with today’s fiber connections and the potential of 5G, light only travels so fast. So, if you want to move a lot of data from point A to point B, and these points are any real distance apart, you’ll pay a lot for adequate bandwidth
+        {{</quote>}}
+
+        {{<quote author="Mark Pesce" jobTitle="Co-founder, Wisely AI"
+            url="https://spectrum.ieee.org/cloud-computings-coming-energy-crisis"
+            linkedIn="markpesce">}}
+          We can't devote the whole of the planet's electricity generation to support the cloud. Something will have to give
+        {{</quote>}}
+      </div>
     </div>
   </div>
 </div>
 
-<section class="py-1 py-md-4 my-2">
+<section class="py-1">
   <div class="container">
-    <div class="d-flex flex-column flex-lg-row align-items-lg-center mb-5">
-      <h2 class="fw-bold display-4 me-lg-5 text-nowrap">Notable Projects</h2>
-      <p class="ms-lg-5 mb-0">We are working on several projects that aim to improve how organizations work with data. These projects build upon standard technologies like JSON and JSON Schema. Some of these projects originate from research at the <a target="_blank" href="https://www.jviotti.com/assets/dissertation.pdf" class="text-dark">University of Oxford</a>.</p>
-    </div>
-
-    <div class="row text-center">
-      <div class="col-12 col-lg-4 mb-5">
-        <div class="card text-bg-dark shadow pb-1">
-          <a href="https://jsonbinpack.sourcemeta.com">
-            <img src="jsonbinpack.png" class="card-img-top" alt="JSON BinPack">
-          </a>
-          <div class="card-header mt-2">
-            <span class="badge bg-secondary">C++</span>
-            <span class="badge text-bg-light">AGPL-3.0</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">JSON BinPack</h5>
-            <p class="card-text">Award-winning space-efficient binary serialization technology based on JSON Schema.</p>
-            <a href="https://jsonbinpack.sourcemeta.com" class="btn btn-primary">Visit project</a>
-          </div>
-        </div>
+    <div class="my-4 my-md-5">
+      <div class="bg-dark text-light px-3 py-1 w-25">
+        <a href="https://jsonbinpack.sourcemeta.com" class="text-light text-decoration-none font-monospace">
+          <small>JSON BinPack</small>
+        </a>
       </div>
+      <div class="border border-dark px-4 py-4">
+        <div class="row flex-column-reverse flex-xl-row">
+          <div class="col-12 col-xl-5">
+            <h2 class="display-6 fw-bold">Space-efficient data transfer for Robotics, IoT, and Automotive</h2>
 
-      <div class="col-12 col-lg-4 mb-5">
-        <div class="card text-bg-dark shadow pb-1">
-          <a href="https://jsontoolkit.sourcemeta.com">
-            <img src="jsontoolkit.png" class="card-img-top" alt="JSON Toolkit">
-          </a>
-          <div class="card-header mt-2">
-            <span class="badge bg-secondary">C++</span>
-            <span class="badge text-bg-light">AGPL-3.0</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">JSON Toolkit</h5>
-            <p class="card-text">A swiss-army knife library for expressive JSON programming in modern C++.</p>
-            <a href="https://jsontoolkit.sourcemeta.com" class="btn btn-primary">Visit project</a>
-          </div>
-        </div>
-      </div>
+            <p>Transferring lots of JSON data, mainly over 4G/5G or satellite transceivers or cloud platforms that charge for outbound traffic, can get very expensive. You might be adopting technologies like CBOR, Protocol Buffers, or ASN.1, but you can do better.</p>
+            <ul>
+              <li>Up to 74% more <a href="https://arxiv.org/abs/2211.12799" class="text-dark">space-efficient</a> than Protocol Buffers</li>
+              <li>Interoperates with OpenAPI and similar API specifications</li>
+              <li>Based on award-winning <a href="https://www.jviotti.com/dissertation.pdf" class="text-dark">research</a> at the University of Oxford</li>
+            </ul>
 
-      <div class="col-12 col-lg-4 mb-5">
-        <div class="card text-bg-dark shadow pb-1">
-          <a href="https://alterschema.sourcemeta.com">
-            <img src="alterschema.png" class="card-img-top" alt="Alterschema">
-          </a>
-          <div class="card-header mt-2">
-            <span class="badge bg-secondary">JavaScript</span>
-            <span class="badge text-bg-light">Apache-2.0</span>
+            <div class="mt-4">
+              <a class="btn btn-outline-dark font-monospace me-2" href="https://jsonbinpack.sourcemeta.com" role="button">Read more</a>
+              <a class="btn btn-dark font-monospace" href="mailto:{{ .Site.Params.Email }}" role="button">Book a demo</a>
+            </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Alterschema</h5>
-            <p class="card-text">A set of formal transformation rules for automatically upgrading JSON Schemas.</p>
-            <a href="https://alterschema.sourcemeta.com" class="btn btn-primary">Visit project</a>
+          <div class="col-12 col-xl-7 mb-3 mb-xl-0">
+            <img src="jsonbinpack.png" class="img-fluid">
           </div>
         </div>
       </div>
     </div>
-    <div class="text-center">
-      <a target="_blank" href="{{<github>}}" class="text-dark">Explore the GitHub organization</a>
+
+    <div class="my-4 my-md-5">
+      <div class="bg-dark text-light px-3 py-1 w-25">
+        <a href="https://github.com/sourcemeta/jsontoolkit" class="text-light text-decoration-none font-monospace">
+          <small>JSON Toolkit</small>
+        </a>
+      </div>
+      <div class="border border-dark px-4 py-4">
+        <div class="row flex-column-reverse flex-xl-row">
+          <div class="col-12 col-xl-5">
+            <h2 class="display-6 fw-bold">Nano-second input data validation for APIs</h2>
+
+            <p>Every API needs to validate untrusted input JSON data, API gateways in particular. For complex input, an API may spend more compute time validating than performing its business logic. You can do better.</p>
+
+            <ul>
+              <li>Typical JSON Schema validation in the nano-second range</li>
+              <li>Stress tested to validate &gt;8000 lines JSON Schemas in half a milli-second</li>
+              <li>Low memory-usage for fast validation on edge computing devices</li>
+            </ul>
+
+            <div class="mt-4">
+              <a class="btn btn-outline-dark font-monospace me-2" href="https://github.com/sourcemeta/jsontoolkit" role="button">Read more</a>
+              <a class="btn btn-dark font-monospace" href="mailto:{{ .Site.Params.Email }}" role="button">Book a demo</a>
+            </div>
+          </div>
+          <div class="col-12 col-xl-7 mb-3 mb-xl-0">
+            <img src="jsontoolkit.png" class="img-fluid">
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="text-center">
+    <a target="_blank" href="{{<github>}}" class="text-dark">Explore the GitHub organization for more projects</a>
   </div>
 </section>

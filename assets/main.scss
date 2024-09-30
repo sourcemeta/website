@@ -1,7 +1,8 @@
 // Base
 @import "../vendor/bootstrap/scss/functions";
 
-$card-border-radius: 0;
+$blockquote-font-size: 16px;
+$border-radius: 0;
 
 // Configuration
 @import "../vendor/bootstrap/scss/variables";
@@ -54,13 +55,15 @@ $bootstrap-icons-font: bootstrap-icons;
 $bootstrap-icons-font-dir: "./";
 @import "../vendor/bootstrap-icons/font/bootstrap-icons.scss";
 
-.navbar-brand {
-  font-family: Verdana, Geneva, sans-serif;
+.text-gradient-metal {
+  background: -webkit-linear-gradient(236deg, #b1b1b1, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #jumbotron {
   background-image: url(background.png);
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
