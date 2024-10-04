@@ -10,6 +10,11 @@
     <link rel="canonical" href="{{ .Site.BaseURL }}">
     <meta name="description" content="{{ block "description" . }}{{ .Site.Params.Description }}{{ end }}">
 
+    <meta property="og:title" content="{{ block "title" . }}{{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ block "description" . }}{{ .Site.Params.Description }}{{ end }}">
+    <meta property="og:url" content="{{ .Site.BaseURL }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}logo.svg">
+
     {{ $style := resources.Get "main.scss" | toCSS (dict "outputStyle" "compressed") }}
 		<link rel="stylesheet" href="{{ $style.Permalink }}">
 
