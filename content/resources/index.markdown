@@ -74,6 +74,32 @@ usage. Also see [Debugging the C++ standard library on
 macOS](https://www.jviotti.com/2022/05/05/debugging-the-cxx-standard-library-on-macos.html),
 a post discussing how to do it on macOS_.
 
+### C
+
+(Code) [**XNU C Standard
+Library**](https://github.com/apple-oss-distributions/xnu/tree/main/bsd/sys).
+_To consult Darwin's C standard library and POSIX implementation (originally
+derived from FreeBSD), which powers every Apple platform. However, keep in mind
+that Apple only releases snapshots of XNU at certain intervals, so don't expect
+the code to match what's on modern devices_.
+
+(Standard) [**IEEE POSIX C
+Standard**](https://standards.ieee.org/ieee/1003.1/7101/). _This is the
+standard that defines the C interfaces that POSIX systems must adhere too. A
+must have if you expect to do any lower-level systems engineering on POSIX
+based platforms like macOS and GNU/Linux_.
+
+### Objective-C
+
+(Application) [**RuntimeBrowser**](https://github.com/nst/RuntimeBrowser). _An
+unmaintained, but still working, native macOS and iOS application to browser
+public and private Objective-C frameworks that ship with macOS and iOS. Can be
+useful if you need to understand and potentially use private APIs that Apple
+doesn't publicly document. Also see [Exploring macOS private
+frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
+a post that teaches techniques for exploring private macOS Objective-C
+frameworks using the RuntimeBrowser application and other tools._
+
 ### macOS
 
 (Application) [**Xcode
@@ -160,28 +186,13 @@ v4**](https://dwarfstd.org/doc/DWARF4.pdf). _The underlying format used by
 `*.dSYM` debugging symbols on Apple platforms. It can help understanding the
 human-readable output of `dwarfdump(1)`_.
 
-### C
+### GNU/Linux
 
-(Code) [**XNU C Standard
-Library**](https://github.com/apple-oss-distributions/xnu/tree/main/bsd/sys).
-_To consult Darwin's C standard library and POSIX implementation (originally
-derived from FreeBSD), which powers every Apple platform. However, keep in mind
-that Apple only releases snapshots of XNU at certain intervals, so don't expect
-the code to match what's on modern devices_.
-
-(Standard) [**IEEE POSIX C
-Standard**](https://standards.ieee.org/ieee/1003.1/7101/). _This is the
-standard that defines the C interfaces that POSIX systems must adhere too. A
-must have if you expect to do any lower-level systems engineering on POSIX
-based platforms like macOS and GNU/Linux_.
-
-### Objective-C
-
-(Application) [**RuntimeBrowser**](https://github.com/nst/RuntimeBrowser). _An
-unmaintained, but still working, native macOS and iOS application to browser
-public and private Objective-C frameworks that ship with macOS and iOS. Can be
-useful if you need to understand and potentially use private APIs that Apple
-doesn't publicly document. Also see [Exploring macOS private
-frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
-a post that teaches techniques for exploring private macOS Objective-C
-frameworks using the RuntimeBrowser application and other tools._
+(Application) [**Intel VTune
+Profiler**](https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html).
+_A great commercial profiler for high-performace computing profiler for Intel
+and AMD x86-based processors with advanced analysis tools. It is available for
+free and supports various popular distributions. However, it can be tricky to
+setup. See [Running the Intel VTune Profiler on
+Fedora](https://www.jviotti.com/2024/10/08/running-the-intel-vtune-profiler-on-fedora.html)
+for Fedora-specific instructions_.
