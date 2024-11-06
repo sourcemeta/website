@@ -2,149 +2,270 @@
 title = "Home"
 +++
 
-<div class="border-top border-bottom" id="jumbotron">
+<div class="border-top" id="jumbotron">
   <div class="container py-4 py-md-5">
     <div class="row">
       <div class="col-12 col-xl-6">
-        <h1 class="display-3 fw-bold">Inefficient software is <span class="text-gradient-metal">expensive</span> to operate, and harmful to our planet</h1>
-        <p class="lead fw-lighter">Reduce data transfer costs, save on cloud compute bills, and outperform your competition with our <b>award-winning</b> high-performance software components and expertise</p>
+        <h1 class="display-3 fw-bold">Unleash the power of <span class="text-gradient-metal">JSON Schema</span>, and align your business operations</h1>
+        <p class="lead fw-lighter">We provide a comprehensive suite of <b>world-class</b> tooling and services to make you succeed with JSON Schema at every step of the way</p>
       </div>
-      <div class="col-12 col-xl-6 ps-xl-5 pt-4 pt-md-5 pt-xl-0">
-        {{<quote author="Jon Thomason" jobTitle="VP & GM, Software Platforms, Qualcomm"
-            url="https://www.forbes.com/sites/barrycollins/2021/05/21/outrageous-data-costs-are-holding-robots-back/"
-            linkedIn="jonthomason">}}
-          The outrageous cost of mobile data is holding back developments in robotics
+      <div class="col-12 col-xl-6 ps-xl-5 pt-2 pt-md-4 pt-xl-0">
+        {{<quote author="Kin Lane" jobTitle="The API Evangelist"
+            url="https://apievangelist.com/2024/11/06/the-json-schema-help-we-need/"
+            linkedIn="kinlane">}}
+          JSON Schema is ubiquitous and critical to our operations, yet so many of us have barely scratched the surface when it comes to putting the specific to work, let alone getting our house in order
         {{</quote>}}
 
-        {{<quote author="Bill Galloway" jobTitle="ex CTO at Pivot3"
-            url="https://www.forbes.com/councils/forbestechcouncil/2020/01/17/the-speed-of-light-cost-of-bandwidth-and-big-data-whats-really-driving-computing-to-the-edge/"
-            linkedIn="billgalloway58">}}
-          Even with today’s fiber connections and the potential of 5G, light only travels so fast. So, if you want to move a lot of data from point A to point B, and these points are any real distance apart, you’ll pay a lot for adequate bandwidth
-        {{</quote>}}
+        <div class="border px-3 py-3 mt-4 shadow-sm bg-light">
+          <small class="d-block mb-3 text-secondary fw-light">Get our open-source CLI, the best way to work with JSON Schema</small>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active bg-light border-bottom-bg-light" aria-current="page" href="#">
+                <i class="bi bi-apple me-2"></i>
+                macOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/sourcemeta/jsonschema/releases">
+              <i class="bi bi-windows me-2"></i>
+                Windows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/sourcemeta/jsonschema/releases">
+              <i class="bi bi-ubuntu me-2"></i>
+                GNU/Linux</a>
+            </li>
+          </ul>
 
-        {{<quote author="Mark Pesce" jobTitle="Co-founder, Wisely AI"
-            url="https://spectrum.ieee.org/cloud-computings-coming-energy-crisis"
-            linkedIn="markpesce">}}
-          We can't devote the whole of the planet's electricity generation to support the cloud. Something will have to give
-        {{</quote>}}
+          <div class="bg-dark text-light font-monospace my-3 p-3">
+            <div>$ brew install sourcemeta/apps/jsonschema</div>
+            <div>$ jsonschema validate &lt;schema.json&gt; &lt;instance.json&gt;</div>
+          </div>
+
+          <small class="d-block">
+            <a href="https://github.com/sourcemeta/jsonschema">Read the docs</a> on GitHub to learn more
+          </small>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<section class="py-1">
-  <div class="container">
-    <div class="my-4 my-md-5">
-      <div class="bg-dark text-light px-3 py-1 w-25">
-        <a href="https://jsonbinpack.sourcemeta.com" class="text-light text-decoration-none font-monospace">
-          <small>JSON BinPack</small>
-        </a>
-      </div>
-      <div class="border border-dark px-4 py-4">
-        <div class="row flex-column-reverse flex-xl-row">
-          <div class="col-12 col-xl-5">
-            <h2 class="display-6 fw-bold">Space-efficient data transfer for Robotics, IoT, and Automotive</h2>
-
-            <p>Transferring telemetry data over 5G or satellite networks like <a href="https://www.iridium.com" class="text-dark">Iridium</a>, <a href="https://www.skylo.tech" class="text-dark">Skylo</a>, and <a href="https://www.thuraya.com" class="text-dark">Thuraya</a>, can get very expensive. You might be adopting technologies like <a href="https://github.com/eProsima/Fast-CDR" class="text-dark">CDR</a>, CBOR, Protocol Buffers, or ASN.1, but you can do better.</p>
-            <ul>
-              <li>Up to 74% more <a href="https://arxiv.org/abs/2211.12799" class="text-dark">space-efficient</a> than Protocol Buffers</li>
-              <li>Interoperates with OpenAPI and similar API specifications</li>
-              <li>Based on award-winning <a href="https://www.jviotti.com/dissertation.pdf" class="text-dark">research</a> at the University of Oxford</li>
-            </ul>
-
-            <div class="mt-4">
-              <a class="btn btn-outline-dark font-monospace me-2" href="https://jsonbinpack.sourcemeta.com" role="button">Read more</a>
-              <a class="btn btn-dark font-monospace" href="mailto:{{<email>}}" role="button">Book a demo</a>
-            </div>
-          </div>
-          <div class="col-12 col-xl-7 mb-3 mb-xl-0">
-            <img src="jsonbinpack.png" class="img-fluid" alt="JSON BinPack benchmark">
-          </div>
-        </div>
+<section class="border-top border-bottom bg-light-subtle mb-2">
+  <div class="container text-secondary d-flex flex-column flex-xl-row align-items-center text-center text-xl-start">
+    <div class="me-xl-5 my-4 text-nowrap">
+      <p class="fs-5 mb-2 fw-light">
+        <i class="bi bi-braces me-1"></i>
+        JSON Schema defines and validates the world
+      </p>
+      <div class="border-top pt-2">
+        <small class="fw-lighter"><a target="_blank" href="http://web.archive.org/web/20240112082550/https://www.postman.com/state-of-api/api-technologies/#specifications-json-schema-holds-the-lead">94%</a> of developers in the API space know JSON Schema. Don't miss out</small>
       </div>
     </div>
-
-    <div class="my-4 my-md-5">
-      <div class="bg-dark text-light px-3 py-1 w-25">
-        <a href="https://github.com/sourcemeta/blaze" class="text-light text-decoration-none font-monospace">
-          <small>Blaze</small>
-        </a>
-      </div>
-      <div class="border border-dark px-4 py-4">
-        <div class="row flex-column-reverse flex-xl-row">
-          <div class="col-12 col-xl-5">
-            <h2 class="display-6 fw-bold">Nano-second input data validation for APIs</h2>
-
-            <p>Every API needs to validate untrusted input JSON data, API gateways in particular. For complex input, an API may spend more compute time validating than performing its business logic. You can do better.</p>
-
-            <ul>
-              <li>Typical JSON Schema validation in the nano-second range</li>
-              <li>Stress tested to validate &gt;8000 lines JSON Schemas in half a milli-second</li>
-              <li>Low memory-usage for fast validation on edge computing devices</li>
-            </ul>
-
-            <div class="mt-4">
-              <a class="btn btn-outline-dark font-monospace me-2" href="https://github.com/sourcemeta/blaze" role="button">Read more</a>
-              <a class="btn btn-dark font-monospace" href="mailto:{{<email>}}" role="button">Book a demo</a>
-            </div>
-          </div>
-          <div class="col-12 col-xl-7 mb-3 mb-xl-0">
-            <img src="blaze.png" class="img-fluid" alt="Blaze benchmark">
-          </div>
-        </div>
-      </div>
+    <div class="py-3">
+      <a target="_blank" class="text-decoration-none" href="https://www.openapis.org">
+        <img class="mx-3 my-3" width="160" src="openapi.svg">
+      </a>
+      <a target="_blank" class="text-decoration-none" href="https://www.asyncapi.com">
+        <img class="mx-3 my-3" width="160" src="asyncapi.svg">
+      </a>
+      <a target="_blank" class="text-decoration-none" href="https://raml.org">
+        <img class="mx-3 my-3" width="160" src="raml.svg">
+      </a>
+      <a target="_blank" class="text-decoration-none" href="https://www.w3.org/WoT/">
+        <img class="mx-3 my-3" width="160" src="wot.svg">
+      </a>
     </div>
-  </div>
-
-  <div class="text-center">
-    <a target="_blank" href="{{<github>}}" class="text-dark">Explore the GitHub organization for more projects</a>
   </div>
 </section>
 
-<section class="py-5 bg-light bg-gradient border-top border-bottom shadow-sm mt-5">
+<section class="py-5 border-bottom" id="products">
   <div class="container">
-    <div class="row">
+    {{<headline index="1" title="Mastering JSON Schema">}}
+
+      JSON Schema is an extensible universal language for defining the
+      structure, meaning, relationship, and hyperlink navigation of JSON
+      documents, and there is a lot more that meets the eye. Whether you are
+      just getting started, or want to explore advanced topics like annotations
+      and custom vocabularies, we have the best resources to get you from zero
+      to hero, fast.
+
+    {{</headline>}}
+
+    <div class="mb-5">
+      {{<box header="Website / Open Source" title="Learn JSON Schema" breakpoint="xl"
+          button="Go to website" link="https://www.learnjsonschema.com" image="learnjsonschema.png">}}
+
+        The ultimate reference documentation site for JSON Schema, with plenty of
+        examples, best practices, common pitfalls, and more; covering a wide range of
+        JSON Schema versions
+
+      {{</box>}}
+    </div>
+
+    <div class="row g-5 align-items-stretch mb-5">
+      <div class="col-12 col-lg-6">
+        {{<box header="Book / O'Reilly" title="Unifying Business, Data, and Code" breakpoint="xl"
+            button="Buy on Amazon" link="https://www.amazon.com/dp/1098145003" image="unifying.webp">}}
+
+            Introduces JSON Schema from a data science point of view, covering
+            advanced topics like writing your own JSON Schema vocabularies,
+            and understanding JSON Schema annotations
+
+        {{</box>}}
+      </div>
+      <div class="col-12 col-lg-6">
+        {{<box header="Coming Soon" title="JSON Schema Video Course" breakpoint="xl">}}
+
+            A comprehensive self-paced video course exploring in-depth every
+            aspect of JSON and JSON Schema, from basic keywords, to
+            annotations, dynamic references, the evaluation model, and ontology
+            design. If you want to become a JSON Schema expert, and/or want to
+            develop your own compliant JSON Schema implementation, this course
+            is for you
+
+        {{</box>}}
+      </div>
+    </div>
+
+    {{<headline index="2" title="Developing with JSON Schema">}}
+
+      Writing a few simple schemas is an easy task. However, developing and
+      maintaining ontologies consisting of hundreds of complex schemas can be
+      extremely challenging. Our suite of tools encapsulates our experience
+      consulting with world-class ontologies. It is what we use to get the job
+      done, and they are available for you too.
+
+    {{</headline>}}
+
+    <div class="mb-5">
+      {{<box header="Open Source" title="JSON Schema CLI" breakpoint="xl"
+          button="View on GitHub" link="https://github.com/sourcemeta/jsonschema" image="jsonschemacli.png">}}
+
+        The ultra compliant swiss-army knife for working with JSON Schema at
+        scale. It includes a schema test runner and validator to exercise your
+        schemas, tracing support for debugging complex schemas, and various
+        other utilities like a formatter, linter, bundler, and more
+
+
+      {{</box>}}
+    </div>
+
+    <div class="row g-5 align-items-stretch mb-5">
+      <div class="col-12 col-lg-6">
+        {{<box header="Coming Soon" title="JSON Schema Debugger" breakpoint="xl">}}
+
+          A cross-platform desktop application to visually step-through JSON
+          Schema validation. Perfect for working with complex schemas,
+          debugging when things go wrong or when they go unexpectedly right
+
+        {{</box>}}
+      </div>
+      <div class="col-12 col-lg-6">
+        {{<box header="Coming Soon" title="JSON Schema Standard Library" breakpoint="xl">}}
+
+          A growing collection of carefully crafted reusable schemas so you
+          don't have to reinvent the wheel, getting rid of a lot of the
+          boilerplate when defining ontologies and API specifications
+
+        {{</box>}}
+      </div>
+    </div>
+
+    {{<headline index="3" title="Deploying JSON Schema">}}
+
+      Whether you are deploying within your organisation or to the world,
+      distributing and operating JSON Schema in production comes with its own
+      challenges. From keeping up with new versions of the specification, all
+      the way to hosting schemas in a compliant manner that guarantees
+      interoperability with other systems and code editors, we got you covered.
+
+    {{</headline>}}
+
+    <div class="mb-5">
+      {{<box header="Website / Open Source" title="AlterSchema" breakpoint="xl"
+          button="Go to website" link="https://alterschema.sourcemeta.com" image="alterschema.png">}}
+
+        Automatically upgrade JSON Schema across versions of the specification
+        to target real-world systems that are often using a diverse set of JSON
+        Schema versions. Downgrade support and Apache Avro conversion coming
+        soon
+
+      {{</box>}}
+    </div>
+
+    <div class="row g-5 align-items-stretch mb-5">
+      <div class="col-12 col-lg-6">
+        {{<box header="Coming Soon" title="JSON Schema Registry" breakpoint="xl">}}
+
+          A public JSON Schema registry that aims to index, bring together, and
+          promote existing schemas from a diverse set of sources and
+          organisations for discoverability and adoption
+
+        {{</box>}}
+      </div>
+      <div class="col-12 col-lg-6">
+        {{<box header="Coming Soon" title="OEM Self-Hosted Registry" breakpoint="xl">}}
+
+          A high-performance configurable micro-service to host your own JSON
+          Schema registry in a compliant manner and serve even the most
+          demanding systems
+
+        {{</box>}}
+      </div>
+    </div>
+
+    {{<headline index="4" title="Integrating JSON Schema">}}
+
+      As you develop your own applications, avoid the trap of integrating with
+      unmaintained, slow, and often non-compliant JSON Schema libraries that
+      will hurt you in the long run. We develop premium JSON Schema
+      foundational technology to power even the most demanding APIs, IoT,
+      Robotics, and Automotive systems.
+
+    {{</headline>}}
+
+    <div class="mb-5">
+      {{<box header="Open Source / Commercial" title="JSON BinPack (on alpha)" breakpoint="xl"
+          button="View on GitHub" link="https://github.com/sourcemeta/jsonschema" image="jsonbinpack.png">}}
+
+        An award-winning binary serialisation format based on JSON Schema with
+        a strong focus on space-efficient (up to 74% more space-efficient than
+        Protocol Buffers). It allows the simplicity of JSON and JSON Schema
+        while significantly reducing costs when transferring telemetry data
+        over 5G or satellite networks like Iridium, Skylo, and Thuraya
+
+      {{</box>}}
+    </div>
+
+    <div class="mb-5">
+      {{<box header="Open Source / Commercial" title="Blaze" breakpoint="xl"
+          button="View on GitHub" link="https://github.com/sourcemeta/blaze" image="blaze.png">}}
+
+        An ultra high-performance JSON Schema validator for API gateways,
+        data-intensive APIs, and low-powered edge computing devices. It can
+        provide validation in the nano-second range to increase data
+        throughput, reduce hosting costs, or optimise energy utilisation, while
+        maintaining a perfect JSON Schema compliance score
+
+      {{</box>}}
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light bg-gradient">
+  <div class="container">
+    <div class="row align-items-xl-center">
+      <div class="col-12 col-xl-6 mb-4 mb-xl-0">
+        <div class="bg-black text-light d-inline-block p-3">
+          <h2 class="fw-light display-5 mb-0">Looking for expert help?</h2>
+        </div>
+      </div>
+
       <div class="col-12 col-xl-6">
-        <div class="bg-black text-light d-inline-block p-3 mb-4">
-          <h2 class="fw-light display-6 mb-0">Looking for expert help?</h2>
-        </div>
-        <p class="lead mb-4">We offer world-class consulting, development, and training on APIs, JSON Schema, C++, CMake, and more.</p>
+        <p class="lead mb-4">We offer world-class custom ontology design, consulting, development, and training on JSON Schema and APIs.</p>
 
-        <a class="btn btn-outline-dark" href="mailto:{{<email>}}" role="button">Get in touch to discuss more</a>
-      </div>
-      <div class="col-12 col-xl-6 d-flex align-items-start mt-5 mt-xl-0">
-        <div class="flex-shrink-0">
-          <a target="_blank" href="https://github.com/jviotti">
-            <img src="jviotti.jpeg" class="img-thumbnail" width="100" height="100">
-          </a>
-        </div>
-        <div class="ms-4">
-          <h3 class="h5 fw-bold">
-            <span class="me-2">Juan Cruz Viotti</span>
-            <a target="_blank" href="https://www.linkedin.com/in/jviotti/" class="text-dark text-decoration-none mx-1">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a target="_blank" href="https://github.com/jviotti" class="text-dark text-decoration-none mx-1">
-              <i class="bi bi-github"></i>
-            </a>
-            <a target="_blank" href="https://www.jviotti.com" class="text-dark text-decoration-none mx-1">
-              <i class="bi bi-link-45deg"></i>
-            </a>
-          </h3>
-          <small class="mb-0 fw-light">Award winning University of Oxford alumni, O'Reilly author, member of the JSON Schema Technical Steering Committee, 10+ experience as a C++ system engineer, performance and data consultant, binary serialisation expert, ex-contractor at Postman, ex-Engineering Lead at Balena, and creator of the popular Etcher open-source desktop application (within the top 700 public repositories on GitHub).</small>
-        </div>
+        <a class="btn btn-outline-dark" href="mailto:hello@sourcemeta.com" role="button">Get in touch to discuss more</a>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="pt-5 mt-4">
-  <div class="container text-center">
-    <p class="lead">Learn more about JSON Schema, the machine-readable declarative language that powers many of our technologies</p>
-    <a href="https://www.learnjsonschema.com">www.learnjsonschema.com</a>
-
-    <a href="https://www.learnjsonschema.com">
-      <img src="learnjsonschema.png" class="img-fluid" alt="Screenshot of LearnJSONSchema.com">
-    </a>
   </div>
 </section>

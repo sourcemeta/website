@@ -3,6 +3,7 @@
 
 $blockquote-font-size: 16px;
 $border-radius: 0;
+$primary: #000;
 
 // Configuration
 @import "../vendor/bootstrap/scss/variables";
@@ -24,7 +25,7 @@ $border-radius: 0;
 // @import "../vendor/bootstrap/scss/transitions";
 // @import "../vendor/bootstrap/scss/dropdown";
 // @import "../vendor/bootstrap/scss/button-group";
-// @import "../vendor/bootstrap/scss/nav";
+@import "../vendor/bootstrap/scss/nav";
 @import "../vendor/bootstrap/scss/navbar";
 // @import "../vendor/bootstrap/scss/card";
 // @import "../vendor/bootstrap/scss/accordion";
@@ -59,6 +60,10 @@ $bootstrap-icons-font-dir: "./";
   background: -webkit-linear-gradient(236deg, #b1b1b1, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.border-bottom-bg-light {
+  border-bottom-color: $light !important;
 }
 
 #jumbotron {
