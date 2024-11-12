@@ -3,6 +3,6 @@ title = 'Sourcemeta'
 staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
 
 [Params]
-description = 'We develop high-performance OEM software foundations for IoT, Robotics, and APIs so you can reduce operational costs and outperform your competitors'
+description = 'Unleash the power of JSON Schema, and align your business operations'
 github = 'https://github.com/sourcemeta'
 email = 'hello@sourcemeta.com'
