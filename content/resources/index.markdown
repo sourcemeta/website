@@ -64,6 +64,10 @@ application that reveals how compilers convert higher-level C++ language
 abstractions into lower-level constructs during the compilation process. It
 helps a lot with understanding how C++ works_.
 
+(Website) [**Quick C++ Benchmark**](https://quick-bench.com). _A convenient web
+application to run and plot quick benchmark tests written using the [Google
+Benchmark](https://github.com/google/benchmark) library_.
+
 (Code) [**LLVM C++ Standard
 Library**](https://github.com/llvm/llvm-project/tree/main/libcxx). _The LLVM
 implementation of the `std` namespace, which you can use to understand how
