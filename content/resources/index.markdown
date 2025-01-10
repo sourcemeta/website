@@ -33,8 +33,10 @@ by many the bible of modern C++_.
 
 (Website) [**C++ Reference**](http://www.cppreference.com). _The most complete
 reference documentation for C++. Signing up allows to tweak site settings to
-your liking. Pro Tip: You can download the documentation for offline
-consumption [here](https://en.cppreference.com/w/Cppreference:Archives)_.
+your liking. The site has a very handy page for checking C++ support across
+compilers [here](https://en.cppreference.com/w/cpp/compiler_support). Pro Tip:
+You can download the documentation for offline consumption
+[here](https://en.cppreference.com/w/Cppreference:Archives)._.
 
 (Standard) [**ISO C++**](https://isocpp.org/std/the-standard). _While its
 mostly for implementors, it is the source of truth for what is compliant across
