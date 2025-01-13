@@ -68,7 +68,10 @@ helps a lot with understanding how C++ works_.
 
 (Website) [**Quick C++ Benchmark**](https://quick-bench.com). _A convenient web
 application to run and plot quick benchmark tests written using the [Google
-Benchmark](https://github.com/google/benchmark) library_.
+Benchmark](https://github.com/google/benchmark) library. See Ash Vardanian's
+excellent interactive [less
+slow](https://github.com/ashvardanian/less_slow.cpp/blob/main/less_slow.cpp)
+C++ Google Benchmark essay on high-performance computing in C++_.
 
 (Code) [**LLVM C++ Standard
 Library**](https://github.com/llvm/llvm-project/tree/main/libcxx). _The LLVM
