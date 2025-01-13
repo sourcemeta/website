@@ -160,16 +160,6 @@ focus on [LLDB](https://lldb.llvm.org). Even if reverse engineering is not your
 focus, this book teaches valuable general-purpose debugging skills and LLDB
 tricks that apply to software engineering_.
 
-(Application) [**Hopper Disassembler**](https://www.hopperapp.com). _A great
-disassembler desktop application for macOS with deep understanding of Apple
-frameworks and Mach-O. While Hopper offers a license, the time-boxed free
-version is enough for most cases. The paid version unlocks an LLDB frontend
-that can be particularly useful for stepping through assembly code_. Also see
-[Exploring macOS private
-frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
-a post that teaches techniques for exploring private macOS Objective-C
-frameworks using the Hopper application and other tools._
-
 (Specification) [**Arm Instruction Set Reference Guide Version
 1.0**](https://developer.arm.com/documentation/100076/0100). _A
 freely-available and searchable reference document for the ARM instruction set
@@ -202,3 +192,21 @@ free and supports various popular distributions. However, it can be tricky to
 setup. See [Running the Intel VTune Profiler on
 Fedora](https://www.jviotti.com/2024/10/08/running-the-intel-vtune-profiler-on-fedora.html)
 for Fedora-specific instructions_.
+
+### Reverse Engineering
+
+(Website) [**Decompiler Explorer (Dogbolt)**](https://dogbolt.org). _A
+convenient web application that can decompile a C++ binary using multiple
+decompilers at the same time. Seeing the same code decompiled in potentially
+different ways often makes it much easier to understand what is actually going
+on_.
+
+(Application) [**Hopper Disassembler**](https://www.hopperapp.com). _A great
+disassembler desktop application for macOS with deep understanding of Apple
+frameworks and Mach-O. While Hopper offers a license, the time-boxed free
+version is enough for most cases. The paid version unlocks an LLDB frontend
+that can be particularly useful for stepping through assembly code_. Also see
+[Exploring macOS private
+frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-frameworks.html),
+a post that teaches techniques for exploring private macOS Objective-C
+frameworks using the Hopper application and other tools._
