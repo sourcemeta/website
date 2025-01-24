@@ -9,7 +9,7 @@ possible without funding.{{</lead>}}
 
 Our approach to licensing is for our software to be *free for open-source,
 academia, or personal use*. However, to ensure the sustainability of our
-projects, exploiting our technology advancements to power for-profit
+projects, exploiting our core technology advancements to power for-profit
 proprietary products requires giving back.
 
 That's why the software we produce is typically published under the
@@ -26,12 +26,33 @@ Kernel](https://www.kernel.org/doc/html/latest/process/license-rules.html), the
 Player](https://www.videolan.org/legal.html), and the popular
 [MinIO](https://min.io) S3-compatible object store.
 
-Because of the AGPL, the most prominent condition of our projects is that you
-cannot include them as part of a project that is not AGPL as well. To help you
-bypass this limitation, we can issue perpetual and/or subscription-based
-commercial licenses that removes all copy-left restrictions. Think of it as an
-enforced donation that keeps our projects healthy while giving you additional
-perks like premium support.
+Complying with the AGPL
+-----------------------
+
+The most prominent condition of our AGPL projects is that you cannot create
+derivatives that are not AGPL as well. However, this condition applies
+differently depending on whether you are consuming a library or an application
+in binary form (i.e. a CLI or a micro-service). In a nutshell:
+
+- **Integrating with a Sourcemeta AGPL library**: Any program that links to an
+  AGPL library (including as bindings to other programming languages)
+  constitutes a derivative work of such library and MUST be released under the
+  AGPL license, _even if no modifications were made_
+
+- **Integrating with a Sourcemeta AGPL application**: You are free to integrate
+  and distribute an AGPL application in binary form into a larger proprietary
+  or open-source application WITHOUT releasing your application under the AGPL.
+  You are also allowed to make your own modifications to the AGPL application,
+  given you release _those modifications_ (and only those modifications) under
+  the AGPL too
+
+Commercial Use
+--------------
+
+If you need to be able to bypass the aforementioned limitations, we can issue
+perpetual and/or subscription-based commercial licenses that removes all
+copy-left restrictions.  Think of it as an enforced donation that keeps our
+projects healthy while giving you additional perks like premium support.
 
 Additionally, we typically issue free commercial licenses to non-profit
 organisations, organisations dedicated to global sustainability, notable
