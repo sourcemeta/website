@@ -8,9 +8,9 @@ open-source software that challenges the status quo. Realistically, that is not
 possible without funding.{{</lead>}}
 
 Our approach to licensing is for our software to be *free for open-source,
-academia, or personal use*. However, to ensure the sustainability of our
-projects, exploiting our core technology advancements to power for-profit
-proprietary products requires giving back.
+non-profit, academia, goverment, or personal use*. However, to ensure the
+sustainability of our projects, exploiting our core technology advancements to
+power for-profit proprietary products requires giving back.
 
 That's why the software we produce is typically published under the
 [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.en.html) copy-left license.
