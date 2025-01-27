@@ -54,10 +54,11 @@ perpetual and/or subscription-based commercial licenses that removes all
 copy-left restrictions.  Think of it as an enforced donation that keeps our
 projects healthy while giving you additional perks like premium support.
 
-Additionally, we typically issue free commercial licenses to non-profit
-organisations, organisations dedicated to global sustainability, notable
-external contributors to our projects, and organisations that hire Sourcemeta
-on general consultancy or custom development deals.
+**Qualifying for free licenses:** Additionally, we typically issue free
+commercial licenses to goverment organisations, non-profit organisations,
+organisations dedicated to global sustainability, notable external contributors
+to our projects, and organisations that hire Sourcemeta on general consultancy
+or custom development deals.
 
 To discuss more, don't hesitate in reaching out to hello@sourcemeta.com. If you
 are a potential contributor, also take a look at our [Contribution
