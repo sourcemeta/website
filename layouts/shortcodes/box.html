@@ -1,27 +1,22 @@
-{{ if (.Get "image") }}
-  <div class="border border-dark bg-white d-flex flex-column-reverse flex-{{ .Get "breakpoint" }}-row align-items-center p-4 p-md-5 h-100">
-{{ else }}
+{{ if (eq (.Get "header") "Coming Soon") }}
   <div class="border bg-white d-flex align-items-start p-4 p-md-5 text-secondary h-100">
+{{ else }}
+  <div class="border border-dark bg-white d-flex align-items-center p-4 p-md-5 h-100">
 {{ end }}
 
-  {{ if (.Get "image") }}
-    <div class="mt-5 mt-{{ .Get "breakpoint" }}-0 me-{{ .Get "breakpoint" }}-5">
-  {{ else }}
-    <div>
-  {{ end }}
-      <small class="d-block mb-1 text-secondary font-monospace">{{ .Get "header" }}</small>
-      <h3 class="fw-bold mb-4">{{ .Get "title" }}</h3>
+  <div>
+    <small class="d-block mb-1 text-secondary">{{ .Get "header" }}</small>
+    <h4 class="fw-bold mb-4">{{ .Get "title" }}</h4>
 
-      {{ if (.Get "button") }}
-        <p>{{ .Inner }}</p>
-        <a class="btn btn-outline-dark font-monospace" href="{{ .Get "link" }}" role="button">{{ .Get "button" }}</a>
-      {{ else }}
-        <p class="mb-0">{{ .Inner }}</p>
-      {{ end }}
-    </div>
-  {{ if (.Get "image") }}
-    <a href="{{ .Get "link" }}" style="min-width: 50%">
-      <img src="{{ .Get "image" }}" class="img-fluid border shadow" alt="{{ .Get "title" }}">
-    </a>
-  {{ end }}
+    {{ if (.Get "button") }}
+      <p>{{ .Inner }}</p>
+      <a class="btn btn-outline-dark" href="{{ .Get "link" }}" role="button">{{ .Get "button" }}</a>
+    {{ else }}
+      <p class="mb-0">{{ .Inner }}</p>
+    {{ end }}
+
+    {{ if (.Get "image") }}
+      <img class="w-100 mt-4 border shadow rounded-4" src="{{ .Get "image" }}">
+    {{ end }}
+  </div>
 </div>

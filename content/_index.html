@@ -3,334 +3,284 @@ title = "Home"
 +++
 
 <div class="border-top" id="jumbotron">
-  <div class="container py-4 py-md-5">
-    <div class="row">
-      <div class="col-12 col-xl-6">
-        <h1 class="display-4 fw-bold">We are the top provider of <span class="text-gradient-metal">JSON Schema</span> tooling and services in the market</h1>
-        <p class="lead fw-lighter">Our <b>world class</b> offerings cover API governance, OpenAI integration, high-performance validation, ontology design, private training, and more.</p>
-        <i class="fw-lighter">Sourcemeta is led by a member of the JSON Schema Technical Steering Committee</i>
-      </div>
-      <div class="col-12 col-xl-6 ps-xl-5 pt-2 pt-md-4 pt-xl-0">
-        {{<quote author="Kin Lane" jobTitle="The API Evangelist"
-          url="https://apievangelist.com/2024/11/06/the-json-schema-help-we-need/" linkedIn="kinlane">}}
-          JSON Schema is ubiquitous and critical to our operations, yet so many of us have barely scratched the surface
-          when it comes to putting the specific to work, let alone getting our house in order
-          {{</quote>}}
+  <div class="container pt-4 pt-md-5">
+    <div>
+      <div class="badge text-wrap border border-primary text-dark fs-6 mb-4 p-2"><b>Blaze</b>: Compiling JSON Schema for 10x Faster Validation. <a href="https://arxiv.org/abs/2503.02770">Read our paper</a></div>
 
-        <div class="border px-3 py-3 mt-4 shadow-sm bg-light">
-          <small class="d-block mb-3 text-secondary fw-light">Get our open-source CLI, the best way to work with JSON
-            Schema</small>
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active bg-light border-bottom-bg-light" aria-current="page" href="#">
-                <i class="bi bi-apple me-2"></i>
-                macOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/sourcemeta/jsonschema/releases">
-                <i class="bi bi-windows me-2"></i>
-                Windows</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/sourcemeta/jsonschema/releases">
-                <i class="bi bi-ubuntu me-2"></i>
-                GNU/Linux</a>
-            </li>
-          </ul>
+      <h1 class="display-2 fw-bold d-none d-lg-block">The <span class="text-gradient-metal">JSON Schema</span> Registry</h1>
+      <h1 class="display-5 fw-bold d-lg-none">The <span class="text-gradient-metal">JSON Schema</span> Registry</h1>
 
-          <div class="bg-dark text-light font-monospace my-3 p-3">
-            <div>$ brew install sourcemeta/apps/jsonschema</div>
-            <div>$ jsonschema validate &lt;schema.json&gt; &lt;instance.json&gt;</div>
-          </div>
+      <h2 class="fw-lighter d-none d-lg-block">
+        <span class="me-2">Enterprise-grade</span> | <span class="mx-2">High-performance</span> | <span class="ms-2">Self-hosted</span>
+      </h2>
 
-          <small class="d-block">
-            <a href="https://github.com/sourcemeta/jsonschema">Read the docs</a> on GitHub to learn more
-          </small>
-        </div>
+      <p class="fw-lighter fs-4 d-lg-none">
+        <span class="me-2">Enterprise-grade</span> | <span class="mx-2">High-performance</span> | <span class="ms-2">Self-hosted</span>
+      </p>
+
+      <p class="text-muted mt-4 fw-light w-lg-75">JSON Schema is at the core of your governance program, but working with it shouldn't be a headache. Our self-hosted registry eliminates the complexity of operating schemas at scale. <i class="fw-lighter text-body">Led by a <a target="_blank" href="https://www.linkedin.com/in/jviotti/">member</a> of the JSON Schema Technical Steering Committee.</i></p>
+
+      <div class="mt-5">
+        <a class="btn btn-lg btn-primary me-2" href="https://github.com/sourcemeta/registry" role="button">
+          <i class="bi bi-github me-1"></i> View on GitHub</a>
+        <a class="btn btn-lg btn-light border" href="https://schemas.sourcemeta.com" role="button">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Explore a live instance</a>
       </div>
     </div>
+
+    <a class="d-block" href="https://schemas.sourcemeta.com">
+      <img class="w-100 my-5 border shadow" src="screenshot.png" alt="The Sourcemeta JSON Schema Registry">
+    </a>
   </div>
 </div>
 
-<section class="border-top border-bottom bg-light-subtle mb-2">
+<section class="border-top border-bottom bg-light-subtle mt-3 mb-4 shadow-sm">
   <div class="container text-secondary d-flex flex-column flex-xl-row align-items-center text-center text-xl-start">
     <div class="me-xl-5 my-4 text-nowrap">
       <p class="fs-5 mb-2 fw-light">
-        <i class="bi bi-braces me-1"></i>
-        JSON Schema defines and validates the world
+        <i class="bi bi-globe2 me-1"></i>
+        Great organisations rely on our tooling
       </p>
       <div class="border-top pt-2">
-        <small class="fw-lighter"><a target="_blank"
+        <small class="fw-lighter"><a
             href="http://web.archive.org/web/20240112082550/https://www.postman.com/state-of-api/api-technologies/#specifications-json-schema-holds-the-lead">94%</a>
           of developers in the API space know JSON Schema. Don't miss out</small>
       </div>
     </div>
     <div class="py-3">
-      <a target="_blank" class="text-decoration-none" href="https://www.openapis.org">
-        <img class="mx-3 my-3" width="160" height="46" src="openapi.svg" alt="OpenAPI logo">
+      <a class="text-decoration-none" href="https://www.krakend.io">
+        <img class="mx-3 my-3" height="26" src="krakend.svg" alt="KrakenD logo">
       </a>
-      <a target="_blank" class="text-decoration-none" href="https://www.asyncapi.com">
-        <img class="mx-3 my-3" width="160" height="35" src="asyncapi.svg" alt="AsyncAPI logo">
+      <a class="text-decoration-none" href="https://www.octue.com">
+        <img class="mx-3 my-3" height="26" src="octue.svg" alt="Octue logo">
       </a>
-      <a target="_blank" class="text-decoration-none" href="https://raml.org">
-        <img class="mx-3 my-3" width="160" height="46" src="raml.svg" alt="RAML logo">
+      <a class="text-decoration-none" href="https://saleor.io">
+        <img class="mx-3 my-3" height="26" src="saleor.svg" alt="Saleor logo">
       </a>
-      <a target="_blank" class="text-decoration-none" href="https://www.w3.org/WoT/">
-        <img class="mx-3 my-3" width="160" height="45" src="wot.svg" alt="W3C WoT logo">
+      <a class="text-decoration-none" href="https://www.gitguardian.com">
+        <img class="mx-3 my-3" height="26" src="gitguardian.svg" alt="GitGuardian logo">
+      </a>
+      <a class="text-decoration-none" href="https://www.fz-juelich.de">
+        <img class="mx-3 my-3" height="26" src="julich.svg" alt="Jülich Forschungszentrum logo">
       </a>
     </div>
   </div>
 </section>
 
-<section class="py-5" id="products">
+<section class="py-5" id="features">
   <div class="container">
-    {{<headline index="1" title="Mastering JSON Schema">}}
+    <h3 class="display-6 fw-bold mb-3">Designed to solve schema management at scale</h3>
+    <p class="lead mb-5">We live and breathe JSON Schema—as expert <a href="https://json-schema.org/overview/pro-help">consultants</a>,
+    <a href="https://www.oreilly.com/library/view/unifying-business-data/9781098144999/">book authors</a>,
+       award-winning <a href="https://www.jviotti.com/dissertation.pdf">researchers</a>, and open-source <a href="https://github.com/jviotti">maintainers</a>. <b
+    class="fw-bolder">This isn't just another registry; It's the result of
+    years of insights operating JSON Schema in production.</b></p>
 
-      JSON Schema is an extensible universal language for defining the
-      structure, meaning, relationship, and hyperlink navigation of JSON
-      documents, and there is a lot more that meets the eye. Whether you are
-      just getting started, or want to explore advanced topics like annotations
-      and custom vocabularies, we have the best resources to get you from zero
-      to hero, fast.
+    <div class="row g-5 align-items-stretch mb-5">
+      <div class="col-12 col-lg-6">
+        {{<box header="Discoverability" title="Make the schemas in your organisation discoverable and reusable" image="discoverability.png">}}
 
-      {{</headline>}}
+          Browse, search, and dereference your collections of schemas, even across multiple GitHub repositories, from a single place
 
-    <div class="mb-5">
-      {{<box header="Website / Open Source" title="Learn JSON Schema" breakpoint="xl" button="Go to website"
-        link="https://www.learnjsonschema.com" image="learnjsonschema.png">}}
+          {{</box>}}
+      </div>
+      <div class="col-12 col-lg-6">
+        {{<box header="Reusability" title="Speed up API design by re-using existing open-source schemas" image="reusability.png">}}
 
-        The ultimate reference documentation site for JSON Schema, with plenty of
-        examples, best practices, common pitfalls, and more; covering a wide range of
-        JSON Schema versions
+          Stop reinventing the wheel. We ship hand picked industry standard ontologies that you can plug into your API specifications right away
 
-        {{</box>}}
+          {{</box>}}
+      </div>
     </div>
 
     <div class="row g-5 align-items-stretch mb-5">
       <div class="col-12 col-lg-6">
-        {{<box header="Book / O'Reilly" title="Unifying Business, Data, and Code" breakpoint="xl" button="Buy on Amazon"
-          link="https://www.amazon.com/dp/1098145003" image="unifying.webp">}}
+        {{<box header="GitOps First" title="Easily deploy the registry from one or more GitHub repositories of schemas" image="gitops.png">}}
 
-          Introduces JSON Schema from a data science point of view, covering
-          advanced topics like writing your own JSON Schema vocabularies,
-          and understanding JSON Schema annotations
+          Dependency-free (not even a database), stateless, horizontally-scalable, and customisable with a simple JSON configuration file
 
           {{</box>}}
       </div>
       <div class="col-12 col-lg-6">
-        {{<box header="Coming Soon" title="JSON Schema Video Course" breakpoint="xl">}}
+        {{<box header="High Performance" title="Connect even your most demanding systems to the registry" image="performance.png">}}
 
-          A comprehensive self-paced video course exploring in-depth every
-          aspect of JSON and JSON Schema, from basic keywords, to
-          annotations, dynamic references, the evaluation model, and ontology
-          design. If you want to become a JSON Schema expert, and/or want to
-          develop your own compliant JSON Schema implementation, this course
-          is for you
-
-          {{</box>}}
-      </div>
-    </div>
-
-    {{<headline index="2" title="Developing with JSON Schema">}}
-
-      Writing a few simple schemas is an easy task. However, developing and
-      maintaining ontologies consisting of hundreds of complex schemas can be
-      extremely challenging. Our suite of tools encapsulates our experience
-      consulting with world-class ontologies. It is what we use to get the job
-      done, and they are available for you too.
-
-      {{</headline>}}
-
-    <div class="mb-5">
-      {{<box header="Open Source" title="JSON Schema CLI" breakpoint="xl" button="View on GitHub"
-        link="https://github.com/sourcemeta/jsonschema" image="jsonschemacli.png">}}
-
-        The ultra compliant swiss-army knife for working with JSON Schema at
-        scale. It includes a schema test runner and validator to exercise your
-        schemas, tracing support for debugging complex schemas, and various
-        other utilities like a formatter, linter, bundler, and more
-
+          Written in C++ and powered by <a href="https://arxiv.org/abs/2503.02770">Blaze</a>, the world's fastest JSON Schema validator, proven by research to be at least 10x faster that alternatives
 
         {{</box>}}
+      </div>
     </div>
 
     <div class="row g-5 align-items-stretch mb-5">
       <div class="col-12 col-lg-6">
-        {{<box header="Coming Soon" title="JSON Schema Debugger" breakpoint="xl">}}
+        {{<box header="Coming Soon" title="Automatically upgrade your schemas across versions of JSON Schema">}}
 
-          A cross-platform desktop application to visually step-through JSON
-          Schema validation. Perfect for working with complex schemas,
-          debugging when things go wrong or when they go unexpectedly right
+          Forget about JSON Schema drafts and dialects. Use the version you know and let us convert to any target your tooling demands, on the fly
 
           {{</box>}}
       </div>
       <div class="col-12 col-lg-6">
-        {{<box header="Coming Soon" title="JSON Schema Standard Library" breakpoint="xl">}}
+        {{<box header="Coming Soon" title="Monitor the health of the schemas in your organisation">}}
 
-          A growing collection of carefully crafted reusable schemas so you
-          don't have to reinvent the wheel, getting rid of a lot of the
-          boilerplate when defining ontologies and API specifications
+          Level up your API Governance program with ever-evolving statistics to flag anti-patterns, invalid schemas, overly loose schemas, and more
 
           {{</box>}}
       </div>
-    </div>
-
-    {{<headline index="3" title="Deploying JSON Schema">}}
-
-      Whether you are deploying within your organisation or to the world,
-      distributing and operating JSON Schema in production comes with its own
-      challenges. From keeping up with new versions of the specification, all
-      the way to hosting schemas in a compliant manner that guarantees
-      interoperability with other systems and code editors, we got you covered.
-
-      {{</headline>}}
-
-    <div class="mb-5">
-      {{<box header="Website / Open Source" title="AlterSchema" breakpoint="xl" button="Go to website"
-        link="https://alterschema.sourcemeta.com" image="alterschema.png">}}
-
-        Automatically upgrade JSON Schema across versions of the specification
-        to target real-world systems that are often using a diverse set of JSON
-        Schema versions. Downgrade support and Apache Avro conversion coming
-        soon
-
-        {{</box>}}
-    </div>
-
-    <div class="mb-5">
-      {{<box header="Website / Free" title="JSON Schema Registry" breakpoint="xl" button="Go to website" link="https://schemas.sourcemeta.com" image="schemas.png">}}
-
-        A public JSON Schema registry that aims to index, bring together, and
-        promote existing schemas from a diverse set of sources and
-        organisations for discoverability and adoption
-
-        {{</box>}}
-    </div>
-
-    <div class="mb-5">
-      {{<box header="Coming Soon" title="OEM Self-Hosted Registry" breakpoint="xl">}}
-
-        A high-performance configurable micro-service to host your own JSON
-        Schema registry in a compliant manner and serve even the most
-        demanding systems
-
-        {{</box>}}
-    </div>
-
-    {{<headline index="4" title="Integrating JSON Schema">}}
-
-      As you develop your own applications, avoid the trap of integrating with
-      unmaintained, slow, and often non-compliant JSON Schema libraries that
-      will hurt you in the long run. We develop premium JSON Schema
-      foundational technology to power even the most demanding APIs, IoT,
-      Robotics, and Automotive systems.
-
-      {{</headline>}}
-
-    <div class="mb-5">
-      {{<box header="Open Source / Commercial" title="JSON BinPack (on alpha)" breakpoint="xl" button="View on GitHub"
-        link="https://github.com/sourcemeta/jsonschema" image="jsonbinpack.png">}}
-
-        An award-winning binary serialisation format based on JSON Schema with
-        a strong focus on space-efficient (up to 74% more space-efficient than
-        Protocol Buffers). It allows the simplicity of JSON and JSON Schema
-        while significantly reducing costs when transferring telemetry data
-        over 5G or satellite networks like Iridium, Skylo, and Thuraya
-
-        {{</box>}}
-    </div>
-
-    <div class="mb-5">
-      {{<box header="Open Source / Commercial" title="Blaze" breakpoint="xl" button="View on GitHub"
-        link="https://github.com/sourcemeta/blaze" image="blaze.png">}}
-
-        An ultra high-performance JSON Schema validator for API gateways,
-        data-intensive APIs, and low-powered edge computing devices. It can
-        provide validation in the nano-second range to increase data
-        throughput, reduce hosting costs, or optimise energy utilisation, while
-        maintaining a perfect JSON Schema compliance score
-
-        {{</box>}}
     </div>
   </div>
 </section>
 
-<section class="py-5 bg-light bg-gradient border-top shadow-sm mt-5">
+<section class="bg-light-subtle bg-gradient mb-5 border-top border-bottom">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-8 col-xl-7 pe-0 pe-lg-5">
+
+        <div class="h2 mb-4 fw-bold">In our experience, the average API company wastes at least <span class="text-gradient-metal font-monospace">$200k</span> per year on simple schema related problems</div>
+        <ul class="fw-light">
+          <li>Over 75% of API developers make use of JSON Schema</li>
+          <li>Over 90% of those developers waste time with substandard schema tooling</li>
+          <li>Over 80% of those developers get stuck when writing non-trivial schemas</li>
+        </ul>
+
+        <figure class="border-top pt-5 mt-5">
+          <blockquote class="blockquote d-flex align-items-start">
+            <a href="https://www.linkedin.com/in/kinlane/">
+              <img src="kinlane.jpeg" class="me-3 border border-dark-subtle" alt="Kin Lane" width="70" height="70">
+            </a>
+            <p class="fw-light fs-6">
+              JSON Schema is ubiquitous and critical to our operations, yet so many of us have barely scratched the surface
+              when it comes to putting the specific to work, let alone getting our house in order
+            </p>
+          </blockquote>
+          <figcaption class="blockquote-footer mt-1 mb-0">
+            <a class="text-dark" href="https://apievangelist.com/2024/11/06/the-json-schema-help-we-need/">Kin Lane</a>, The API Evangelist
+          </figcaption>
+        </figure>
+
+      </div>
+      <div class="col-12 col-lg-4 col-xl-5 mt-5 mt-lg-0">
+        <a href="https://web.archive.org/web/20240112082550/https://www.postman.com/state-of-api/api-technologies/#specifications-json-schema-holds-the-lead" class="d-block mb-2">
+          <img src="postman-jsonschema.png" class="img-thumbnail">
+        </a>
+        <small class="text-muted">Source: Postman's State of the API Report</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container py-5">
+    <h3 class="display-6 fw-bold mb-3">Pricing</h3>
+
+    <p class="lead">Deploy the Sourcemeta JSON Schema Registry for free (all features included) for up to a certain number of schemas. For larger deployments, you must purchase a commercial license. All editions are available on <a href="https://github.com/sourcemeta/registry">GitHub</a> for auditing purposes and contributions.</p>
+
+    <p class="fw-light mb-5">We are committed to building nothing less than the highest quality JSON Schema tooling in the market. As a lean bootstrapped company, our revenue allow us to invest an immense amount of effort to perfect our foundational technology, all the way to our custom <a href="https://github.com/sourcemeta/core/tree/main/src/core/json">JSON parser</a> and record-breaking <a href="https://github.com/sourcemeta/blaze">JSON Schema validator</a>.</p>
+
+    <div class="row row-cols-1 row-cols-lg-3 g-5 text-center mb-4">
+      <div class="col mb-4 mb-lg-0">
+        <div class="card h-100">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Starter</h4>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title">€0<small class="text-body-secondary fw-light">/mo</small></h1>
+            <small class="text-muted">Free forever</small>
+            <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
+              <li class="fw-bold">Up to 100 schemas</li>
+              <li>Unlimited instances</li>
+              <li>Community support</li>
+            </ul>
+            <a href="https://github.com/sourcemeta/registry" class="w-100 btn btn-lg btn-outline-primary d-block">Get Started</a>
+            <a href="https://github.com/sourcemeta/registry" class="mt-3 d-block">Gift us a star on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 mb-lg-0">
+        <div class="card h-100 border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Pro</h4>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title">€225<small class="text-body-secondary fw-light">/mo</small></h1>
+            <small class="text-muted">Billed yearly</small>
+            <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
+              <li class="fw-bold">Up to 1000 schemas</li>
+              <li class="fst-italic">For one organisation</li>
+              <li>Unlimited instances</li>
+              <li>Premium support</li>
+              <li>Assisted onboarding</li>
+              <li>Free updates</li>
+            </ul>
+            <small class="text-muted my-3">Fully refundable within 30 days of purchase. Contact us over <a href="mailto:hello@sourcemeta.com">e-mail</a> for any billing related questions</small>
+            <a href="https://buy.stripe.com/5kA0161q91qv18c4gg" class="w-100 btn btn-lg btn-primary d-block">Purchase License</a>
+            <a href="https://github.com/sponsors/sourcemeta/sponsorships?tier_id=476227" class="mt-3 d-block">Or pay using GitHub Sponsors</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 mb-lg-0">
+        <div class="card h-100 border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Enterprise</h4>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title">€1125<small class="text-body-secondary fw-light">/mo</small></h1>
+            <small class="text-muted">Billed yearly</small>
+            <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
+              <li class="fw-bold">Unlimited schemas</li>
+              <li class="fst-italic">For one organisation</li>
+              <li>Unlimited instances</li>
+              <li>Premium support</li>
+              <li>Assisted onboarding</li>
+              <li>Free updates</li>
+            </ul>
+            <small class="text-muted my-3">Fully refundable within 30 days of purchase. Contact us over <a href="mailto:hello@sourcemeta.com">e-mail</a> for any billing related questions</small>
+            <a href="https://buy.stripe.com/9AQ6pu6Ktc59dUY3cd" class="w-100 btn btn-lg btn-primary d-block">Purchase License</a>
+            <a href="https://github.com/sponsors/sourcemeta/sponsorships?tier_id=476228" class="mt-3 d-block">Or pay using GitHub Sponsors</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <small class="text-muted">Are you an open-source, research, or non-profit organisation? <a href="mailto:hello@sourcemeta.com">Get in touch</a> to see if you qualify for a free or discounted license.</small>
+
+    <div class="row gy-4 gx-5 align-items-stretch mb-5 mt-4">
+      <div class="col-12 col-lg-6">
+        {{<box header="Coming Soon" title="Managed Hosting">}}
+
+          Deploy instances of the Sourcemeta Registry on a custom domain out of a GitHub repository in just a few clicks.
+
+        {{</box>}}
+      </div>
+      <div class="col-12 col-lg-6">
+        {{<box header="Add-on" title="Custom Schema Design" link="mailto:hello@sourcemeta.com" button="E-mail us to discuss more">}}
+
+          Embedded professional help designing or auditing complex JSON Schema collections as part of your API Governance program.
+
+        {{</box>}}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="opensource" class="border-top pt-5 bg-light-subtle bg-gradient">
   <div class="container">
-    <p class="fw-light display-6 mb-5">Meet the minds behind cutting-edge innovations</p>
-    <div class="column">
-      <div class="row">
-        <div class="col-12 col-lg-6">
-          <div class="d-flex align-items-start mb-5">
-            <div class="flex-shrink-0">
-              <a target="_blank" href="https://github.com/jviotti">
-                <img src="jviotti.jpeg" class="img-thumbnail" width="100" height="100">
-              </a>
-            </div>
-            <div class="ms-4">
-              <h3 class="h5 fw-bold">
-                <span class="me-2">Juan Cruz Viotti</span>
-                <a target="_blank" href="https://www.linkedin.com/in/jviotti/"
-                  class="text-dark text-decoration-none mx-1">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a target="_blank" href="https://github.com/jviotti" class="text-dark text-decoration-none mx-1">
-                  <i class="bi bi-github"></i>
-                </a>
-                <a target="_blank" href="https://www.jviotti.com" class="text-dark text-decoration-none mx-1">
-                  <i class="bi bi-link-45deg"></i>
-                </a>
-              </h3>
-              <small class="mb-0 fw-light">Award winning University of Oxford alumnus, O'Reilly author, member of the
-                JSON
-                Schema Technical Steering Committee, 10+ experience as a C++ system engineer, performance and data
-                consultant, binary serialisation expert, ex-contractor at Postman, ex-Engineering Lead at Balena, and
-                creator of the popular Etcher open-source desktop application (within the top 700 public repositories on
-                GitHub).</small>
-            </div>
-          </div>
+    <h4 class="display-6 fw-bold mb-3">Open Source</h4>
 
-          <div class="d-flex align-items-start">
-            <div class="flex-shrink-0">
-              <a target="_blank" href="https://standardresume.co/r/tonygo">
-                <img src="tonygorez.jpg" class="img-thumbnail" width="100" height="100">
-              </a>
-            </div>
-            <div class="ms-4">
-              <h3 class="h5 fw-bold">
-                <span class="me-2">Tony Gorez</span>
-                <a target="_blank" href="https://www.linkedin.com/in/tonygorez/"
-                  class="text-dark text-decoration-none mx-1">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a target="_blank" href="https://github.com/tony-go" class="text-dark text-decoration-none mx-1">
-                  <i class="bi bi-github"></i>
-                </a>
-                <a target="_blank" href="https://www.tonygo.tech" class="text-dark text-decoration-none mx-1">
-                  <i class="bi bi-link-45deg"></i>
-                </a>
-              </h3>
-              <small class="mb-0 fw-light">As a fellow software engineer, Tony focuses on research and
-                development projects. He is skilled in low-level languages like C, C++, and Swift. He plays a pivotal
-                role on Postman's advanced R&D team, working on innovative desktop framework solutions. Tony's deep
-                interest in macOS internals, debugging, and reverse engineering drives his willingness to gain mastery
-                over the Apple ecosystem.
-              </small>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6 ps-lg-5 mt-5 mt-lg-0">
-          <div class="bg-black text-light d-inline-block p-3 mb-5">
-            <h2 class="fw-light display-5 mb-0">Looking for expert help?</h2>
-          </div>
+    <p class="lead mb-4">We maintain key open-source projects that make working with JSON Schema a breeze. Explore our projects on <a href="https://github.com/sourcemeta">GitHub</a> to learn more!</p>
 
-          <p class="lead mb-4">We offer world-class custom ontology design, consulting, development, and training on
-            JSON
-            Schema and APIs.</p>
+    <div class="row g-5">
+      <div class="col-6">
+        <a class="mb-3 fs-5 d-block" href="https://www.learnjsonschema.com">Learn JSON Schema</a>
+        <a href="https://www.learnjsonschema.com">
+          <img class="w-100 border-top border-start border-end" src="learnjsonschema.png">
+        </a>
+      </div>
 
-          <a class="btn btn-outline-dark" href="mailto:hello@sourcemeta.com" role="button">Get in touch to discuss
-            more</a>
-        </div>
+      <div class="col-6">
+        <a class="mb-3 fs-5 d-block" href="https://github.com/sourcemeta/jsonschema">JSON Schema CLI</a>
+        <a href="https://github.com/sourcemeta/jsonschema">
+          <img class="w-100 border-top border-start border-end" src="jsonschemacli.png">
+        </a>
       </div>
     </div>
   </div>
