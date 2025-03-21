@@ -115,11 +115,13 @@ frameworks using the RuntimeBrowser application and other tools._
 Instruments**](https://help.apple.com/instruments/mac/current/#/dev7b09c84f5).
 _The de-facto profiling and performance analysis tool for Apple platforms
 (largely a frontend to [DTrace](https://dtrace.org/about/)), which comes as a
-standalone desktop application shipped as part of the Xcode package. See
-[Using Xcode Instruments for C++ CPU
-profiling](https://www.jviotti.com/2024/01/29/using-xcode-instruments-for-cpp-cpu-profiling.html)
-and [Emitting Signposts to Instruments on macOS using
-C++](https://www.jviotti.com/2022/02/21/emitting-signposts-to-instruments-on-macos-using-cpp.html)
+standalone desktop application shipped as part of the Xcode package. See [Using
+Xcode Instruments for C++ CPU
+profiling](https://www.jviotti.com/2024/01/29/using-xcode-instruments-for-cpp-cpu-profiling.html),
+[Emitting Signposts to Instruments on macOS using
+C++](https://www.jviotti.com/2022/02/21/emitting-signposts-to-instruments-on-macos-using-cpp.html),
+and [Studying C++ generated assembly using Xcode
+Instruments](https://www.jviotti.com/2025/03/21/studying-cpp-generated-assembly-using-xcode-instruments.html)
 for more detailed information on using Instruments for C++ performance
 analysis._
 
