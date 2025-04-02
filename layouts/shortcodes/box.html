@@ -16,7 +16,7 @@
     {{ end }}
 
     {{ if (.Get "image") }}
-      <img class="w-100 mt-4 border shadow rounded-4" src="{{ .Get "image" }}">
+      <img class="w-100 mt-4 border shadow rounded-4" src="{{ .Get "image" }}" alt="{{ .Get "title" }}">
     {{ end }}
   </div>
 </div>
