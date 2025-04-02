@@ -8,9 +8,9 @@ open-source software that challenges the status quo. Realistically, that is not
 possible without funding.{{</lead>}}
 
 Our approach to licensing is for our software to be *free for open-source,
-non-profit, academia, goverment, or personal use*. However, to ensure the
-sustainability of our projects, exploiting our core technology advancements to
-power for-profit proprietary products requires giving back.
+non-profit, research, or personal use*. However, to ensure the sustainability
+of our projects, exploiting our core technology advancements to power
+for-profit proprietary products requires giving back.
 
 That's why the software we produce is typically published under the
 [AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.en.html) copy-left license.
@@ -55,10 +55,10 @@ copy-left restrictions.  Think of it as an enforced donation that keeps our
 projects healthy while giving you additional perks like premium support.
 
 **Qualifying for free licenses:** Additionally, we typically issue free
-commercial licenses to goverment organisations, non-profit organisations,
-organisations dedicated to global sustainability, notable external contributors
-to our projects, and organisations that hire Sourcemeta on general consultancy
-or custom development deals.
+commercial licenses to research goverment organisations, non-profit
+organisations, organisations dedicated to global sustainability, notable
+external contributors to our projects, and organisations that hire Sourcemeta
+on general consultancy or custom development deals.
 
 To discuss more, don't hesitate in reaching out to hello@sourcemeta.com. If you
 are a potential contributor, also take a look at our [Contribution
