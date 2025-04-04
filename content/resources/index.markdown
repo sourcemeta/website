@@ -216,6 +216,12 @@ frameworks](https://www.jviotti.com/2023/11/20/exploring-macos-private-framework
 a post that teaches techniques for exploring private macOS Objective-C
 frameworks using the Hopper application and other tools._
 
+### Other
+
 (Application) [**Ripes**](https://github.com/mortbopet/Ripes). _A simulator for
 the RISC-V instruction set to visualise and understand how machine code is
 executed and how memory is accessed._
+
+(Website) [**Command Line Interface Guidelines**](https://clig.dev). _A
+detailed resource on what it takes to produce a high-quality UNIX-friendly
+command-line application. Full of examples, practical guidelines, and more._
