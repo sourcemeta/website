@@ -66,13 +66,6 @@ $bootstrap-icons-font-dir: "./";
   border-bottom-color: $light !important;
 }
 
-#jumbotron {
-  background-image: url(background.webp);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 // TODO: $btn-border-radius doesn't seem to help
 .btn {
   @extend .rounded-0;
