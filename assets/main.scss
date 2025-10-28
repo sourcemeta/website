@@ -22,13 +22,13 @@ $primary: #000;
 // @import "../vendor/bootstrap/scss/tables";
 // @import "../vendor/bootstrap/scss/forms";
 @import "../vendor/bootstrap/scss/buttons";
-// @import "../vendor/bootstrap/scss/transitions";
+@import "../vendor/bootstrap/scss/transitions";
 // @import "../vendor/bootstrap/scss/dropdown";
 // @import "../vendor/bootstrap/scss/button-group";
 @import "../vendor/bootstrap/scss/nav";
 @import "../vendor/bootstrap/scss/navbar";
 @import "../vendor/bootstrap/scss/card";
-// @import "../vendor/bootstrap/scss/accordion";
+@import "../vendor/bootstrap/scss/accordion";
 // @import "../vendor/bootstrap/scss/breadcrumb";
 // @import "../vendor/bootstrap/scss/pagination";
 @import "../vendor/bootstrap/scss/badge";
@@ -74,5 +74,14 @@ $bootstrap-icons-font-dir: "./";
 @include media-breakpoint-up(lg) {
   .w-lg-75 {
     max-width: 75%;
+  }
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
   }
 }
