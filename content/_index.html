@@ -2,39 +2,35 @@
 title = "Home"
 +++
 
-<div class="border-top position-relative overflow-hidden">
-  {{< blueprint theme="light" >}}
+{{< blueprint color="white" class="border-top pt-4 pt-md-5 pb-3" >}}
+  <div>
+    <div class="badge text-wrap border border-primary text-dark fs-6 mb-4 p-2"><b>Blaze</b>: Compiling JSON Schema for 10x Faster Validation. <a href="https://arxiv.org/abs/2503.02770">Read our paper</a></div>
 
-  <div class="container pt-4 pt-md-5 pb-3 position-relative">
-    <div>
-      <div class="badge text-wrap border border-primary text-dark fs-6 mb-4 p-2"><b>Blaze</b>: Compiling JSON Schema for 10x Faster Validation. <a href="https://arxiv.org/abs/2503.02770">Read our paper</a></div>
+    <h1 class="display-2 fw-bold d-none d-lg-block">The <span class="text-gradient-metal">JSON Schema</span> Registry</h1>
+    <h1 class="display-5 fw-bold d-lg-none">The <span class="text-gradient-metal">JSON Schema</span> Registry</h1>
 
-      <h1 class="display-2 fw-bold d-none d-lg-block">The <span class="text-gradient-metal">JSON Schema</span> Registry</h1>
-      <h1 class="display-5 fw-bold d-lg-none">The <span class="text-gradient-metal">JSON Schema</span> Registry</h1>
+    <h2 class="fw-lighter d-none d-lg-block">
+      <span class="me-2">Enterprise-grade</span> | <span class="mx-2">High-performance</span> | <span class="ms-2">Self-hosted</span>
+    </h2>
 
-      <h2 class="fw-lighter d-none d-lg-block">
-        <span class="me-2">Enterprise-grade</span> | <span class="mx-2">High-performance</span> | <span class="ms-2">Self-hosted</span>
-      </h2>
+    <p class="fw-lighter fs-4 d-lg-none">
+      <span class="me-2">Enterprise-grade</span> | <span class="mx-2">High-performance</span> | <span class="ms-2">Self-hosted</span>
+    </p>
 
-      <p class="fw-lighter fs-4 d-lg-none">
-        <span class="me-2">Enterprise-grade</span> | <span class="mx-2">High-performance</span> | <span class="ms-2">Self-hosted</span>
-      </p>
+    <p class="text-muted mt-4 fw-light w-lg-75">JSON Schema is at the core of your governance program, but working with it shouldn't be a headache. Our self-hosted registry eliminates the complexity of operating schemas at scale. <i class="fw-lighter text-body">Led by a <a target="_blank" href="https://www.linkedin.com/in/jviotti/">member</a> of the JSON Schema Technical Steering Committee.</i></p>
 
-      <p class="text-muted mt-4 fw-light w-lg-75">JSON Schema is at the core of your governance program, but working with it shouldn't be a headache. Our self-hosted registry eliminates the complexity of operating schemas at scale. <i class="fw-lighter text-body">Led by a <a target="_blank" href="https://www.linkedin.com/in/jviotti/">member</a> of the JSON Schema Technical Steering Committee.</i></p>
-
-      <div class="mt-5">
-        <a class="btn btn-lg btn-primary me-2" href="https://github.com/sourcemeta/registry" role="button">
-          <i class="bi bi-github me-1"></i> View on GitHub</a>
-        <a class="btn btn-lg btn-light border" href="https://schemas.sourcemeta.com" role="button">
-          <i class="bi bi-box-arrow-up-right me-1"></i> Explore a live instance</a>
-      </div>
+    <div class="mt-5">
+      <a class="btn btn-lg btn-primary me-2" href="https://github.com/sourcemeta/registry" role="button">
+        <i class="bi bi-github me-1"></i> View on GitHub</a>
+      <a class="btn btn-lg btn-light border" href="https://schemas.sourcemeta.com" role="button">
+        <i class="bi bi-box-arrow-up-right me-1"></i> Explore a live instance</a>
     </div>
-
-    <a class="d-block" href="https://schemas.sourcemeta.com">
-      <img class="w-100 my-5 border shadow" src="screenshot.webp" alt="The Sourcemeta JSON Schema Registry">
-    </a>
   </div>
-</div>
+
+  <a class="d-block" href="https://schemas.sourcemeta.com">
+    <img class="w-100 my-5 border shadow" src="screenshot.webp" alt="The Sourcemeta JSON Schema Registry">
+  </a>
+{{< /blueprint >}}
 
 {{< components/ribbon >}}
   <div class="container text-secondary d-flex flex-column flex-xl-row align-items-center text-center text-xl-start">
@@ -161,23 +157,25 @@ title = "Home"
       </div>
     </div>
 
-    <div class="border p-4 bg-light-subtle d-flex align-items-lg-center flex-column flex-md-row">
-      <a href="https://www.linkedin.com/in/jviotti/">
-        <img src="jviotti.webp" alt="Juan Cruz Viotti" class="img-thumbnail mb-4 mb-md-0 me-md-4" style="max-width: 200px">
-      </a>
+    {{< callout >}}
+      <div class="col-12 col-md-auto">
+        <a href="https://www.linkedin.com/in/jviotti/">
+          <img src="jviotti.webp" alt="Juan Cruz Viotti" class="img-thumbnail mb-4 mb-md-0" style="max-width: 200px">
+        </a>
+      </div>
 
-      <div>
+      <div class="col-12 col-md">
         <div class="h4 fw-bold">Do you have any questions?</div>
-        <p class="lead mb-1">I'm <a href="https://www.linkedin.com/in/jviotti/">Juan Cruz Viotti</a>, founder of Sourcemeta, member of the JSON Schema Technical Steering Committee, O'Reilly author, and award-winning University of Oxford alumnus.</p>
-        <p>I'd love to discuss how JSON Schema, OpenAPI, and Sourcemeta tooling can help you build world class APIs.</p>
-        <button type="button" class="btn btn-dark" data-cal-link="jviotti/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Book a virtual coffee chat</button>
+        <p class="lead mb-1 text-white-50">I'm <a href="https://www.linkedin.com/in/jviotti/" class="text-white">Juan Cruz Viotti</a>, founder of Sourcemeta, member of the JSON Schema Technical Steering Committee, O'Reilly author, and award-winning University of Oxford alumnus.</p>
+        <p class="text-white-50">I'd love to discuss how JSON Schema, OpenAPI, and Sourcemeta tooling can help you build world class APIs.</p>
+        <button type="button" class="btn btn-light" data-cal-link="jviotti/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Book a virtual coffee chat</button>
         <script type="text/javascript">
           (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
         Cal("init", "30min", {origin:"https://cal.com"});
           Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#000000"},"dark":{"cal-brand":"#ffffff"}},"hideEventTypeDetails":false,"layout":"month_view"});
         </script>
       </div>
-    </div>
+    {{< /callout >}}
   </div>
 </section>
 
@@ -306,5 +304,3 @@ title = "Home"
     </div>
   </div>
 </section>
-
-{{< sections/opensource >}}

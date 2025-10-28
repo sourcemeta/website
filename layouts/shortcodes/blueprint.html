@@ -1,72 +1,76 @@
-{{- $theme := .Get "theme" | default "light" -}}
-{{- $color := cond (eq $theme "dark") "255, 255, 255" "0, 0, 0" -}}
-{{- $gridOpacity := cond (eq $theme "dark") "0.03" "0.02" -}}
-{{- $circleOpacity1 := cond (eq $theme "dark") "0.1" "0.06" -}}
-{{- $circleOpacity2 := cond (eq $theme "dark") "0.06" "0.04" -}}
-{{- $bracketOpacity1 := cond (eq $theme "dark") "0.12" "0.08" -}}
-{{- $bracketOpacity2 := cond (eq $theme "dark") "0.08" "0.05" -}}
-{{- $targetOpacity1 := cond (eq $theme "dark") "0.08" "0.05" -}}
-{{- $targetOpacity2 := cond (eq $theme "dark") "0.06" "0.04" -}}
-{{- $rectOpacity1 := cond (eq $theme "dark") "0.08" "0.05" -}}
-{{- $rectOpacity2 := cond (eq $theme "dark") "0.05" "0.04" -}}
-{{- $measureOpacity := cond (eq $theme "dark") "0.08" "0.06" -}}
+{{- $color := .Get "color" | default "white" -}}
+{{- $extraClasses := .Get "class" | default "" -}}
 
-<!-- Blueprint-style technical drawing background -->
-<div class="position-absolute top-0 start-0 w-100 h-100">
-  <!-- Grid pattern -->
-  <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: linear-gradient(rgba({{ $color }}, {{ $gridOpacity }}) 1px, transparent 1px), linear-gradient(90deg, rgba({{ $color }}, {{ $gridOpacity }}) 1px, transparent 1px); background-size: 60px 60px;"></div>
+{{- $bgClass := "" -}}
+{{- $blueprintColor := "0, 0, 0" -}}
+{{- $blueprintTheme := "light" -}}
 
-  {{- if eq $theme "dark" -}}
-  <!-- Large circle outline top-left (like a compass drawing) -->
-  <div class="position-absolute rounded-circle" style="width: 400px; height: 400px; top: -150px; left: -100px; border: 1px solid rgba({{ $color }}, {{ $circleOpacity1 }});"></div>
-  <div class="position-absolute rounded-circle" style="width: 420px; height: 420px; top: -160px; left: -110px; border: 1px solid rgba({{ $color }}, {{ $circleOpacity2 }});"></div>
+{{- if eq $color "gray" -}}
+  {{- $bgClass = "bg-light" -}}
+{{- else if eq $color "dark" -}}
+  {{- $bgClass = "bg-dark text-white" -}}
+  {{- $blueprintColor = "255, 255, 255" -}}
+  {{- $blueprintTheme = "dark" -}}
+{{- end -}}
 
-  <!-- Corner bracket top-right -->
-  <div class="position-absolute" style="top: 40px; right: 60px; width: 80px; height: 80px; border-top: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }}); border-right: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }});"></div>
-  <div class="position-absolute" style="top: 50px; right: 70px; width: 60px; height: 60px; border-top: 1px solid rgba({{ $color }}, {{ $bracketOpacity2 }}); border-right: 1px solid rgba({{ $color }}, {{ $bracketOpacity2 }});"></div>
-
-  <!-- Center crosshair/target circle -->
-  <div class="position-absolute rounded-circle" style="width: 250px; height: 250px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid rgba({{ $color }}, {{ $targetOpacity1 }});"></div>
-  <div class="position-absolute rounded-circle" style="width: 200px; height: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid rgba({{ $color }}, {{ $targetOpacity2 }});"></div>
-  <!-- Crosshair lines -->
-  <div class="position-absolute" style="width: 1px; height: 60px; top: calc(50% - 125px); left: 50%; background: rgba({{ $color }}, {{ $targetOpacity1 }});"></div>
-  <div class="position-absolute" style="width: 1px; height: 60px; top: calc(50% + 65px); left: 50%; background: rgba({{ $color }}, {{ $targetOpacity1 }});"></div>
-  <div class="position-absolute" style="width: 60px; height: 1px; top: 50%; left: calc(50% - 125px); background: rgba({{ $color }}, {{ $targetOpacity1 }});"></div>
-  <div class="position-absolute" style="width: 60px; height: 1px; top: 50%; left: calc(50% + 65px); background: rgba({{ $color }}, {{ $targetOpacity1 }});"></div>
-
-  <!-- Corner bracket bottom-left -->
-  <div class="position-absolute" style="bottom: 60px; left: 40px; width: 100px; height: 100px; border-bottom: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }}); border-left: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }});"></div>
-
-  <!-- Rectangle outline bottom-right (like a detail callout) -->
-  <div class="position-absolute" style="bottom: -50px; right: -30px; width: 300px; height: 200px; border: 1px solid rgba({{ $color }}, {{ $rectOpacity1 }}); transform: rotate(-15deg);"></div>
-  <div class="position-absolute" style="bottom: -40px; right: -20px; width: 280px; height: 180px; border: 1px solid rgba({{ $color }}, {{ $rectOpacity2 }}); transform: rotate(-15deg);"></div>
-
-  <!-- Small measurement-style lines top -->
-  <div class="position-absolute" style="top: 20%; left: 15%; width: 150px; height: 1px; background: rgba({{ $color }}, {{ $measureOpacity }});"></div>
-  <div class="position-absolute" style="top: 20%; left: 15%; width: 1px; height: 8px; background: rgba({{ $color }}, {{ $measureOpacity }});"></div>
-  <div class="position-absolute" style="top: 20%; left: calc(15% + 150px); width: 1px; height: 8px; background: rgba({{ $color }}, {{ $measureOpacity }});"></div>
+<div class="{{ $bgClass }} position-relative overflow-hidden {{ $extraClasses }}">
+  <!-- Blueprint background -->
+  {{- if eq $blueprintTheme "dark" -}}
+  {{- $gridOpacity := "0.03" -}}
+  {{- $circleOpacity1 := "0.1" -}}
+  {{- $circleOpacity2 := "0.06" -}}
+  {{- $bracketOpacity1 := "0.12" -}}
+  {{- $bracketOpacity2 := "0.08" -}}
+  {{- $targetOpacity1 := "0.08" -}}
+  {{- $targetOpacity2 := "0.06" -}}
+  {{- $rectOpacity1 := "0.08" -}}
+  {{- $rectOpacity2 := "0.05" -}}
+  {{- $measureOpacity := "0.08" -}}
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: linear-gradient(rgba({{ $blueprintColor }}, {{ $gridOpacity }}) 1px, transparent 1px), linear-gradient(90deg, rgba({{ $blueprintColor }}, {{ $gridOpacity }}) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="position-absolute rounded-circle" style="width: 400px; height: 400px; top: -150px; left: -100px; border: 1px solid rgba({{ $blueprintColor }}, {{ $circleOpacity1 }});"></div>
+    <div class="position-absolute rounded-circle" style="width: 420px; height: 420px; top: -160px; left: -110px; border: 1px solid rgba({{ $blueprintColor }}, {{ $circleOpacity2 }});"></div>
+    <div class="position-absolute" style="top: 40px; right: 60px; width: 80px; height: 80px; border-top: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }}); border-right: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }});"></div>
+    <div class="position-absolute" style="top: 50px; right: 70px; width: 60px; height: 60px; border-top: 1px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity2 }}); border-right: 1px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity2 }});"></div>
+    <div class="position-absolute rounded-circle" style="width: 250px; height: 250px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid rgba({{ $blueprintColor }}, {{ $targetOpacity1 }});"></div>
+    <div class="position-absolute rounded-circle" style="width: 200px; height: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid rgba({{ $blueprintColor }}, {{ $targetOpacity2 }});"></div>
+    <div class="position-absolute" style="width: 1px; height: 60px; top: calc(50% - 125px); left: 50%; background: rgba({{ $blueprintColor }}, {{ $targetOpacity1 }});"></div>
+    <div class="position-absolute" style="width: 1px; height: 60px; top: calc(50% + 65px); left: 50%; background: rgba({{ $blueprintColor }}, {{ $targetOpacity1 }});"></div>
+    <div class="position-absolute" style="width: 60px; height: 1px; top: 50%; left: calc(50% - 125px); background: rgba({{ $blueprintColor }}, {{ $targetOpacity1 }});"></div>
+    <div class="position-absolute" style="width: 60px; height: 1px; top: 50%; left: calc(50% + 65px); background: rgba({{ $blueprintColor }}, {{ $targetOpacity1 }});"></div>
+    <div class="position-absolute" style="bottom: 60px; left: 40px; width: 100px; height: 100px; border-bottom: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }}); border-left: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }});"></div>
+    <div class="position-absolute" style="bottom: -50px; right: -30px; width: 300px; height: 200px; border: 1px solid rgba({{ $blueprintColor }}, {{ $rectOpacity1 }}); transform: rotate(-15deg);"></div>
+    <div class="position-absolute" style="bottom: -40px; right: -20px; width: 280px; height: 180px; border: 1px solid rgba({{ $blueprintColor }}, {{ $rectOpacity2 }}); transform: rotate(-15deg);"></div>
+    <div class="position-absolute" style="top: 20%; left: 15%; width: 150px; height: 1px; background: rgba({{ $blueprintColor }}, {{ $measureOpacity }});"></div>
+    <div class="position-absolute" style="top: 20%; left: 15%; width: 1px; height: 8px; background: rgba({{ $blueprintColor }}, {{ $measureOpacity }});"></div>
+    <div class="position-absolute" style="top: 20%; left: calc(15% + 150px); width: 1px; height: 8px; background: rgba({{ $blueprintColor }}, {{ $measureOpacity }});"></div>
+  </div>
   {{- else -}}
-  <!-- Large circle outline top-right (like a compass drawing) -->
-  <div class="position-absolute rounded-circle" style="width: 350px; height: 350px; top: -100px; right: -80px; border: 1px solid rgba({{ $color }}, {{ $circleOpacity1 }});"></div>
-  <div class="position-absolute rounded-circle" style="width: 370px; height: 370px; top: -110px; right: -90px; border: 1px solid rgba({{ $color }}, {{ $circleOpacity2 }});"></div>
-
-  <!-- Corner bracket top-left -->
-  <div class="position-absolute" style="top: 40px; left: 60px; width: 80px; height: 80px; border-top: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }}); border-left: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }});"></div>
-  <div class="position-absolute" style="top: 50px; left: 70px; width: 60px; height: 60px; border-top: 1px solid rgba({{ $color }}, {{ $bracketOpacity2 }}); border-left: 1px solid rgba({{ $color }}, {{ $bracketOpacity2 }});"></div>
-
-  <!-- Center target circles -->
-  <div class="position-absolute rounded-circle" style="width: 200px; height: 200px; top: 35%; left: 15%; border: 1px solid rgba({{ $color }}, {{ $targetOpacity1 }});"></div>
-  <div class="position-absolute rounded-circle" style="width: 160px; height: 160px; top: calc(35% + 20px); left: calc(15% + 20px); border: 1px solid rgba({{ $color }}, {{ $targetOpacity2 }});"></div>
-
-  <!-- Corner bracket bottom-right -->
-  <div class="position-absolute" style="bottom: 80px; right: 40px; width: 100px; height: 100px; border-bottom: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }}); border-right: 2px solid rgba({{ $color }}, {{ $bracketOpacity1 }});"></div>
-
-  <!-- Rectangle outline bottom-left (like a detail callout) -->
-  <div class="position-absolute" style="bottom: -40px; left: -20px; width: 280px; height: 180px; border: 1px solid rgba({{ $color }}, {{ $targetOpacity1 }}); transform: rotate(12deg);"></div>
-
-  <!-- Small measurement-style lines -->
-  <div class="position-absolute" style="top: 25%; right: 20%; width: 120px; height: 1px; background: rgba({{ $color }}, {{ $measureOpacity }});"></div>
-  <div class="position-absolute" style="top: 25%; right: 20%; width: 1px; height: 8px; background: rgba({{ $color }}, {{ $measureOpacity }});"></div>
-  <div class="position-absolute" style="top: 25%; right: calc(20% + 120px); width: 1px; height: 8px; background: rgba({{ $color }}, {{ $measureOpacity }});"></div>
+  {{- $gridOpacity := "0.02" -}}
+  {{- $circleOpacity1 := "0.06" -}}
+  {{- $circleOpacity2 := "0.04" -}}
+  {{- $bracketOpacity1 := "0.08" -}}
+  {{- $bracketOpacity2 := "0.05" -}}
+  {{- $targetOpacity1 := "0.05" -}}
+  {{- $targetOpacity2 := "0.04" -}}
+  {{- $measureOpacity := "0.06" -}}
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background-image: linear-gradient(rgba({{ $blueprintColor }}, {{ $gridOpacity }}) 1px, transparent 1px), linear-gradient(90deg, rgba({{ $blueprintColor }}, {{ $gridOpacity }}) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <div class="position-absolute rounded-circle" style="width: 350px; height: 350px; top: -100px; right: -80px; border: 1px solid rgba({{ $blueprintColor }}, {{ $circleOpacity1 }});"></div>
+    <div class="position-absolute rounded-circle" style="width: 370px; height: 370px; top: -110px; right: -90px; border: 1px solid rgba({{ $blueprintColor }}, {{ $circleOpacity2 }});"></div>
+    <div class="position-absolute" style="top: 40px; left: 60px; width: 80px; height: 80px; border-top: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }}); border-left: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }});"></div>
+    <div class="position-absolute" style="top: 50px; left: 70px; width: 60px; height: 60px; border-top: 1px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity2 }}); border-left: 1px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity2 }});"></div>
+    <div class="position-absolute rounded-circle" style="width: 200px; height: 200px; top: 35%; left: 15%; border: 1px solid rgba({{ $blueprintColor }}, {{ $targetOpacity1 }});"></div>
+    <div class="position-absolute rounded-circle" style="width: 160px; height: 160px; top: calc(35% + 20px); left: calc(15% + 20px); border: 1px solid rgba({{ $blueprintColor }}, {{ $targetOpacity2 }});"></div>
+    <div class="position-absolute" style="bottom: 80px; right: 40px; width: 100px; height: 100px; border-bottom: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }}); border-right: 2px solid rgba({{ $blueprintColor }}, {{ $bracketOpacity1 }});"></div>
+    <div class="position-absolute" style="bottom: -40px; left: -20px; width: 280px; height: 180px; border: 1px solid rgba({{ $blueprintColor }}, {{ $targetOpacity1 }}); transform: rotate(12deg);"></div>
+    <div class="position-absolute" style="top: 25%; right: 20%; width: 120px; height: 1px; background: rgba({{ $blueprintColor }}, {{ $measureOpacity }});"></div>
+    <div class="position-absolute" style="top: 25%; right: 20%; width: 1px; height: 8px; background: rgba({{ $blueprintColor }}, {{ $measureOpacity }});"></div>
+    <div class="position-absolute" style="top: 25%; right: calc(20% + 120px); width: 1px; height: 8px; background: rgba({{ $blueprintColor }}, {{ $measureOpacity }});"></div>
+  </div>
   {{- end -}}
+
+  <div class="container position-relative">
+    {{ .Inner }}
+  </div>
 </div>

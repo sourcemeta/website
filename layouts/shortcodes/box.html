@@ -1,18 +1,32 @@
+{{- $icon := .Get "icon" -}}
+
 {{ if (eq (.Get "header") "Coming Soon") }}
-  <div class="border bg-white d-flex align-items-start p-4 p-md-5 text-secondary h-100">
+  <div class="card border bg-white text-secondary h-100 p-4">
 {{ else }}
-  <div class="border border-dark bg-white d-flex align-items-center p-4 p-md-5 h-100">
+  <div class="card border border-dark bg-white h-100 p-4 shadow-sm hover-lift">
 {{ end }}
 
-  <div>
-    <small class="d-block mb-1 text-secondary">{{ .Get "header" }}</small>
-    <div class="h4 fw-bold mb-4">{{ .Get "title" }}</div>
+  <div class="card-body p-4">
+    {{ if $icon }}
+      <div class="d-flex align-items-start mb-4">
+        <div class="bg-dark text-white p-3 me-3" style="border-radius: 12px;">
+          <i class="bi {{ $icon }} fs-2"></i>
+        </div>
+        <div class="flex-grow-1">
+          <small class="text-muted">{{ .Get "header" }}</small>
+          <h4 class="fw-bold mb-1">{{ .Get "title" }}</h4>
+        </div>
+      </div>
+    {{ else }}
+      <small class="d-block mb-1 text-secondary">{{ .Get "header" }}</small>
+      <div class="h4 fw-bold mb-4">{{ .Get "title" }}</div>
+    {{ end }}
 
     {{ if (.Get "button") }}
-      <p>{{ .Inner }}</p>
+      <p class="fw-light text-muted">{{ .Inner }}</p>
       <a class="btn btn-outline-dark" href="{{ .Get "link" }}" role="button">{{ .Get "button" }}</a>
     {{ else }}
-      <p class="mb-0">{{ .Inner }}</p>
+      <p class="mb-0 fw-light text-muted">{{ .Inner }}</p>
     {{ end }}
 
     {{ if (.Get "image") }}
