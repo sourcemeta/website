@@ -1,0 +1,575 @@
++++
+title = "JSON Schema Standard Library"
+description = "Production-ready JSON Schema definitions for industry standards. Stop writing email regex patterns and currency codes from scratch."
++++
+
+{{< blueprint color="white" class="border-top pt-4 pt-md-5 pb-5" >}}
+  <div class="text-center mb-5">
+    <div class="d-none d-lg-block mx-auto" style="max-width: 1000px;">
+      <h2 class="display-4 fw-bold text-dark mb-3">Stop writing complex schemas.</h2>
+      <h1 class="display-2 fw-bold mb-4"><span class="text-gradient-metal">Ship better APIs.</span></h1>
+    </div>
+    <div class="d-lg-none">
+      <h2 class="display-6 fw-bold text-dark mb-3">Stop writing complex schemas.</h2>
+      <h1 class="display-5 fw-bold mb-4"><span class="text-gradient-metal">Ship better APIs.</span></h1>
+    </div>
+
+    <p class="lead text-muted mb-4 mx-auto" style="max-width: 800px;">A <strong>standard library</strong> of all the foundational schemas you'll ever need—from email addresses to currency codes—so you never have to bother with JSON Schema again</p>
+
+    <div class="mt-4">
+      <a class="btn btn-lg btn-primary me-2" href="https://schemas.sourcemeta.com/sourcemeta/std" role="button">
+        <i class="bi bi-box-arrow-up-right me-1"></i> Browse Schemas</a>
+      <a class="btn btn-lg btn-light border" href="https://github.com/sourcemeta/std" role="button">
+        <i class="bi bi-github me-1"></i> View on GitHub</a>
+    </div>
+
+    <div class="mt-4 p-3 border border-primary bg-light rounded d-inline-block">
+      <p class="mb-0 fw-bold text-dark"><i class="bi bi-infinity text-primary me-2"></i>Commercial library with <span class="text-primary">perpetual pricing</span> — Pay once, own forever</p>
+    </div>
+
+    <div class="mt-3">
+      <small class="text-muted fw-light"><i class="bi bi-shield-check me-1"></i> Maintained by a member of the JSON Schema Technical Steering Committee</small>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-4">
+    <div class="col-12 col-lg-6">
+      <div class="d-flex flex-column h-100">
+        <div class="d-flex align-items-center mb-3">
+          <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+            <i class="bi bi-x-lg"></i>
+          </div>
+          <h3 class="h4 mb-0 fw-bold">Before</h3>
+        </div>
+        <div class="card border-0 shadow flex-grow-1 d-flex flex-column overflow-hidden" style="border-radius: 12px;">
+          <div class="d-flex align-items-center px-3 py-2" style="background: #2d2d2d;">
+            <div class="d-flex gap-1 me-3">
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: #ff5f56;"></div>
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: #ffbd2e;"></div>
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: #27c93f;"></div>
+            </div>
+            <span class="small text-white-50">openapi.yaml</span>
+          </div>
+          <div class="card-body p-0 flex-grow-1" style="min-height: 400px;">
+            <pre class="mb-0 h-100 p-4" style="background: linear-gradient(135deg, #3d0a0a 0%, #1e1e1e 100%); color: #d4d4d4; font-size: 0.75rem; line-height: 1.6; overflow-x: auto;"><code>openapi: 3.1.0
+paths:
+  /users:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                  description: Email address
+                phone:
+                  type: string
+                  pattern: '^\+?[1-9]\d{1,14}$'
+                  description: Phone number
+                country:
+                  type: string
+                  pattern: '^[A-Z]{2}$'
+                  description: ISO 3166-1 alpha-2 country code
+                currency:
+                  type: string
+                  enum: [AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT, BGN, BHD, BIF, BMD, BND, BOB, BRL, BSD, BTN, BWP, BYN, BZD, CAD, CDF, CHF, CLP, CNY, COP, CRC, CUP, CVE, CZK, DJF, DKK, DOP, DZD, EGP, ERN, ETB, EUR, FJD, FKP, FOK, GBP, GEL, GGP, GHS, GIP, GMD, GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF, IDR, ILS, IMP, INR, IQD, IRR, ISK, JEP, JMD, JOD, JPY, KES, KGS, KHR, KID, KMF, KRW, KWD, KYD, KZT, LAK, LBP, LKR, LRD, LSL]
+                  description: ISO 4217 currency code
+                website:
+                  type: string
+                  pattern: '^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$'
+                  description: Website URL
+                created_at:
+                  type: string
+                  pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z?$'
+                  description: ISO 8601 datetime
+                language:
+                  type: string
+                  pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+                  description: Language code</code></pre>
+          </div>
+          <div class="border-0" style="background: #252526; border-top: 1px solid #3c3c3c;">
+            <div class="px-3 py-2" style="background: #2d2d30; border-bottom: 1px solid #3c3c3c;">
+              <small class="text-white-50 text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+                <i class="bi bi-exclamation-triangle-fill text-danger me-2"></i>Problems (4)
+              </small>
+            </div>
+            <div class="p-3">
+              <div class="mb-2 d-flex align-items-start">
+                <i class="bi bi-x-circle-fill text-danger me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">170+ lines of repetitive validation code</span>
+              </div>
+              <div class="mb-2 d-flex align-items-start">
+                <i class="bi bi-x-circle-fill text-danger me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Regex patterns copied from StackOverflow</span>
+              </div>
+              <div class="mb-2 d-flex align-items-start">
+                <i class="bi bi-x-circle-fill text-danger me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Incomplete enum lists (only 77 of 180 currencies)</span>
+              </div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-x-circle-fill text-danger me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">No standards compliance guarantees</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <div class="d-flex flex-column h-100">
+        <div class="d-flex align-items-center mb-3">
+          <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <h3 class="h4 mb-0 fw-bold">After</h3>
+        </div>
+        <div class="card border-success shadow flex-grow-1 d-flex flex-column overflow-hidden" style="border-radius: 12px;">
+          <div class="d-flex align-items-center px-3 py-2" style="background: #2d2d2d;">
+            <div class="d-flex gap-1 me-3">
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: #ff5f56;"></div>
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: #ffbd2e;"></div>
+              <div class="rounded-circle" style="width: 12px; height: 12px; background: #27c93f;"></div>
+            </div>
+            <span class="small text-white-50">openapi.yaml</span>
+          </div>
+          <div class="card-body p-0 flex-grow-1" style="min-height: 400px;">
+            <pre class="mb-0 h-100 p-4" style="background: linear-gradient(135deg, #0a3d1a 0%, #1e1e1e 100%); color: #d4d4d4; font-size: 0.75rem; line-height: 1.6; overflow-x: auto;"><code>openapi: 3.1.0
+paths:
+  /users:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/ietf/email/address'
+                phone:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/ietf/rfc3966/tel-uri'
+                country:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/iso/3166-1/alpha2'
+                currency:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/iso/4217/code'
+                website:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/ietf/rfc3986/uri'
+                created_at:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/iso/8601/datetime'
+                language:
+                  $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/ietf/rfc5646/language-tag'</code></pre>
+          </div>
+          <div class="border-0" style="background: #252526; border-top: 1px solid #3c3c3c;">
+            <div class="px-3 py-2" style="background: #2d2d30; border-bottom: 1px solid #3c3c3c;">
+              <small class="text-white-50 text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>Output (4)
+              </small>
+            </div>
+            <div class="p-3">
+              <div class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">27 lines of clean, readable code</span>
+              </div>
+              <div class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Standards-backed validation (RFC 5322, ISO 4217, etc.)</span>
+              </div>
+              <div class="mb-2 d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Complete coverage (all 180 ISO currencies included)</span>
+              </div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Maintained by JSON Schema TSC member</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{< /blueprint >}}
+
+<section class="bg-light-subtle border-top border-bottom py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+        <h2 class="h3 fw-bold mb-3">Built on the foundations of our digital world</h2>
+        <p class="text-muted mb-3">We meticulously study official specifications from the world's leading standards bodies—many behind expensive paywalls—and encode them into production-ready JSON Schema definitions.</p>
+        <p class="lead text-muted mb-0">Every schema in this library represents careful implementation of the standards that power the modern internet, ensuring your APIs are built on proven, battle-tested foundations.</p>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="d-flex flex-column justify-content-center align-items-center gap-4 h-100">
+          <div class="d-flex justify-content-center align-items-center gap-5">
+            <a href="https://www.ietf.org" target="_blank" rel="noopener noreferrer">
+              <img src="/products/std/ietf.svg" alt="IETF" height="75" class="opacity-75">
+            </a>
+            <a href="https://www.iso.org" target="_blank" rel="noopener noreferrer">
+              <img src="/products/std/iso.svg" alt="ISO" height="75" class="opacity-75">
+            </a>
+            <a href="https://www.ieee.org" target="_blank" rel="noopener noreferrer">
+              <img src="/products/std/ieee.svg" alt="IEEE" height="60" class="opacity-75">
+            </a>
+          </div>
+          <div class="d-flex justify-content-center align-items-center gap-5">
+            <a href="https://www.iec.ch" target="_blank" rel="noopener noreferrer">
+              <img src="/products/std/iec.svg" alt="IEC" height="75" class="opacity-75">
+            </a>
+            <a href="https://www.w3.org" target="_blank" rel="noopener noreferrer">
+              <img src="/products/std/w3c.svg" alt="W3C" height="75" class="opacity-75">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light bg-gradient border-top border-bottom">
+  <div class="container">
+    <div class="text-center mb-5 mx-auto" style="max-width: 900px;">
+      <h2 class="display-6 fw-bold mb-3">Most API companies waste months reinventing the wheel—and doing it wrong.</h2>
+      <p class="h4 text-muted fw-normal">Your company is smarter than that.</p>
+    </div>
+
+    <div class="row g-5 mb-5 align-items-stretch">
+      <div class="col-12 col-md-4">
+        <div class="text-center px-3 d-flex flex-column h-100">
+          <div class="mb-4">
+            <div class="bg-danger bg-opacity-10 border border-danger border-opacity-25 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+              <i class="bi bi-arrow-repeat fs-1 text-danger"></i>
+            </div>
+          </div>
+          <h4 class="fw-semibold mb-3">You're writing the same email regex everyone else is writing</h4>
+          <p class="text-muted mb-3 flex-grow-1">Thousands of developers waste time reinventing the same validation patterns, each with their own bugs and edge cases.</p>
+          <p class="small fst-italic text-muted mb-0">And you're probably not unit testing your schemas.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="text-center px-3 d-flex flex-column h-100">
+          <div class="mb-4">
+            <div class="bg-warning bg-opacity-10 border border-warning border-opacity-25 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+              <i class="bi bi-toggles fs-1 text-warning"></i>
+            </div>
+          </div>
+          <h4 class="fw-semibold mb-3">Your schemas are either too complex or uselessly loose</h4>
+          <p class="text-muted mb-3 flex-grow-1">Finding the right balance between strict validation and practical usability requires deep expertise you don't have time to develop.</p>
+          <p class="small fst-italic text-muted mb-0">And you might even be introducing security vulnerabilities.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="text-center px-3 d-flex flex-column h-100">
+          <div class="mb-4">
+            <div class="bg-primary bg-opacity-10 border border-primary border-opacity-25 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+              <i class="bi bi-hourglass-split fs-1 text-primary"></i>
+            </div>
+          </div>
+          <h4 class="fw-semibold mb-3">Writing schemas from scratch takes 100x longer</h4>
+          <p class="text-muted mb-3 flex-grow-1">Stop building every validation pattern from the ground up. Snap in battle-tested schemas like building blocks and ship your OpenAPI specs in hours, not weeks.</p>
+          <p class="small fst-italic text-muted mb-0">While your competitors are already shipping.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 border-top border-bottom">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-bold mb-3">Use the schemas your way</h2>
+      <p class="lead text-muted">We don't lock you in. Choose the method that works best for your workflow.</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg">
+        <div class="text-center p-3">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-cloud-download fs-3 text-primary"></i>
+          </div>
+          <h4 class="h6 fw-bold mb-2">HTTPS URLs</h4>
+          <p class="text-muted small mb-0">Reference from <a href="https://schemas.sourcemeta.com/sourcemeta/std">schemas.sourcemeta.com</a> using <code>$ref</code></p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg">
+        <div class="text-center p-3">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-window fs-3 text-primary"></i>
+          </div>
+          <h4 class="h6 fw-bold mb-2">OpenAPI Editors</h4>
+          <p class="text-muted small mb-0">Works with <a href="https://scalar.com">Scalar</a>, Stoplight, SwaggerHub</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg">
+        <div class="text-center p-3">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-file-earmark-zip fs-3 text-primary"></i>
+          </div>
+          <h4 class="h6 fw-bold mb-2">Download ZIP</h4>
+          <p class="text-muted small mb-0">Latest release from <a href="https://github.com/sourcemeta/std/releases">GitHub</a></p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg">
+        <div class="text-center p-3">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-git fs-3 text-primary"></i>
+          </div>
+          <h4 class="h6 fw-bold mb-2">Git Submodule</h4>
+          <p class="text-muted small mb-0">Version alongside your codebase</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg">
+        <div class="text-center p-3">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi bi-clipboard fs-3 text-primary"></i>
+          </div>
+          <h4 class="h6 fw-bold mb-2">Copy & Paste</h4>
+          <p class="text-muted small mb-0">Copy schemas into your project</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="bg-light border-top border-bottom py-5">
+  <div class="container">
+    <h3 class="display-6 fw-bold mb-3">Pricing</h3>
+
+    <p class="lead">Use these production-ready schemas in your OpenAPI specifications without writing validation code from scratch. All schemas are available on <a href="https://github.com/sourcemeta/std">GitHub</a> for auditing purposes and contributions.</p>
+
+    <p class="fw-light mb-5">Every schema in this library is backed by official standards from organizations like IETF, ISO, IEEE, and W3C. We purchase access to paywalled specifications, study them in depth, and encode them into rigorously tested JSON Schema definitions. This is not open-source, but source-available commercial software.</p>
+
+    <div class="row row-cols-1 row-cols-lg-3 g-5 text-center mb-4">
+      <div class="col mb-4 mb-lg-0">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header py-3 h4 my-0 fw-normal bg-white">Community</div>
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title mb-1">€0</h1>
+            <small class="text-muted mb-4">Free forever</small>
+            <ul class="list-unstyled mt-3 mb-4 flex-grow-1 text-start">
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Non-commercial use</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Evaluation purposes</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Writing publicly available standards</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>All schemas included</li>
+              <li class="mb-2"><i class="bi bi-info-circle text-muted me-2"></i>Requires attribution</li>
+              <li class="mb-2"><i class="bi bi-chat text-muted me-2"></i>Community support</li>
+            </ul>
+            <a href="https://github.com/sourcemeta/std" class="w-100 btn btn-lg btn-outline-primary d-block">Get Started</a>
+            <a href="https://github.com/sourcemeta/std" class="mt-3 d-block small">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 mb-lg-0">
+        <div class="card h-100 border-primary shadow">
+          <div class="card-header py-3 h4 my-0 fw-normal text-bg-primary border-primary">Pro</div>
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title mb-1">€2,105</h1>
+            <small class="text-muted mb-4">One-time payment</small>
+            <ul class="list-unstyled mt-3 mb-4 flex-grow-1 text-start">
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Commercial use (single company)</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Lifetime access</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>All schemas included</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Free updates forever</li>
+              <li class="mb-2"><i class="bi bi-info-circle text-muted me-2"></i>Requires attribution</li>
+              <li class="mb-2"><i class="bi bi-headset text-success me-2"></i>Premium support</li>
+            </ul>
+            <small class="text-muted my-3">Fully refundable within 30 days of purchase. Contact us over <a href="mailto:hello@sourcemeta.com">e-mail</a> for any billing related questions</small>
+            <a href="#" class="w-100 btn btn-lg btn-primary d-block">Purchase License</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4 mb-lg-0">
+        <div class="card h-100 border-primary shadow">
+          <div class="card-header py-3 h4 my-0 fw-normal text-bg-primary border-primary">Enterprise</div>
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title pricing-card-title mb-1">€1,125<small class="text-body-secondary fw-light">/mo</small></h1>
+            <small class="text-muted mb-4">Billed monthly</small>
+            <ul class="list-unstyled mt-3 mb-4 flex-grow-1 text-start">
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Offer schemas as part of your own product</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>White-label / OEM distribution</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>All schemas included</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Free updates forever</li>
+              <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>No attribution required</li>
+              <li class="mb-2"><i class="bi bi-headset text-success me-2"></i>Dedicated support</li>
+            </ul>
+            <small class="text-muted my-3">Contact us to discuss OEM and white-label distribution options for incorporating these schemas into commercial products</small>
+            <a href="mailto:hello@sourcemeta.com" class="w-100 btn btn-lg btn-primary d-block">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-light border mt-4 mb-0">
+      <p class="mb-0"><i class="bi bi-info-circle me-2"></i>This library is maintained by a <a href="https://www.linkedin.com/in/jviotti/" class="fw-semibold">member of the JSON Schema Technical Steering Committee</a>. Your purchase directly supports Sourcemeta's open-source contributions to the JSON Schema ecosystem, including our high-performance validator and community tools.</p>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-gradient" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">An investment that pays for itself</h2>
+      <p class="lead text-muted w-lg-75 mx-auto">Solve the OpenAPI authoring problem for your company forever</p>
+    </div>
+
+    <div class="row g-4 text-center mb-5">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="display-1 text-primary mb-3"><i class="bi bi-coin"></i></div>
+          <h3 class="h6 fw-bold mb-2">Less than a week of developer salary</h3>
+          <p class="text-muted small mb-0">One-time investment for permanent access</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="display-1 text-primary mb-3"><i class="bi bi-infinity"></i></div>
+          <h3 class="h6 fw-bold mb-2">Perpetual ownership</h3>
+          <p class="text-muted small mb-0">Every project, every team, forever</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="display-1 text-primary mb-3"><i class="bi bi-check2-square"></i></div>
+          <h3 class="h6 fw-bold mb-2">Empower your API Governance team</h3>
+          <p class="text-muted small mb-0">Consistent validation logic across your organization</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="p-4 bg-white rounded shadow-sm h-100">
+          <div class="display-1 text-primary mb-3">6+</div>
+          <h3 class="h6 fw-bold mb-2">Months of work saved</h3>
+          <p class="text-muted small mb-0">Standards research, implementation, testing</p>
+        </div>
+      </div>
+    </div>
+
+    {{< talk-to-us >}}
+  </div>
+</section>
+
+<section class="py-5 position-relative overflow-hidden">
+  <div class="container position-relative">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Trusted by developers</h2>
+      <p class="lead text-muted">Join API architects building production-grade specifications</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        {{< testimonial github="fmvilas" name="Fran Mendez" role="Creator of AsyncAPI" >}}When I think of JSON Schema experts, Juan is one of the very first names that comes to mind. He doesn't just understand the spec inside and out. He's actively building amazing, practical tools that make working with JSON Schema so much better for everyone.{{< /testimonial >}}
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        {{< testimonial github="relequestual" name="Ben Hutton" role="JSON Schema TSC" >}}Gaining all the most critical and impactful knowledge about JSON Schema in a single place, used to be impossible... Now it's not. Juan is a true authority.{{< /testimonial >}}
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        {{< testimonial github="michaelmior" name="Michael Mior" role="Co-author of the Blaze validator" >}}Juan is one of the most knowledgeable voices there is on JSON Schema. His attention to detail is incredible and he has so much helpful info to share!{{< /testimonial >}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light border-top">
+  <div class="container">
+    <h3 class="display-6 fw-bold mb-4">Frequently Asked Questions</h3>
+
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            How do I use these in my OpenAPI spec?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Reference the schemas using the <code>$ref</code> keyword with HTTPS URLs from our hosting service:</p>
+            <pre class="bg-dark text-white p-3 rounded"><code>schema:
+  type: object
+  properties:
+    email:
+      $ref: 'https://schemas.sourcemeta.com/sourcemeta/std/1.0.0/ietf/email/address'</code></pre>
+            <p class="mb-0">Alternatively, download the schemas from <a href="https://github.com/sourcemeta/std/releases">GitHub Releases</a> and reference them locally using relative paths, or add them as a git submodule to your repository.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Can I use this with existing schemas?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Absolutely! These schemas are designed to be building blocks. You can reference them from your existing schemas using <code>$ref</code>, compose them with <code>allOf</code>, <code>anyOf</code>, or <code>oneOf</code>, or extend them with additional constraints.</p>
+            <p class="mb-0">Start by replacing common patterns (email, dates, URIs) and gradually adopt more schemas as you refactor your API specifications.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            What JSON Schema version do these schemas use?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p class="mb-0">All schemas target <strong>JSON Schema 2020-12</strong>, which is the dialect used by OpenAPI v3.1 and later. Support for earlier JSON Schema dialects will be added in future releases.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            How often are schemas updated?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p class="mb-0">We regularly update schemas to reflect new standards, fix bugs, and add coverage for additional specifications. Commercial license holders receive all updates for free. We follow semantic versioning, so you can safely upgrade to patch and minor versions without breaking changes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Can I contribute schemas or request new standards?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Yes! We welcome contributions. Open an issue on <a href="https://github.com/sourcemeta/std/issues">GitHub</a> to request coverage of a new standard, or submit a pull request with your schema implementation.</p>
+            <p class="mb-0">Meaningful contributions may be taken into consideration towards a discounted or even free commercial license.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{< blueprint color="dark" class="border-top py-5" >}}
+  <div class="text-center py-4">
+    <h2 class="display-3 fw-bold mb-4 text-white">Ready to solve OpenAPI development<br><span class="text-gradient-metal">at your company forever?</span></h2>
+    <p class="lead mb-4 mx-auto text-white-50" style="max-width: 700px;">One payment. Perpetual access. Every schema you need. Never write validation patterns from scratch again.</p>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-4">
+      <a href="#pricing" class="btn btn-light btn-lg px-5 shadow">
+        <i class="bi bi-infinity me-2"></i>Get Lifetime Access — €2,105
+      </a>
+      <a href="https://schemas.sourcemeta.com/sourcemeta/std" class="btn btn-outline-light btn-lg">
+        Browse Schemas First
+      </a>
+    </div>
+
+    <small class="text-white-50 d-block mt-3">
+      <i class="bi bi-shield-check me-1"></i>
+      30-day money-back guarantee • Maintained by JSON Schema TSC member
+    </small>
+  </div>
+{{< /blueprint >}}
