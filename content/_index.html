@@ -1,5 +1,26 @@
 +++
 title = "Home"
+github = "sourcemeta/registry"
+
+[[navigation]]
+title = "Docs"
+link = "https://registry.sourcemeta.com"
+
+[[navigation]]
+title = "Features"
+link = "#features"
+
+[[navigation]]
+title = "Pricing"
+link = "#pricing"
+
+[[navigation]]
+title = "Open Source"
+link = "#opensource"
+
+[[navigation]]
+title = "Support"
+link = "https://github.com/sourcemeta/registry/discussions"
 +++
 
 {{< blueprint color="white" class="border-top pt-4 pt-md-5 pb-3" >}}
@@ -80,31 +101,7 @@ title = "Home"
   </div>
 {{< /components/ribbon >}}
 
-<section class="bg-light border-bottom py-4">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-12 col-md-3">
-        <a href="/courses/jsonschema-for-openapi/" class="d-block position-relative">
-          <img src="courses/jsonschema-for-openapi/screenshot.webp" alt="JSON Schema for OpenAPI course" class="img-fluid rounded shadow-sm">
-          <div class="position-absolute top-50 start-50 translate-middle">
-            <div class="bg-primary bg-opacity-90 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-              <i class="bi bi-play-fill text-white" style="font-size: 1.5rem; margin-left: 3px;"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-md-9">
-        <div class="d-flex align-items-start">
-          <div>
-            <h3 class="h4 fw-bold mb-2">Master JSON Schema for OpenAPI</h3>
-            <p class="mb-3 text-muted small">Learn advanced patterns, schema-first design, and production-grade techniques from a member of the JSON Schema Technical Steering Committee. 14 modules and over 9 hours of content covering the entirety of JSON Schema 2020-12, from basics all the way to dynamic references.</p>
-            <a href="/courses/jsonschema-for-openapi/" class="btn btn-sm btn-outline-primary">Take the Video Course <i class="bi bi-arrow-right ms-1"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{{< promotion >}}
 
 <section class="py-5" id="features">
   <div class="container">
@@ -183,25 +180,7 @@ title = "Home"
       </div>
     </div>
 
-    {{< callout >}}
-      <div class="col-12 col-md-auto">
-        <a href="https://www.linkedin.com/in/jviotti/">
-          <img src="jviotti.webp" alt="Juan Cruz Viotti" class="img-thumbnail mb-4 mb-md-0" style="max-width: 200px">
-        </a>
-      </div>
-
-      <div class="col-12 col-md">
-        <div class="h4 fw-bold">Do you have any questions?</div>
-        <p class="lead mb-1 text-white-50">I'm <a href="https://www.linkedin.com/in/jviotti/" class="text-white">Juan Cruz Viotti</a>, founder of Sourcemeta, member of the JSON Schema Technical Steering Committee, O'Reilly author, and award-winning University of Oxford alumnus.</p>
-        <p class="text-white-50">I'd love to discuss how JSON Schema, OpenAPI, and Sourcemeta tooling can help you build world class APIs.</p>
-        <button type="button" class="btn btn-light" data-cal-link="jviotti/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view"}'>Book a virtual coffee chat</button>
-        <script type="text/javascript">
-          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "30min", {origin:"https://cal.com"});
-          Cal.ns["30min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#000000"},"dark":{"cal-brand":"#ffffff"}},"hideEventTypeDetails":false,"layout":"month_view"});
-        </script>
-      </div>
-    {{< /callout >}}
+    {{< talk-to-us >}}
   </div>
 </section>
 

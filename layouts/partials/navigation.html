@@ -7,28 +7,14 @@
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item me-5">
-          <a class="text-decoration-none fw-light" href="https://registry.sourcemeta.com">Docs</a>
+        {{ range $index, $item := .Params.navigation }}
+        <li class="nav-item me-5{{ if ne $index 0 }} d-none d-lg-block{{ end }}">
+          <a class="text-decoration-none fw-light" href="{{ $item.link }}">{{ $item.title }}</a>
         </li>
-
-        <li class="nav-item me-5 d-none d-lg-block">
-          <a class="text-decoration-none fw-light" href="{{ .Site.BaseURL }}#features">Features</a>
-        </li>
-
-        <li class="nav-item me-5 d-none d-lg-block">
-          <a class="text-decoration-none fw-light" href="{{ .Site.BaseURL }}#pricing">Pricing</a>
-        </li>
-
-        <li class="nav-item me-5 d-none d-lg-block">
-          <a class="text-decoration-none fw-light" href="{{ .Site.BaseURL }}#opensource">Open Source</a>
-        </li>
-
-        <li class="nav-item me-5 d-none d-lg-block">
-          <a class="text-decoration-none fw-light" href="https://github.com/sourcemeta/registry/discussions">Support</a>
-        </li>
+        {{ end }}
 
         <li class="nav-item">
-          <a class="btn btn-light border" href="https://github.com/sourcemeta/registry" aria-label="Sourcemeta JSON Schema Registry">
+          <a class="btn btn-light border" href="https://github.com/{{ .Params.github }}" aria-label="{{ .Title }}">
             <i class="align-middle bi bi-github"></i>
             <small class="align-middle ms-1">Star on GitHub</small>
           </a>

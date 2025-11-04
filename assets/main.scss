@@ -32,7 +32,7 @@ $primary: #000;
 // @import "../vendor/bootstrap/scss/breadcrumb";
 // @import "../vendor/bootstrap/scss/pagination";
 @import "../vendor/bootstrap/scss/badge";
-// @import "../vendor/bootstrap/scss/alert";
+@import "../vendor/bootstrap/scss/alert";
 // @import "../vendor/bootstrap/scss/progress";
 // @import "../vendor/bootstrap/scss/list-group";
 // @import "../vendor/bootstrap/scss/close";
@@ -84,4 +84,10 @@ $bootstrap-icons-font-dir: "./";
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
   }
+}
+
+.highlight pre {
+  background: transparent !important;
+  @extend .mb-0;
+  @extend .p-4;
 }

@@ -6,3 +6,15 @@ staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
 description = 'The JSON Schema Registry. Enterprise-grade, high-performance, and self-hosted'
 github = 'https://github.com/sourcemeta'
 email = 'hello@sourcemeta.com'
+
+[markup]
+  [markup.highlight]
+    style = 'swapoff'
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "vendor/bootstrap/js"
+target = "assets/vendor/bootstrap/js"
