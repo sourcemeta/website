@@ -35,6 +35,10 @@
       {{ .Content }}
     </main>
 
+    {{ partial "opensource.html" . }}
+
     {{ partial "footer.html" . }}
+    {{ $js := resources.Get "bootstrap.js" | js.Build (dict "minify" true) }}
+    <script src="{{ $js.Permalink }}"></script>
   </body>
 </html>
