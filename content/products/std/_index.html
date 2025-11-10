@@ -126,90 +126,316 @@ link = "#opensource"
     </div>
   </div>
 
-  <div class="row g-4 mt-4">
-    <div class="col-12 col-lg-6">
-      <div class="d-flex flex-column h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-            <i class="bi bi-x-lg"></i>
-          </div>
-          <h3 class="h4 mb-0 fw-bold">Before</h3>
+  <div class="mt-5">
+    <h3 class="h4 fw-bold text-center mb-2">What's Inside: Some Sample Schemas from the Library</h3>
+    <p class="text-center text-muted mb-4">
+      <small>Hint: Your OpenAPI specs in YAML format can directly reference these schemas in JSON format using <a href="https://www.learnjsonschema.com/2020-12/core/ref"><code>$ref</code></a></small>
+    </p>
+
+    <style>
+      .schema-editor-window {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      }
+      .schema-tab {
+        background: #1e1e1e;
+        color: #858585;
+        border: none;
+        border-right: 1px solid #3c3c3c;
+        border-bottom: 2px solid transparent;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+      }
+      .schema-tab:hover {
+        background: #2d2d2d;
+        color: #ffffff;
+      }
+      .schema-tab.active {
+        background: #2d2d2d;
+        color: #ffffff;
+        border-bottom-color: #007acc;
+      }
+      .line-numbers {
+        color: #858585;
+        user-select: none;
+        text-align: right;
+        padding-right: 1rem;
+        border-right: 1px solid #3c3c3c;
+        min-width: 3.5rem;
+        width: 3.5rem;
+      }
+      .tab-line-count {
+        font-size: 0.75rem;
+        color: #666;
+        font-weight: normal;
+      }
+      .browse-link {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        font-weight: 600;
+        border-right: none;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .browse-link:hover {
+        background: linear-gradient(135deg, #5568d3 0%, #6a4193 100%);
+        color: #ffffff;
+        transform: translateY(-1px);
+      }
+    </style>
+
+    <div class="schema-editor-window">
+      <!-- Window Controls -->
+      <div class="d-flex align-items-center px-3 py-2" style="background: #2d2d2d;">
+        <div class="d-flex gap-1 me-3">
+          <div class="rounded-circle" style="width: 12px; height: 12px; background: #ff5f56;"></div>
+          <div class="rounded-circle" style="width: 12px; height: 12px; background: #ffbd2e;"></div>
+          <div class="rounded-circle" style="width: 12px; height: 12px; background: #27c93f;"></div>
         </div>
-        {{< editor filename="openapi.yaml" type="fail" language="yaml" details="100+ lines of repetitive validation code|Broken regex patterns copied from ChatGPT|Incomplete or incorrect enumerations|No standards compliance guarantees" >}}openapi: 3.1.0
-paths:
-  /users:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-                  description: Email address
-                country:
-                  type: string
-                  pattern: '^[A-Z]{2}$'
-                  description: ISO 3166-1 alpha-2 country code
-                currency:
-                  type: string
-                  enum: [ AED, AFN, ALL, AMD, ANG, AOA, ARS, AUD, AWG, AZN, BAM, BBD, BDT,
-                          BGN, BHD, BIF, BMD, BND, BOB, BRL, BSD, BTN, BWP, BYN, BZD, CAD,
-                          CDF, CHF, CLP, CNY, COP, CRC, CUP, CVE, CZK, DJF, DKK, DOP, DZD,
-                          EGP, ERN, ETB, EUR, FJD, FKP, FOK, GBP, GEL, GGP, GHS, GIP, GMD,
-                          GNF, GTQ, GYD, HKD, HNL, HRK, HTG, HUF, IDR, ILS, IMP, INR, IQD,
-                          IRR, ISK, JEP, JMD, JOD, JPY, KES, KGS, KHR, KID, KMF, KRW, KWD,
-                          KYD, KZT, LAK, LBP, LKR, LRD, LSL ]
-                  description: ISO 4217 currency code
-                website:
-                  type: string
-                  pattern: '^https'
-                  description: Website URL
-                created_at:
-                  type: string
-                  pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z?$'
-                  description: ISO 8601 datetime
-                language:
-                  type: string
-                  pattern: '^[a-z]{2}(-[A-Z]{2})?$'
-                  description: Language code{{< /editor >}}
+        <span class="small text-white-50" id="schema-filename">jsonrpc/v2.0/request.json</span>
+      </div>
+
+      <!-- Tabs -->
+      <div class="d-flex" style="background: #1e1e1e;">
+        <button class="schema-tab active" data-schema="jsonrpc">
+          JSON-RPC Request <span class="tab-line-count" id="tab-jsonrpc"></span>
+        </button>
+        <button class="schema-tab" data-schema="currency">
+          ISO Currency <span class="tab-line-count" id="tab-currency"></span>
+        </button>
+        <button class="schema-tab" data-schema="xbrl">
+          XBRL Monetary <span class="tab-line-count" id="tab-xbrl"></span>
+        </button>
+        <button class="schema-tab" data-schema="uri">
+          URI Reference <span class="tab-line-count" id="tab-uri"></span>
+        </button>
+        <a href="https://schemas.sourcemeta.com/sourcemeta/std" class="schema-tab browse-link" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Browse All 300+ Schemas
+        </a>
+      </div>
+
+      <!-- Editor Content -->
+      <div style="max-height: 600px; background: #1e1e1e; overflow-y: auto;">
+        <div class="d-flex" style="font-size: 0.875rem; line-height: 1.6;">
+          <pre class="m-0 p-3 line-numbers" id="line-numbers">1</pre>
+          <pre class="m-0 p-3 flex-grow-1"><code id="schema-content" class="language-json text-white-50">Loading schema...</code></pre>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div style="background: #252526; border-top: 1px solid #3c3c3c;">
+        <div class="px-3 py-2" style="background: #2d2d30; border-bottom: 1px solid #3c3c3c;">
+          <small class="text-white-50 text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+            <i class="bi bi-info-circle-fill text-info me-2"></i>About This Schema
+          </small>
+        </div>
+        <div class="p-3" id="schema-description">
+          <div class="d-flex align-items-start mb-2">
+            <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+            <span class="small text-white-50">Implements the official JSON-RPC 2.0 specification for remote procedure calls</span>
+          </div>
+          <div class="d-flex align-items-start mb-2">
+            <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+            <span class="small text-white-50">Validates request structure, method names, and parameter formats</span>
+          </div>
+          <div class="d-flex align-items-start">
+            <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+            <span class="small text-white-50">Used by thousands of APIs for standardized RPC communication</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col-12 col-lg-6">
-      <div class="d-flex flex-column h-100">
-        <div class="d-flex align-items-center mb-3">
-          <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-            <i class="bi bi-check-lg"></i>
-          </div>
-          <h3 class="h4 mb-0 fw-bold">After</h3>
-        </div>
-        {{< editor filename="openapi.yaml" type="success" language="yaml" details="Clean and readable OpenAPI definitions|Standards-backed validation (IETF RFC's, ISO, etc)|Guaranteed schema correctness|Took 5 minutes to write" >}}openapi: 3.1.0
-paths:
-  /users:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  $ref: './std/ietf/email/address.json'
-                country:
-                  $ref: './std/iso/country/2020/alpha-2.json'
-                currency:
-                  $ref: './std/iso/currency/2015/alpha-code.json'
-                website:
-                  $ref: './std/ietf/uri/url.json'
-                created_at:
-                  $ref: './std/iso/datetime/2019/datetime/calendar-extended.json'
-                language:
-                  $ref: './std/ietf/language/tag.json'{{< /editor >}}
-      </div>
-    </div>
+    <script>
+      (function() {
+        const schemas = {
+          jsonrpc: {
+            url: 'https://schemas.sourcemeta.com/sourcemeta/std/v0/jsonrpc/v2.0/request.json?bundle=1',
+            filename: 'jsonrpc/v2.0/request.json',
+            description: `
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Implements the official JSON-RPC 2.0 specification for remote procedure calls</span>
+              </div>
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Validates request structure, method names, and parameter formats</span>
+              </div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Critical for JSON-RPC based APIs like MCP (Model Context Protocol)</span>
+              </div>
+            `,
+            data: null
+          },
+          currency: {
+            url: 'https://schemas.sourcemeta.com/sourcemeta/std/v0/iso/currency/2015/alpha-code.json?bundle=1',
+            filename: 'iso/currency/2015/alpha-code.json',
+            description: `
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Based on ISO 4217 standard for currency codes</span>
+              </div>
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Covers currencies, funds, and precious metals like gold and silver</span>
+              </div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Essential for financial APIs and e-commerce platforms</span>
+              </div>
+            `,
+            data: null
+          },
+          xbrl: {
+            url: 'https://schemas.sourcemeta.com/sourcemeta/std/v0/xbrl/instance/2003/monetary-item-type.json?bundle=1',
+            filename: 'xbrl/instance/2003/monetary-item-type.json',
+            description: `
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Implements the XBRL financial reporting standard</span>
+              </div>
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Commonly used for accountancy and financial disclosures</span>
+              </div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Widely adopted by regulatory bodies and financial authorities worldwide</span>
+              </div>
+            `,
+            data: null
+          },
+          uri: {
+            url: 'https://schemas.sourcemeta.com/sourcemeta/std/v0/ietf/uri/uri-reference.json?bundle=1',
+            filename: 'ietf/uri/uri-reference.json',
+            description: `
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Implements IETF RFC 3986 for URI validation</span>
+              </div>
+              <div class="d-flex align-items-start mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Validates URLs, URNs, and all URI formats correctly</span>
+              </div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-check-circle-fill text-success me-2" style="font-size: 0.85rem; margin-top: 2px;"></i>
+                <span class="small text-white-50">Fully supports both relative and absolute URIs</span>
+              </div>
+            `,
+            data: null
+          }
+        };
+
+        const contentElement = document.getElementById('schema-content');
+        const lineNumbersElement = document.getElementById('line-numbers');
+        const filenameElement = document.getElementById('schema-filename');
+        const descriptionElement = document.getElementById('schema-description');
+        const tabs = document.querySelectorAll('.schema-tab[data-schema]');
+
+        function syntaxHighlight(json) {
+          json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            let cls = 'text-warning';
+            if (/^"/.test(match)) {
+              if (/:$/.test(match)) {
+                cls = 'text-info';
+              } else {
+                cls = 'text-success';
+              }
+            } else if (/true|false/.test(match)) {
+              cls = 'text-primary';
+            } else if (/null/.test(match)) {
+              cls = 'text-secondary';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+          });
+        }
+
+        function updateLineNumbers(text) {
+          const lineCount = text.split('\n').length;
+          lineNumbersElement.textContent = Array.from({length: lineCount}, (_, i) => i + 1).join('\n');
+        }
+
+        function updateTabLineCount(schemaKey, lineCount) {
+          const tabElement = document.getElementById('tab-' + schemaKey);
+          if (tabElement) {
+            tabElement.textContent = '(' + lineCount + ' lines)';
+          }
+        }
+
+        function loadSchema(schemaKey) {
+          const schema = schemas[schemaKey];
+
+          if (schema.data) {
+            contentElement.innerHTML = schema.data.highlighted;
+            updateLineNumbers(schema.data.formatted);
+            filenameElement.textContent = schema.filename;
+            descriptionElement.innerHTML = schema.description;
+          } else {
+            contentElement.textContent = 'Loading schema...';
+            lineNumbersElement.textContent = '1';
+            fetch(schema.url)
+              .then(response => response.json())
+              .then(data => {
+                const formatted = JSON.stringify(data, null, 2);
+                const highlighted = syntaxHighlight(formatted);
+                const lineCount = formatted.split('\n').length;
+                schema.data = { formatted, highlighted, lineCount };
+                contentElement.innerHTML = highlighted;
+                updateLineNumbers(formatted);
+                updateTabLineCount(schemaKey, lineCount);
+                filenameElement.textContent = schema.filename;
+                descriptionElement.innerHTML = schema.description;
+              })
+              .catch(error => {
+                contentElement.textContent = 'Error loading schema: ' + error.message;
+                contentElement.classList.add('text-danger');
+                lineNumbersElement.textContent = '1';
+              });
+          }
+        }
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            const schemaKey = this.getAttribute('data-schema');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+
+            loadSchema(schemaKey);
+          });
+        });
+
+        // Preload all schemas
+        Object.keys(schemas).forEach(schemaKey => {
+          const schema = schemas[schemaKey];
+          fetch(schema.url)
+            .then(response => response.json())
+            .then(data => {
+              const formatted = JSON.stringify(data, null, 2);
+              const highlighted = syntaxHighlight(formatted);
+              const lineCount = formatted.split('\n').length;
+              schema.data = { formatted, highlighted, lineCount };
+              updateTabLineCount(schemaKey, lineCount);
+
+              // If this is the first schema, display it
+              if (schemaKey === 'jsonrpc') {
+                contentElement.innerHTML = highlighted;
+                updateLineNumbers(formatted);
+                filenameElement.textContent = schema.filename;
+                descriptionElement.innerHTML = schema.description;
+              }
+            })
+            .catch(error => {
+              console.error('Error preloading schema ' + schemaKey + ':', error);
+            });
+        });
+      })();
+    </script>
   </div>
 {{< /blueprint >}}
 
