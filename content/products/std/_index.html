@@ -22,12 +22,83 @@ link = "#opensource"
 
 {{< blueprint color="white" class="border-top pt-4 pt-md-5 pb-5" >}}
   <div class="text-center mb-5">
-    <h1 class="display-2 d-none d-lg-block fw-bold text-dark mb-4 mx-auto" style="max-width: 1000px;">
-      World-class OpenAPI specs <span class="position-relative d-inline-block"><span class="text-gradient-metal">without</span><svg class="position-absolute start-0" style="bottom: -2px; width: 100%; height: 10px; transform: rotate(-1deg); overflow: visible;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 10" preserveAspectRatio="none"><path d="M2,5 L198,5" stroke="#dc3545" stroke-width="6" stroke-linecap="round" fill="none"/></svg></span> <span class="text-gradient-metal">the schema grind</span>
+    <h1 class="display-3 d-none d-lg-block fw-bold text-dark mb-4 mx-auto" style="max-width: 1200px;">
+      Design OpenAPI Specs <br><span class="text-gradient-metal"><span id="typewriter" data-variants='["That Actually Validate Correctly","Your Docs Generator Will Love","That Actually Pass Industry Audits","That LLMs Will Actually Understand"]'>That Actually Validate Correctly</span><span id="cursor" class="fw-normal">_</span></span>
     </h1>
-    <h1 class="display-5 d-lg-none fw-bold text-dark mb-4">
-      World-class OpenAPI specs <span class="position-relative d-inline-block"><span class="text-gradient-metal">without</span><svg class="position-absolute start-0" style="bottom: -2px; width: 100%; height: 8px; transform: rotate(-1deg); overflow: visible;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 8" preserveAspectRatio="none"><path d="M2,4 L198,4" stroke="#dc3545" stroke-width="5" stroke-linecap="round" fill="none"/></svg></span> <span class="text-gradient-metal">the schema grind</span>
+    <h1 class="display-6 d-lg-none fw-bold text-dark mb-4">
+      Design OpenAPI Specs <br><span class="text-gradient-metal"><span id="typewriter-mobile">That Actually Validate Correctly</span><span id="cursor-mobile" class="fw-normal">_</span></span>
     </h1>
+
+    <script>
+      (function() {
+        const typewriterElement = document.getElementById('typewriter');
+        const typewriterMobileElement = document.getElementById('typewriter-mobile');
+        const cursorElement = document.getElementById('cursor');
+        const cursorMobileElement = document.getElementById('cursor-mobile');
+
+        const phrases = JSON.parse(typewriterElement.getAttribute('data-variants'));
+
+        let currentPhraseIndex = 0;
+        let currentCharIndex = phrases[0].length;
+        let isDeleting = false;
+        let isPaused = true;
+
+        function type() {
+          if (isPaused) {
+            return;
+          }
+
+          const currentPhrase = phrases[currentPhraseIndex];
+
+          if (isDeleting) {
+            currentCharIndex--;
+            const text = currentPhrase.substring(0, currentCharIndex);
+            typewriterElement.textContent = text;
+            typewriterMobileElement.textContent = text;
+
+            if (currentCharIndex === 0) {
+              isDeleting = false;
+              currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+              isPaused = true;
+              setTimeout(() => {
+                isPaused = false;
+                type();
+              }, 500);
+              return;
+            }
+          } else {
+            currentCharIndex++;
+            const text = currentPhrase.substring(0, currentCharIndex);
+            typewriterElement.textContent = text;
+            typewriterMobileElement.textContent = text;
+
+            if (currentCharIndex === currentPhrase.length) {
+              isPaused = true;
+              setTimeout(() => {
+                isPaused = false;
+                isDeleting = true;
+                type();
+              }, 2500);
+              return;
+            }
+          }
+
+          const typingSpeed = isDeleting ? 30 : 60;
+          setTimeout(type, typingSpeed);
+        }
+
+        setInterval(() => {
+          cursorElement.style.opacity = cursorElement.style.opacity === '0' ? '1' : '0';
+          cursorMobileElement.style.opacity = cursorMobileElement.style.opacity === '0' ? '1' : '0';
+        }, 500);
+
+        setTimeout(() => {
+          isPaused = false;
+          isDeleting = true;
+          type();
+        }, 2500);
+      })();
+    </script>
 
     <p class="lead text-muted mb-4 mx-auto" style="max-width: 800px;">A growing collection of over +300 battle-tested schemas (ISO, IETF, IEC, W3C, etc) to power your next API spec, so you never have to bother with the quirks of JSON Schema again</i></p>
 
