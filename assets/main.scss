@@ -4,6 +4,7 @@
 $blockquote-font-size: 16px;
 $border-radius: 0;
 $primary: #000;
+$warning: rgba(189, 142, 0, 1);
 
 // Configuration
 @import "../vendor/bootstrap/scss/variables";
@@ -19,7 +20,7 @@ $primary: #000;
 @import "../vendor/bootstrap/scss/images";
 @import "../vendor/bootstrap/scss/containers";
 @import "../vendor/bootstrap/scss/grid";
-// @import "../vendor/bootstrap/scss/tables";
+@import "../vendor/bootstrap/scss/tables";
 // @import "../vendor/bootstrap/scss/forms";
 @import "../vendor/bootstrap/scss/buttons";
 @import "../vendor/bootstrap/scss/transitions";
