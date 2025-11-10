@@ -252,30 +252,24 @@ paths:
 <section class="py-5 bg-light bg-gradient">
   <div class="container">
     <div class="text-center mb-5 mx-auto" style="max-width: 900px;">
-      <h2 class="display-6 fw-bold mb-3">Most API companies waste months reinventing the wheel, <span class="fw-bolder">and still doing it wrong</span></h2>
+      <h2 class="display-6 fw-bold mb-3">Most API companies waste years reinventing the wheel, <span class="fw-bolder">and still doing it wrong</span></h2>
       <p class="h4 text-muted fw-light">Your company is smarter than that</p>
     </div>
 
     <div class="row g-5 mb-3">
       <div class="col-12 col-xl-4">
-        {{< box header="Correctness" icon="bi-arrow-repeat" title="You are writing schemas that are likely broken" >}}
-          Thousands of developers waste time reinventing the same foundational schemas (like e-mail addresses), each with their own bugs and edge cases.
-          <hr class="my-4">
-          <p class="small fst-italic text-muted mb-0">And you are probably not even unit testing your schemas for correctness</p>
+        {{< box header="Correctness" icon="bi-arrow-repeat" title="Your schemas are broken and you don't know it" >}}
+          We worked with dozens of API companies, and less than 4% of developers unit tests their OpenAPI schemas. Unsurprisingly, they had subtle schema bugs that you can avoid.
         {{< /box >}}
       </div>
       <div class="col-12 col-xl-4">
-        {{< box header="Strictness" icon="bi-toggles" title="Your schemas are either too strict or uselessly loose" >}}
-          Designing robust and correct schemas takes a ton of time, deep expertise, and access to standards. But you need to ship your APIs yesterday.
-          <hr class="my-4">
-          <p class="small fst-italic text-muted mb-0">And you might even be introducing security vulnerabilities with overly loose schemas</p>
+        {{< box header="Compliance" icon="bi-toggles" title="All of those standards exist for a reason" >}}
+          Take country codes. Too strict? You reject less-known countries. Too loose? You introduce compliance issues, and accept SQL injection attacks and other vulnerabilities. We take the risk out.
         {{< /box >}}
       </div>
       <div class="col-12 col-xl-4">
-        {{< box header="Productivity" icon="bi-hourglass-split" title="Writing schemas from scratch takes 100x longer" >}}
-          You are largely paying your API designers and API Governance teams to write schemas that we have already spent hundreds of hours designing.
-          <hr class="my-4">
-          <p class="small fst-italic text-muted mb-0">Why waste your time designing complex schemas that have already been designed?</p>
+        {{< box header="Productivity" icon="bi-hourglass-split" title="Writing schemas yourself is expensive" >}}
+          Just the <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> date and time specification is 50+ pages long and costs around $500 USD. We implemented it in 115 variants covered by 6000 edge cases. And that's a single schema.
         {{< /box >}}
       </div>
     </div>
