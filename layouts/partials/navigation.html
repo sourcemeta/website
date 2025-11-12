@@ -7,16 +7,26 @@
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto align-items-center">
-        {{ range $index, $item := .Params.navigation }}
-        <li class="nav-item me-5{{ if ne $index 0 }} d-none d-lg-block{{ end }}">
-          <a class="text-decoration-none fw-light" href="{{ $item.link }}">{{ $item.title }}</a>
+        <li class="nav-item me-5">
+          <a class="text-decoration-none fw-light d-none d-lg-block" href="#pricing">Pricing</a>
         </li>
-        {{ end }}
+
+        <li class="nav-item me-5">
+          <a class="text-decoration-none fw-light d-none d-lg-block" href="#opensource">Open Source</a>
+        </li>
+
+        <li class="nav-item me-5">
+          <a class="text-decoration-none fw-light d-none d-lg-block" href="https://registry.sourcemeta.com">Registry</a>
+        </li>
+
+        <li class="nav-item me-5">
+          <a class="text-decoration-none fw-light d-none d-lg-block" href="{{ .Site.BaseURL }}courses/jsonschema-for-openapi">Training</a>
+        </li>
 
         <li class="nav-item">
-          <a class="btn btn-light border" href="https://github.com/{{ .Params.github }}" aria-label="{{ .Title }}">
-            <i class="align-middle bi bi-github"></i>
-            <small class="align-middle ms-1">Star on GitHub</small>
+          <a class="btn btn-light border d-flex align-items-center" href="mailto:hello@sourcemeta.com?subject=Enterprise%20JSON%20Compliance%20Consultation%20Request" aria-label="Contact">
+            <i class="bi bi-arrow-right-short me-1"></i>
+            <small class="">Schedule Consultation</small>
           </a>
         </li>
       </ul>

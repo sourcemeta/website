@@ -3,9 +3,7 @@ title = 'Sourcemeta'
 staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
 
 [Params]
-description = 'The JSON Schema Registry. Enterprise-grade, high-performance, and self-hosted'
-github = 'https://github.com/sourcemeta'
-email = 'hello@sourcemeta.com'
+description = 'A growing library of battle-tested JSON Schemas implementing standards from ISO, IETF, IEC, W3C, XBRL, and more. Ready to plug into your OpenAPI specs and API Gateways'
 
 [markup]
   [markup.highlight]
