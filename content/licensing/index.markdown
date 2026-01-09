@@ -26,39 +26,19 @@ Kernel](https://www.kernel.org/doc/html/latest/process/license-rules.html), the
 Player](https://www.videolan.org/legal.html), and the popular
 [MinIO](https://min.io) S3-compatible object store.
 
-Complying with the AGPL
------------------------
-
-The most prominent condition of our AGPL projects is that you cannot create
-derivatives that are not AGPL as well. However, this condition applies
-differently depending on whether you are consuming a library or an application
-in binary form (i.e. a CLI or a micro-service). In a nutshell:
-
-- **Integrating with a Sourcemeta AGPL library**: Any program that links to an
-  AGPL library (including as bindings to other programming languages)
-  constitutes a derivative work of such library and MUST be released under the
-  AGPL license, _even if no modifications were made_
-
-- **Integrating with a Sourcemeta AGPL application**: You are free to integrate
-  and distribute an AGPL application in binary form into a larger proprietary
-  or open-source application WITHOUT releasing your application under the AGPL.
-  You are also allowed to make your own modifications to the AGPL application,
-  given you release _those modifications_ (and only those modifications) under
-  the AGPL too
-
 Commercial Use
 --------------
 
-If you need to be able to bypass the aforementioned limitations, we can issue
-perpetual and/or subscription-based commercial licenses that removes all
-copy-left restrictions.  Think of it as an enforced donation that keeps our
-projects healthy while giving you additional perks like premium support.
+If you need to be able to bypass the AGPL limitations, we can issue perpetual
+and/or subscription-based commercial licenses that removes all copy-left
+restrictions.  Think of it as an enforced donation that keeps our projects
+healthy while giving you additional perks like premium support.
 
 **Qualifying for free licenses:** Additionally, we typically issue free
-commercial licenses to research goverment organisations, non-profit
-organisations, organisations dedicated to global sustainability, notable
-external contributors to our projects, and organisations that hire Sourcemeta
-on general consultancy or custom development deals.
+commercial licenses to non-profit organisations, organisations dedicated to
+global sustainability, notable external contributors to our projects, and
+organisations that hire Sourcemeta on general consultancy or custom development
+deals.
 
 To discuss more, don't hesitate in reaching out to hello@sourcemeta.com. If you
 are a potential contributor, also take a look at our [Contribution
