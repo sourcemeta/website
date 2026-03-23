@@ -3,7 +3,7 @@ title = 'Sourcemeta'
 staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
 
 [Params]
-description = 'A growing library of battle-tested JSON Schemas implementing standards from ISO, IETF, IEC, W3C, XBRL, and more. Ready to plug into your OpenAPI specs and API Gateways'
+description = 'The enterprise-grade, high-performance, self-hosted JSON Schema registry. Eliminate the complexity of operating schemas at scale.'
 
 [markup]
   [markup.highlight]
