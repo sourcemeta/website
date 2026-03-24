@@ -1,9 +1,9 @@
 languageCode = 'en-us'
-title = 'Sourcemeta'
+title = 'The JSON Schema Registry | Sourcemeta One'
 staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
 
 [Params]
-description = 'The enterprise-grade, high-performance, self-hosted JSON Schema registry. Eliminate the complexity of operating schemas at scale.'
+description = 'Sourcemeta One is the self-hosted JSON Schema registry for enterprise teams. Unify your schemas, monitor quality, and govern your entire API layer. Built by a member of the JSON Schema Technical Steering Committee.'
 
 [markup]
   [markup.highlight]

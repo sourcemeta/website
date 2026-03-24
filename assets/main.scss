@@ -87,6 +87,51 @@ $bootstrap-icons-font-dir: "./";
   }
 }
 
+.enterprise-checklist {
+  position: relative;
+  padding-left: 80px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, $success 5%, $success 95%, transparent);
+  }
+
+  .checklist-item {
+    position: relative;
+    padding: 1.0rem 0;
+
+    .checklist-icon {
+      position: absolute;
+      left: -80px;
+      top: 1.5rem;
+      width: 56px;
+      height: 56px;
+      background: $light;
+      border: 2px solid $success;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -52px;
+      top: calc(1.5rem + 27px);
+      width: 24px;
+      height: 2px;
+      background: $success;
+    }
+  }
+}
+
 .highlight pre {
   background: transparent !important;
   @extend .mb-0;

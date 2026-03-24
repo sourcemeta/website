@@ -20,3 +20,4 @@ hugo.linux
 
 .DS_Store
 /dist
+.claude

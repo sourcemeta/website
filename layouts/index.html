@@ -3,4 +3,51 @@
   {{ .Content }}
 </main>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Juan Cruz Viotti",
+  "url": "https://www.linkedin.com/in/jviotti/",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Sourcemeta"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/jviotti/",
+    "https://github.com/jviotti",
+    "https://www.jviotti.com"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Sourcemeta One",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Docker",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "name": "Free"
+    },
+    {
+      "@type": "Offer",
+      "name": "Enterprise",
+      "description": "Custom pricing, contact for details"
+    }
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Sourcemeta",
+    "url": "https://www.sourcemeta.com"
+  }
+}
+</script>
+
 {{ end }}
