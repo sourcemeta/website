@@ -78,22 +78,7 @@ aliases = ["/products/std"]
 
 <section class="py-2 py-md-5">
   <div class="container">
-    <div class="row g-5">
-      <div class="col-12 col-lg-6">
-        <div class="border-start border-3 border-primary ps-4">
-          <p class="text-uppercase text-muted fw-semibold small mb-2">Why JSON Schema</p>
-          <p class="fs-5 fw-light mb-0">Most schema registries were built for event streaming pipelines, treating JSON Schema as just another serialisation format alongside Protocol Buffers, Apache Avro, and others. <span class="fw-semibold">Sourcemeta One is built exclusively for JSON Schema governance, by a member of the JSON Schema Technical Steering Committee.</span> When the specification evolves, Sourcemeta One supports it correctly.</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-6">
-        <div class="border-start border-3 border-primary ps-4">
-          <p class="text-uppercase text-muted fw-semibold small mb-2">Why a Schema Registry</p>
-          <p class="fs-5 fw-light mb-0">Large organisations define the same concepts repeatedly across systems with no shared source of truth. Five teams end up with five definitions of the same idea and nobody is sure which one is correct. <span class="fw-semibold">Sourcemeta One gives those concepts a single governed repository that every team and system references.</span> One definition per concept. Owned, versioned, and measurable across your entire organisation.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row align-items-center g-5 mt-5 pb-5 border-top border-bottom">
+    <div class="row align-items-center g-5 pb-5 border-bottom">
       <div class="col-12 col-lg-5">
         <img class="w-100 border shadow rounded-4" src="discoverability.webp" alt="Map Your Organisation">
       </div>
@@ -145,36 +130,6 @@ aliases = ["/products/std"]
         <h3 class="fw-bold mb-3">Built for Performance</h3>
         <p class="fw-light text-muted">Written in C++ and powered by <a href="https://github.com/sourcemeta/blaze">Blaze</a>, our high-performance JSON Schema validator. Each instance starts in under 2 milliseconds, consumes under 3 MiB of RAM at idle, and requires zero external dependencies. No database, no message queue, no JVM. Just a single stateless Docker container that scales horizontally without limits.</p>
         <a href="https://dl.acm.org/doi/abs/10.14778/3773749.3773764">Read the research paper <i class="bi bi-arrow-right ms-1"></i></a>
-      </div>
-    </div>
-
-    <div class="row g-4 mt-5">
-      <div class="col-12 col-lg-4">
-        <div class="card border bg-white text-secondary h-100 p-4">
-          <div class="card-body">
-            <small class="d-block mb-1 text-secondary">Coming Soon</small>
-            <h5 class="fw-bold mb-3">Safely Evolve Your Schemas</h5>
-            <p class="fw-light mb-0">As your organisation's data contracts evolve, breaking changes are inevitable. Sourcemeta One will automatically detect breaking schema changes, flag them in your CI pipelines, and provide live semantic compatibility analysis between any two schema versions. And when migration is needed, define data transforms to automatically move data from one schema version to another.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="card border bg-white text-secondary h-100 p-4">
-          <div class="card-body">
-            <small class="d-block mb-1 text-secondary">Coming Soon</small>
-            <h5 class="fw-bold mb-3">Ingest Your API Specifications</h5>
-            <p class="fw-light mb-0">Most organisations already have dozens or hundreds of OpenAPI and AsyncAPI specifications across their teams. Sourcemeta One will let you point directly at those existing specifications and automatically extract, index, and govern the schemas embedded within them. Bootstrap your entire schema layer from what you already have, without custom scripts or manual restructuring.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="card border bg-white text-secondary h-100 p-4">
-          <div class="card-body">
-            <small class="d-block mb-1 text-secondary">Coming Soon</small>
-            <h5 class="fw-bold mb-3">Understand How Your Schemas Are Used</h5>
-            <p class="fw-light mb-0">Know which schemas are consumed most, which are never referenced, and how usage patterns evolve across your organisation over time. Make informed decisions about deprecation, consolidation, and investment in your schema layer.</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -430,32 +385,6 @@ aliases = ["/products/std"]
             <a href="mailto:hello@sourcemeta.com?subject=Enterprise%20Consultation%20Request" class="w-100 btn btn-lg btn-primary mt-auto">Contact Us</a>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="border-top py-4">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-12 col-md-3">
-        <a href="/courses/jsonschema-for-openapi/" class="d-block position-relative">
-          <img src="/courses/jsonschema-for-openapi/screenshot.webp" alt="JSON Schema for OpenAPI course" class="img-fluid rounded shadow-sm">
-          <div class="position-absolute top-50 start-50 translate-middle">
-            <div class="bg-primary bg-opacity-90 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-              <i class="bi bi-play-fill text-white" style="font-size: 1.5rem; margin-left: 3px;"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-md-9">
-        <p class="fw-light text-muted">
-          <i class="bi bi-arrow-right-short"></i>
-          Set your team up for success</p>
-        <h3 class="h4 fw-bold mb-2">On-demand training: <span class="fw-light">Master JSON Schema for OpenAPI</span></h3>
-        <p class="mb-2 text-muted small">Adopting a registry is only half the story. Teams that invest in deep JSON Schema expertise get more out of Sourcemeta One, design better schemas from day one, and reduce their dependency on external support over time.</p>
-        <p class="mb-3 text-muted small fst-italic">14 modules and over 9 hours of content covering JSON Schema 2020-12 from basics to dynamic references.</p>
-        <a href="/courses/jsonschema-for-openapi/" class="btn btn-sm btn-outline-primary">Buy the Course <i class="bi bi-arrow-right ms-1"></i></a>
       </div>
     </div>
   </div>
