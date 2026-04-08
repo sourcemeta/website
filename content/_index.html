@@ -158,6 +158,7 @@ aliases = ["/products/std"]
             <th class="text-center">Confluent</th>
             <th class="text-center">Apicurio</th>
             <th class="text-center">SchemaStore</th>
+            <th class="text-center">Snowplow Iglu</th>
             <th class="text-center text-white bg-dark border-start border-end border-3 border-primary">Sourcemeta One</th>
           </tr>
         </thead>
@@ -165,9 +166,10 @@ aliases = ["/products/std"]
 
           <tr>
             <td class="fw-semibold">Specialised in JSON Schema</td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">one of nine supported formats</small></td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">one of nine supported formats</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">one of three supported formats</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">one of fourteen supported formats</small></td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
+            <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">only JSON Schema, with a Snowplow custom meta-schema</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
@@ -176,14 +178,16 @@ aliases = ["/products/std"]
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">requires a running <a href="https://docs.confluent.io/platform/current/schema-registry/installation/deployment.html">Kafka cluster</a> as storage backend</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">requires <a href="https://github.com/Apicurio/apicurio-registry#storage">PostgreSQL or Kafka</a> for production</small></td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">static files on GitHub</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">requires <a href="https://github.com/snowplow-incubator/iglu-server/blob/master/docker/docker-compose.yml">PostgreSQL</a> in production</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
           <tr>
             <td class="fw-semibold">Deploys as a single Docker container</td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">requires <a href="https://github.com/Apicurio/apicurio-registry-operator">Kubernetes Operator</a> for recommended deployment</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">single container defaults to in-memory H2, persistent production requires external <a href="https://github.com/Apicurio/apicurio-registry#storage">PostgreSQL, MySQL, MSSQL, or Kafka</a></small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">server container plus external PostgreSQL, with a one-off setup step</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
@@ -192,27 +196,31 @@ aliases = ["/products/std"]
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">via <a href="https://docs.confluent.io/platform/current/schema-registry/index.html">Confluent Platform</a></small></td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
             <td class="text-center">—<br><small class="text-muted">not meant to be self-hosted for general use</small></td>
+            <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/limited-use-license-1.1">SLULA</a> forbids production use without a Snowplow commercial agreement</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
           <tr>
             <td class="fw-semibold">GitOps-native</td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/Apicurio/apicurio-registry/blob/main/app/src/main/java/io/apicurio/registry/storage/impl/gitops/README.md">experimental GitOps backend</a> requires Kubernetes and a sidecar</small></td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">schemas live in PostgreSQL, pushed over REST</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
           <tr>
-            <td class="fw-semibold">Rejects invalid schema submissions</td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.confluent.io/platform/current/schema-registry/schema-validation.html">validates Kafka message IDs</a>, not JSON Schema correctness</small></td>
+            <td class="fw-semibold">Validates schema submissions against the meta-schema</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">only structurally parsed via <a href="https://github.com/everit-org/json-schema">Everit</a> and <a href="https://github.com/erosb/jsons-kema">json-sKema</a>, no meta-schema validation</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://www.apicur.io/registry/docs/apicurio-registry/3.2.x/getting-started/assembly-rule-reference.html">validity rule</a> is optional and disabled by default</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">many schemas are invalid, <a href="https://github.com/SchemaStore/schemastore/blob/master/CONTRIBUTING.md">community-contributed without spec enforcement</a></small></td>
+            <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">validates against the <a href="https://github.com/snowplow/iglu-central/blob/master/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0">Snowplow meta-schema</a> (Draft 04)</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
           <tr>
             <td class="fw-semibold">Aggregated schema health scores</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
@@ -224,15 +232,26 @@ aliases = ["/products/std"]
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://www.apicur.io/blog/2024/04/19/registry-vscode-plugin">groups cannot be nested</a>, maximum two levels</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">flat file structure</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">fixed <code>vendor/name/format/version</code> hierarchy</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
           <tr>
             <td class="fw-semibold">Spec-compliant schemas with IDE compatibility</td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">schemas served as-is</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Jackson-normalised on store</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">schemas served as-is</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/microsoft/vscode-json-languageservice/issues/149">known VS Code compliance issues</a> mean schemas are compromised to work around them</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">mandatory non-standard <code>self</code> wrapper, Draft 04 only</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">automatically serves a transformed version for VS Code without affecting registry schemas</small></td>
+          </tr>
+
+          <tr>
+            <td class="fw-semibold">Supports modern JSON Schema dialects</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">only parses via <a href="https://github.com/everit-org/json-schema">Everit</a> and <a href="https://github.com/erosb/jsons-kema">json-sKema</a>, no meta-schema validation</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/Apicurio/apicurio-registry/blob/main/schema-util/json/src/main/java/io/apicurio/registry/json/rules/compatibility/jsonschema/JsonUtil.java">2019-09 not supported in code</a></small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/SchemaStore/schemastore/blob/master/CONTRIBUTING.md">community policy</a> discourages modern dialects for IDE compatibility</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/docs/fundamentals/schemas/">Draft 04 only</a>, officially documented</small></td>
+            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">all drafts through 2020-12, via <a href="https://github.com/sourcemeta/blaze">Blaze</a></small></td>
           </tr>
 
           <tr>
@@ -240,19 +259,22 @@ aliases = ["/products/std"]
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">JVM-based</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://www.apicur.io/registry/docs/apicurio-registry/3.1.x/getting-started/assembly-intro-to-the-registry.html">Quarkus Java runtime</a></small></td>
             <td class="text-center">—<br><small class="text-muted">file serving only, no JSON Schema processing performed</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Scala / JVM, plus PostgreSQL</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">C++, starts in under 2ms, under 3 MiB RAM at idle</small></td>
           </tr>
 
           <tr>
             <td class="fw-semibold">Premium support plan available</td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
+            <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">via <a href="https://www.redhat.com/en/technologies/jboss-middleware/application-foundations">Red Hat Application Foundations</a></small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
-            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
+            <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">via <a href="https://snowplow.io/">Snowplow BDP</a></small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
           <tr>
             <td class="fw-semibold">Support includes JSON Schema TSC expertise</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
@@ -264,6 +286,7 @@ aliases = ["/products/std"]
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Confluent by IBM</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Red Hat by IBM</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Microsoft</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Snowplow (UK / US)</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
@@ -272,6 +295,7 @@ aliases = ["/products/std"]
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
             <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i></td>
+            <td class="text-center bg-success bg-opacity-10"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/limited-use-license-1.1">SLULA</a>, not open source</small></td>
             <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i></td>
           </tr>
 
