@@ -236,7 +236,7 @@ aliases = ["/products/std"]
           </tr>
 
           <tr>
-            <td class="fw-semibold">Arbitrary directory structure</td>
+            <td class="fw-semibold">Flexible directory structure</td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">flat <code>Registry / Schema / Version</code> hierarchy, <a href="https://docs.aws.amazon.com/glue/latest/dg/schema-registry.html">maximum 100 registries per region</a></small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://www.apicur.io/blog/2024/04/19/registry-vscode-plugin">groups cannot be nested</a>, maximum two levels</small></td>
@@ -425,7 +425,16 @@ aliases = ["/products/std"]
           </div>
           <div class="card-body d-flex flex-column p-3 p-md-4">
             <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>All core features</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Draft 4, 6, 7, 2019-09 and 2020-12 support</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom meta-schema support <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="The registry rejects any schema that does not validate against its meta-schema, whether official or custom. No invalid schemas make it in"></i></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Flexible directory structure <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="Organize schemas by team, department, domain, or any hierarchy that fits your organisation. Most alternatives force a flat or rigid structure"></i></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://one.sourcemeta.com/api/">Full HTTP API access</a></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Web explorer UI</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Health scores per schema and directory <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="Get a 10,000 feet view over the overall quality of all schemas in your organisation or department, while still being able to zoom into specific schemas and see what the issues are"></i></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Dependency tree with forward and reverse lookups <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="See what dependencies a schema has and which other schemas depend on it. Useful for evaluating blast radius before changing a schema and for understanding your overall schema hierarchy"></i></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://json-schema.org/blog/posts/bundling-json-schema-compound-documents">Standards-compliant schema bundling</a> <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="Many tools claim to bundle or de-reference schemas, but produce non-standard output that breaks across validators. Our bundling follows the authoritative JSON Schema guidance"></i></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://one.sourcemeta.com/integrations/#visual-studio-code">Visual Studio Code integration</a> <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="Schemas are automatically processed to work around VS Code JSON Schema limitations, giving you better auto-completion out of the box"></i></li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Basic collection customization</li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://github.com/sourcemeta/one/blob/main/LICENSE">BSL 1.1 license</a></li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Community support via GitHub</li>
             </ul>
@@ -442,12 +451,15 @@ aliases = ["/products/std"]
           </div>
           <div class="card-body d-flex flex-column p-3 p-md-4">
             <ul class="list-unstyled mt-3 mb-4 flex-grow-1">
-              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://github.com/sourcemeta/std">Standard Library</a> (ISO, IETF, W3C, and more)</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Everything in Free</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Access to our <a href="https://github.com/sourcemeta/std">JSON Schema Standard Library</a> (ISO, IETF, W3C, and more) <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="Skip hundreds of hours implementing and testing foundational schemas for dates, currencies, country codes, addresses, and more. Focus on what is unique to your organisation"></i></li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom linter rules for your organisation</li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Supply chain security (Cosign, FIPS, SBOM)</li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Premium support by a TSC member</li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Assisted onboarding and integration</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://one.sourcemeta.com/guide/approach/">Hands-on help architecting your organisation's schema layer</a></li>
               <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Optional custom schema development</li>
+              <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Optional managed hosting</li>
             </ul>
             <p class="text-muted small mb-4">Available as an annual subscription, or as a perpetual license tied to a major version.</p>
             <a href="mailto:hello@sourcemeta.com?subject=Enterprise%20Consultation%20Request" class="w-100 btn btn-lg btn-primary mt-auto">Contact Us</a>

@@ -21,3 +21,4 @@ hugo.linux
 .DS_Store
 /dist
 .claude
+/node_modules
