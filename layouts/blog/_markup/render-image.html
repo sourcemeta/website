@@ -1,0 +1,7 @@
+{{- $alt := .PlainText -}}
+<figure>
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+  {{ with $alt }}
+  <figcaption>{{ . }}</figcaption>
+  {{ end }}
+</figure>

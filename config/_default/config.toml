@@ -8,6 +8,8 @@ description = 'Sourcemeta One is the self-hosted JSON Schema registry for enterp
 [markup]
   [markup.highlight]
     style = 'swapoff'
+  [markup.goldmark.parser]
+    wrapStandAloneImageWithinParagraph = false
 
 [[module.mounts]]
 source = "assets"

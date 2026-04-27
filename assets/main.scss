@@ -137,3 +137,118 @@ $bootstrap-icons-font-dir: "./";
   @extend .mb-0;
   @extend .p-4;
 }
+
+.post {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-body {
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  p, li {
+    font-weight: 300;
+    color: $gray-800;
+  }
+
+  strong, b {
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    transition: border-bottom-color 0.15s ease;
+
+    &:hover {
+      border-bottom-color: $body-color;
+    }
+  }
+
+  code {
+    background: $gray-100;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.875em;
+    color: $gray-900;
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.875rem;
+    color: inherit;
+  }
+
+  blockquote {
+    border-left: 3px solid $gray-300;
+    padding: 0.25rem 1.25rem;
+    margin: 1.75rem 0;
+    color: $gray-700;
+    font-style: italic;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.75rem auto;
+  }
+
+  figure {
+    margin: 1.75rem 0;
+
+    img {
+      margin: 0 auto 0.75rem;
+    }
+
+    figcaption {
+      font-size: 0.875rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: $gray-600;
+    }
+  }
+}
+
+.post-body .highlight {
+  margin: 1.75rem 0;
+  border: 1px solid $border-color;
+  background: $gray-100;
+
+  pre, pre *, code, code * {
+    background: transparent !important;
+    color: $gray-900 !important;
+  }
+}
+

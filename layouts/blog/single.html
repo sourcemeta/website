@@ -1,0 +1,46 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+{{ define "description" }}{{ .Summary }}{{ end }}
+
+{{ define "main" }}
+<main class="border-top">
+  <div class="container mt-5 mb-5">
+    <article class="post mb-5">
+      <header class="post-header mb-4">
+        <h1 class="fw-bold display-5 mb-3">{{ .Title }}</h1>
+        <div class="d-flex justify-content-between align-items-center gap-3">
+          {{ with index hugo.Data.authors (.Params.author | default "") }}
+          <div class="d-flex align-items-center gap-3">
+            {{ if .url }}
+            <a href="{{ .url }}" class="d-block flex-shrink-0">
+              <img src="{{ .image }}" alt="{{ .name }}" width="48" height="48" class="rounded-circle">
+            </a>
+            {{ else }}
+            <img src="{{ .image }}" alt="{{ .name }}" width="48" height="48" class="rounded-circle flex-shrink-0">
+            {{ end }}
+            <div>
+              <div class="fw-semibold">
+                {{ if .url }}
+                <a href="{{ .url }}" class="text-decoration-none text-body">{{ .name }}</a>
+                {{ else }}
+                {{ .name }}
+                {{ end }}
+              </div>
+              {{ with .description }}
+              <div class="text-muted small">{{ . }}</div>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+          <div class="text-muted small text-end flex-shrink-0">
+            <div><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></div>
+            <div>{{ .ReadingTime }} min read</div>
+          </div>
+        </div>
+      </header>
+      <div class="post-body">
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+</main>
+{{ end }}
