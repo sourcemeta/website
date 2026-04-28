@@ -8,7 +8,7 @@
       <header class="post-header mb-4">
         <h1 class="fw-bold display-5 mb-3">{{ .Title }}</h1>
         <div class="d-flex justify-content-between align-items-center gap-3">
-          {{ with index hugo.Data.authors (.Params.author | default "") }}
+          {{ with index .Site.Data.authors (.Params.author | default "") }}
           <div class="d-flex align-items-center gap-3">
             {{ if .url }}
             <a href="{{ .url }}" class="d-block flex-shrink-0">
