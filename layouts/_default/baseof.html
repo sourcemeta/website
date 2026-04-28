@@ -6,23 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    <link rel="canonical" href="{{ .Site.BaseURL }}">
-    <meta name="description" content="{{ block "description" . }}{{ .Site.Params.Description }}{{ end }}">
+    {{- $isBlogPost := and .IsPage (eq .Section "blog") -}}
+    {{- $title := cond .IsHome .Site.Title .Title -}}
+    {{- $rawDescription := "" -}}
+    {{- if .IsHome -}}
+      {{- $rawDescription = .Site.Params.Description -}}
+    {{- else -}}
+      {{- $rawDescription = .Description | default (.Summary | plainify) | default .Site.Params.Description -}}
+    {{- end -}}
+    {{- $description := trim (replaceRE "\\s+" " " $rawDescription) " " -}}
+    {{- if gt (len $description) 200 -}}
+      {{- $description = printf "%s…" (substr $description 0 199) -}}
+    {{- end -}}
+    {{- $url := .Permalink -}}
+    {{- $image := printf "%sscreenshot.webp" .Site.BaseURL -}}
+    {{- $imageWidth := 2592 -}}
+    {{- $imageHeight := 1191 -}}
+    {{- if $isBlogPost -}}
+      {{- $cover := "" -}}
+      {{- with .Resources.GetMatch "*.webp" -}}{{- $cover = . -}}{{- end -}}
+      {{- if not $cover -}}{{- with .Resources.GetMatch "*.png" -}}{{- $cover = . -}}{{- end -}}{{- end -}}
+      {{- with $cover -}}
+        {{- $image = .Permalink -}}
+        {{- $imageWidth = .Width -}}
+        {{- $imageHeight = .Height -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $ogType := cond $isBlogPost "article" "website" -}}
+    {{- $author := "" -}}
+    {{- if $isBlogPost -}}
+      {{- $author = index .Site.Data.authors (.Params.author | default "") -}}
+    {{- end -}}
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ .Site.BaseURL }}">
-    <meta property="og:title" content="{{ .Site.Title }}">
-    <meta property="og:description" content="{{ .Site.Params.Description }}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}screenshot.webp">
-    <meta property="og:image:type" content="image/webp">
-    <meta property="og:image:width" content="2592">
-    <meta property="og:image:height" content="1191">
+    <title>{{ $title }}</title>
+    <link rel="canonical" href="{{ $url }}">
+    <meta name="description" content="{{ $description }}">
+
+    <meta property="og:type" content="{{ $ogType }}">
+    <meta property="og:url" content="{{ $url }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{{ $image }}">
+    <meta property="og:image:width" content="{{ $imageWidth }}">
+    <meta property="og:image:height" content="{{ $imageHeight }}">
+    {{- if $isBlogPost }}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{- if and (not .Lastmod.IsZero) (ne .Date.Unix .Lastmod.Unix) }}
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{- end }}
+    {{- with $author }}
+    <meta property="article:author" content="{{ .name }}">
+    {{- end }}
+    <meta property="article:section" content="Blog">
+    {{- end }}
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ .Site.Title }}">
-    <meta name="twitter:description" content="{{ .Site.Params.Description }}">
-    <meta name="twitter:image" content="{{ .Site.BaseURL }}screenshot.webp">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $image }}">
 
     {{ $style := resources.Get "main.scss" | toCSS (dict "outputStyle" "compressed") }}
 		<link rel="stylesheet" href="{{ $style.Permalink }}">
@@ -31,6 +72,36 @@
     <link rel="icon" href="{{ .Site.BaseURL }}logo.svg" type="image/svg+xml">
     <link rel="manifest" href="{{ .Site.BaseURL }}manifest.webmanifest">
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} Blog" href="{{ .Site.BaseURL }}blog/index.xml">
+
+    {{- if $isBlogPost }}
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify | safeJS }},
+  "description": {{ $description | jsonify | safeJS }},
+  "image": {{ $image | jsonify | safeJS }},
+  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }},
+  "dateModified": {{ (.Lastmod | default .Date).Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }},
+  "mainEntityOfPage": {{ $url | jsonify | safeJS }},
+  {{- with $author }}
+  "author": {
+    "@type": "Person",
+    "name": {{ .name | jsonify | safeJS }}{{ with .url }},
+    "url": {{ . | jsonify | safeJS }}{{ end }}
+  },
+  {{- end }}
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sourcemeta",
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ (printf "%slogo.svg" .Site.BaseURL) | jsonify | safeJS }}
+    }
+  }
+}
+    </script>
+    {{- end }}
 
     <script defer src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="5BEC8971-2BEA-4D7C-A436-54EBDF4D6D93"></script>
   </head>
