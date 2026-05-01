@@ -23,8 +23,8 @@ report](https://www.postman.com/state-of-api/2024) recorded a 73%
 year-over-year jump in AI-related API traffic across its platform, with OpenAI
 alone accounting for 78.5% of it. The [2025
 follow-up](https://www.postman.com/state-of-api/2025/) puts it even more
-directly: *API strategy is fast becoming AI strategy. APIs are no longer just
-powering applications. They're powering agents.* [Kin
+directly: *APIs are no longer just powering applications. They're powering
+agents.* [Kin
 Lane](https://apievangelist.com/2025/01/27/how-do-i-prepare-my-apis-for-ai-agents/)
 treats AI agents as just another API consumer.
 
@@ -85,7 +85,7 @@ this writing, all of them support JSON Schema. Literally all of them:
 |---|---|---|---|
 | [OpenAI](https://platform.openai.com/docs/guides/structured-outputs) | August 2024 | Unspecified | `response_format` with `json_schema` |
 | [xAI / Grok](https://docs.x.ai/docs/guides/structured-outputs) | December 2024 | [2020-12](https://www.learnjsonschema.com/2020-12/) and [Draft 7](https://www.learnjsonschema.com/draft7) | `response_format` with `json_schema` |
-| [Mistral](https://docs.mistral.ai/capabilities/structured-output/) | January 2025 | Unspecified | `response_format` with `json_schema` |
+| [Mistral](https://docs.mistral.ai/capabilities/structured_output/) | January 2025 | Unspecified | `response_format` with `json_schema` |
 | [DeepSeek](https://api-docs.deepseek.com/guides/function_calling) | August 2025 (Beta) | Unspecified | Through strict-mode function calling |
 | [Google Gemini](https://blog.google/technology/developers/gemini-api-structured-outputs/) | November 2025 | Unspecified (OpenAPI 3.0 lineage) | `response_json_schema` parameter |
 | [Anthropic](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) | November 2025 | [2020-12](https://www.learnjsonschema.com/2020-12/) | `output_config.format` (and strict tool use) |
@@ -201,9 +201,11 @@ non-exhaustive list:
   500M+ documents processed. Their SDK literally takes a `json_schema`
   argument
 - **[LandingAI](https://landing.ai)**. Andrew Ng's document AI
-  company. Their Agentic Document Extraction docs call the extraction
-  schema *"a JSON Schema object that determines which key-value pairs
-  are extracted and how they are structured"*
+  company. Their Agentic Document Extraction takes [JSON Schema as
+  its extraction
+  format](https://docs.landing.ai/ade/ade-extract-schema-json), with
+  documented support for standard JSON Schema keywords and format
+  values
 - **[Vapi](https://vapi.ai)**. Voice AI agent platform. Custom tool
   definitions take a JSON Schema as the `parameters` field
 - **[AssemblyAI](https://www.assemblyai.com)**. Speech and transcript
@@ -277,7 +279,7 @@ substrate]({{< ref "/blog/json-schema-dominates-openapi" >}}) over a decade and
 a half. The AI industry did not pick JSON Schema. It found that JSON Schema had
 already been picked, by seventeen years of accumulated convention, and built on
 top. As [Charlie Holland](https://www.chiply.dev/post-schema-languages) frames
-it, JSON Schema has become *the interface definition language for AI*.
+it, JSON Schema has become *the interface definition language for AI tools*.
 
 The implication for anyone building APIs or AI-facing software is direct. Your
 schema layer is no longer documentation. It is the interface AI systems will
