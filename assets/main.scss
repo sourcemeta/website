@@ -240,6 +240,12 @@ $bootstrap-icons-font-dir: "./";
       color: $gray-600;
     }
   }
+
+  table {
+    @extend .table;
+    @extend .table-striped;
+    @extend .table-bordered;
+  }
 }
 
 .post-body .highlight {
