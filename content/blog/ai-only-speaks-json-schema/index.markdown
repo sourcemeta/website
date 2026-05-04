@@ -285,11 +285,3 @@ The implication for anyone building APIs or AI-facing software is direct. Your
 schema layer is no longer documentation. It is the interface AI systems will
 use to consume your software. Schema quality, governance, and infrastructure
 were not your top priority five years ago. They will be in five more.
-
-*PS: If you are looking at your own JSON Schemas wondering whether they are
-managed well enough for the AI era, [Sourcemeta](https://www.sourcemeta.com/)
-is building a comprehensive suite of tools for the schema layer. Led by a
-member of the JSON Schema Technical Steering Committee, we offer a [self-hosted
-JSON Schema registry](https://one.sourcemeta.com) and companion tools to kickstart an effective schema
-governance initiative in your organisation. If you have schemas at scale and no
-coherent place to manage them, it might be worth a look.*

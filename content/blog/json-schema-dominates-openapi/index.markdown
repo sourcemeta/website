@@ -189,32 +189,12 @@ the rest of the industry?
 
 ## The schema layer deserves its own infrastructure
 
-This is exactly the problem we are aiming to solve at
-[Sourcemeta](https://www.sourcemeta.com/). Led by a member of the JSON Schema
-Technical Steering Committee, we are confident we can do better.
-
 If JSON Schema is the substance of your API contract, and if the schema content
 of your APIs is going to keep growing as your APIs mature, then the schemas
-deserve their own infrastructure: correct implementations, [a cohesive
-API-first registry](https://one.sourcemeta.com/), a governance model, a
-discovery mechanism, and tooling that understands them as semantic objects
-rather than as opaque sections within a YAML file.
+deserve their own infrastructure: correct implementations, a cohesive
+API-first registry, a governance model, a discovery mechanism, and tooling
+that understands them as semantic objects rather than as opaque sections
+within a YAML file.
 
 The data says the schema layer is already most of your API. The question is
-whether you treat it that way. If you are ready to start, we encourage you to
-explore the Sourcemeta ecosystem:
-
-- [Learn JSON Schema](https://www.learnjsonschema.com/): a free reference for
-  every keyword in the standard, with plenty of examples
-- [JSON Schema for
-  OpenAPI](https://www.sourcemeta.com/courses/jsonschema-for-openapi/): a
-  course covering the JSON Schema half of OpenAPI in depth, from the basics to
-  the most advanced patterns
-- [JSON Schema CLI](https://github.com/sourcemeta/jsonschema): validate,
-  format, and lint your schemas from the command line or from CI
-- [JSON Schema Studio for VS
-  Code](https://marketplace.visualstudio.com/items?itemName=sourcemeta.sourcemeta-studio):
-  schema inspection, formatting, and linting inside your editor
-- [Sourcemeta One](https://one.sourcemeta.com/): a self-hosted registry and
-  governance platform for organisations ready to treat the schema layer as a
-  first-class citizen
+whether you treat it that way.
