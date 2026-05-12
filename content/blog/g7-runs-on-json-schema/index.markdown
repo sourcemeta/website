@@ -264,7 +264,7 @@ entire compliance posture as JSON validated against OSCAL.
 
 The US [National Cancer Institute](https://www.cancer.gov/) (part of
 [NIH](https://www.nih.gov/)) publishes the [GDC Data
-Dictionary](https://github.com/NCI-GDC/gdcdictionary), 91 JSON Schemas defining
+Dictionary](https://github.com/NCI-GDC/gdcdictionary), 89 JSON Schemas defining
 every entity in the [Genomic Data Commons](https://gdc.cancer.gov/), the
 federal cancer-genomics platform pooling harmonised tumour data from across NCI
 programmes. Every biospecimen, patient case, sequencing aliquot, mutation call,
@@ -357,11 +357,11 @@ served as a static directory listing of versioned schema collections including
 IWXXM, METCE, WaterML, WCMP, WMDR, and others. Source schemas are developed at
 [github.com/wmo-im](https://github.com/wmo-im)](schemas-wmo-int.webp)  The [European
 Organization for Nuclear Research (CERN)](https://home.cern/), an
-intergovernmental body with 23 member states, runs its [Open Data
+intergovernmental body with 25 member states, runs its [Open Data
 portal](https://github.com/cernopendata/cernopendata-portal) on
 JSON-Schema-validated records. The [European Bioinformatics Institute
 (EMBL-EBI)](https://www.ebi.ac.uk/), the intergovernmental molecular-biology
-lab spanning 28 European member states, maintains a [versioned JSON Schema
+lab spanning 29 European member states, maintains a [versioned JSON Schema
 store](https://github.com/EBIBioSamples/json-schema-store) for biological
 samples.
 
