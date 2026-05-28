@@ -283,5 +283,11 @@ it, JSON Schema has become *the interface definition language for AI tools*.
 
 The implication for anyone building APIs or AI-facing software is direct. Your
 schema layer is no longer documentation. It is the interface AI systems will
-use to consume your software. Schema quality, governance, and infrastructure
-were not your top priority five years ago. They will be in five more.
+use to consume your software. And the demand for that interface is already
+universal: [Kin
+Lane's](https://apievangelist.com/blog/2026/05/25/the-fortune-1000-is-saturated-with-ai/)
+recent audit of 989 Fortune 1000 companies turned up zero without an AI signal,
+across every industry he sampled, including the ones he expected to come up
+empty: mining, tobacco, and specialty retail. Schema quality, governance, and
+infrastructure were not your top priority five years ago. They will be in five
+more.
