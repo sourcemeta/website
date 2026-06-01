@@ -288,6 +288,11 @@ universal. After auditing 989 Fortune 1000 companies, [Kin
 Lane](https://apievangelist.com/blog/2026/05/25/the-fortune-1000-is-saturated-with-ai/)
 found zero without an AI signal: *The signal floor is non-zero across every
 industry in the Fortune 1000, including the ones I expected to come up empty.
-Mining. Tobacco. Specialty retail.* Schema quality, governance, and
-infrastructure were not your top priority five years ago. They will be in five
-more.
+Mining. Tobacco. Specialty retail.*
+
+And the next layer of that interface is already taking shape: governance.
+[Portkey's review of production MCP
+deployments](https://portkey.ai/blog/mcp-governance/) catalogues the security
+and trust gaps now surfacing across the ecosystem, and points at a familiar
+model for closing them: *A better reference is JSON-schema-based registries
+used in major cloud platforms, where structure and validation are enforced.*
