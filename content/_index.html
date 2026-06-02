@@ -298,7 +298,17 @@ aliases = ["/products/std"]
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/Apicurio/apicurio-registry/blob/main/schema-util/json/src/main/java/io/apicurio/registry/json/rules/compatibility/jsonschema/JsonUtil.java">2019-09 not supported in code</a></small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/SchemaStore/schemastore/blob/master/CONTRIBUTING.md">community policy</a> discourages modern dialects for IDE compatibility</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/docs/fundamentals/schemas/">Draft 04 only</a>, officially documented</small></td>
-            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">all drafts through 2020-12, via <a href="https://github.com/sourcemeta/blaze">Blaze</a></small></td>
+            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">all dialects through 2020-12, via <a href="https://github.com/sourcemeta/blaze">Blaze</a></small></td>
+          </tr>
+
+          <tr>
+            <td class="fw-semibold">Full Model Context Protocol (MCP) support</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">Schema Registry exposed via only <a href="https://docs.confluent.io/cloud/current/ai/ai-tools/managed-mcp-server.html">two read-only Cloud MCP tools</a>, schemas not exposed as MCP resources</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">no MCP integration for Glue Schema Registry, only generic AWS CLI passthrough</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://www.apicur.io/blog/2025/07/08/introducing-mcp-server-for-apicurio-registry-3">separate MCP sidecar container</a>, exposes tools and prompts only, schemas not exposed as MCP resources</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/SchemaStore/SchemaStoreMcpServer">three read-only MCP tools</a>, schemas not exposed as MCP resources</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/docs/llms-support/mcp-server/">Snowplow MCP</a> wraps the commercial Snowplow Console only, not the open-source Iglu Server</small></td>
+            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted"><a href="https://one.sourcemeta.com/api/#model-context-protocol">every schema exposed as an MCP resource, every API action as an MCP tool</a></small></td>
           </tr>
 
           <tr>
@@ -495,7 +505,7 @@ aliases = ["/products/std"]
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://one.sourcemeta.com/guide/approach/">Hands-on help architecting your organisation's schema layer</a></li>
               <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i><a href="https://one.sourcemeta.com/api/#model-context-protocol">MCP support</a></li>
               <li class="mb-3"><i class="bi bi-clock text-warning me-2"></i>Analytics (OpenTelemetry) <span class="badge bg-warning-subtle text-warning-emphasis ms-1">Coming soon</span></li>
-              <li class="mb-3"><i class="bi bi-clock text-warning me-2"></i>Authentication (OAuth) <span class="badge bg-warning-subtle text-warning-emphasis ms-1">Coming soon</span></li>
+              <li class="mb-3"><i class="bi bi-clock text-warning me-2"></i>Authentication (OAuth, SSO) <span class="badge bg-warning-subtle text-warning-emphasis ms-1">Coming soon</span></li>
               <li class="mb-3"><i class="bi bi-clock text-warning me-2"></i>Automatic upgrades to newer JSON Schema dialects <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" data-bs-title="Write your schemas in whatever dialect you want and the registry will additionally serve them re-written in all newer dialects with semantics preserved, so you never have to worry about future versions of JSON Schema"></i> <span class="badge bg-warning-subtle text-warning-emphasis ms-1">Coming soon</span></li>
               <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Optional custom schema development</li>
               <li class="mb-3"><i class="bi bi-arrow-right-circle text-primary me-2"></i>Optional managed hosting</li>
