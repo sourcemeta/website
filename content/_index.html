@@ -377,13 +377,41 @@ aliases = ["/products/std"]
   </div>
 </section>
 
-<section class="py-5 border-top">
+<section class="py-5 border-top bg-light-subtle bg-gradient">
   <div class="container py-5">
-    <div class="row g-5">
-      <div class="col-12 col-lg-7">
-        <h3 class="display-6 fw-bold mb-1">Enterprise Ready</h3>
-        <p class="lead mb-4">Built for teams where security, compliance, and operational independence are non-negotiable.</p>
+    <h3 class="display-6 fw-bold mb-1">Enterprise Ready</h3>
+    <p class="lead mb-4">Comes with world-class support, directly from a member of the JSON Schema Technical Steering Committee.</p>
 
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col">
+        <div class="card h-100 border bg-white hover-lift p-4">
+          <div class="support-icon mb-3"><i class="bi bi-chat-dots fs-3"></i></div>
+          <h5 class="fw-bold mb-2">A Direct Line to Us</h5>
+          <p class="fw-light text-muted small mb-0">We set up a Slack Connect channel, or whichever tool you prefer, so your engineers reach us directly and get fast answers day to day, as if we sat on your own team. No ticket queue, no first-line agent reading from a script.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border bg-white hover-lift p-4">
+          <div class="support-icon mb-3"><i class="bi bi-mortarboard fs-3"></i></div>
+          <h5 class="fw-bold mb-2">We Level Up Your Team</h5>
+          <p class="fw-light text-muted small mb-0">We shape your schema strategy, teach JSON Schema best practices, and review your pull requests whenever you want a second set of expert eyes.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 border bg-white hover-lift p-4">
+          <div class="support-icon mb-3"><i class="bi bi-diagram-3 fs-3"></i></div>
+          <h5 class="fw-bold mb-2">We Run It End to End</h5>
+          <p class="fw-light text-muted small mb-0">Want it off your plate entirely? We take full ownership of schema authoring projects and can run your whole schema governance programme for you, end to end.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5">
+
+    <p class="lead mb-4">A perfect fit for teams where security, compliance, and operational independence are non-negotiable.</p>
+
+    <div class="row g-5">
+      <div class="col-12 col-lg-6">
         <div class="enterprise-checklist">
           <div class="checklist-item">
             <div class="checklist-icon"><i class="bi bi-github fs-4 text-success"></i></div>
@@ -396,7 +424,10 @@ aliases = ["/products/std"]
             <h5 class="fw-bold mb-2">Built for Regulated Supply Chains</h5>
             <p class="fw-light text-muted mb-0">Every release ships with signed container images via Cosign and Sigstore, SLSA Build Level 3 provenance, and a signed SPDX Software Bill of Materials. Cryptographic operations are built against the OpenSSL FIPS provider for industries where compliance is non-negotiable.</p>
           </div>
-
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="enterprise-checklist">
           <div class="checklist-item">
             <div class="checklist-icon"><i class="bi bi-unlock fs-4 text-success"></i></div>
             <h5 class="fw-bold mb-2">Standards-Based, Never Locked In</h5>
@@ -408,25 +439,7 @@ aliases = ["/products/std"]
             <h5 class="fw-bold mb-2">Handle Any Load, At Any Scale</h5>
             <p class="fw-light text-muted mb-0">Built in C++, proven by research to be at least 10x faster than alternatives. Each instance starts in under 2 milliseconds and consumes under 3 MiB of RAM at idle. Stateless by design and fully independent, instances scale horizontally without limits or coordination overhead.</p>
           </div>
-
-          <div class="checklist-item">
-            <div class="checklist-icon"><i class="bi bi-pencil-square fs-4 text-success"></i></div>
-            <h5 class="fw-bold mb-2">Enforce Your Own Guidelines</h5>
-            <p class="fw-light text-muted mb-0">Every organisation has its own schema requirements. Define custom linting rules, each annotated with your own explanations so teams understand not just what is wrong but why. They integrate directly into the health scoring system, making compliance with your internal guidelines visible across every schema your teams produce.</p>
-          </div>
-
-          <div class="checklist-item">
-            <div class="checklist-icon"><i class="bi bi-layers fs-4 text-success"></i></div>
-            <h5 class="fw-bold mb-2">Start With a Complete Foundation</h5>
-            <p class="fw-light text-muted mb-0">Most governance programmes begin the same way: extract all your schemas, discover a mess, and spend months cleaning it up. The majority of what you find will map to standards your industry already defined. The Sourcemeta One Enterprise edition ships with hundreds of expertly implemented ISO, IETF, W3C, and industry schemas, heavily unit tested and maintained by us, so you start with a solid foundation on day one.</p>
-          </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-5 d-flex flex-column gap-4 justify-content-center">
-        {{< testimonial github="ikenna" name="Ikenna Nwaiwu" role="API Governance Consultant at Ikenna Consulting" >}}Before the standard library, defining foundational schemas in an enterprise was a time-consuming, error-prone task that could result in inconsistencies. This library is a game-changer, delivering huge time savings while ensuring improved API consistency and strong governance of API definition files{{< /testimonial >}}
-        {{< testimonial github="mwadams" name="Matthew Adams" role="JSON Schema TSC" >}}This is a terrific project and should be a standard subscription for any enterprise working with JSON Schema{{< /testimonial >}}
-        {{< testimonial github="paraskakis" name="Emmanuel Paraskakis" role="Founder at Level 250" >}}This aligns exactly with my thinking! OpenAPI should not include schemas but should reference them externally from a source of truth like this one{{< /testimonial >}}
-        {{< testimonial github="ronitelman" name="Ron Itelman" role="O'Reilly Author" >}}This is definitely going to become an incredibly important tool for defining concepts using best in class standards{{< /testimonial >}}
       </div>
     </div>
   </div>
@@ -528,6 +541,7 @@ aliases = ["/products/std"]
         </div>
       </div>
     </div>
+
     <p class="text-muted small text-center mt-5 mb-0">
       <i class="bi bi-people me-1"></i> Know an organisation that could be a good fit? Our <a href="{{< ref "/legal/referral-program" >}}">Referral Programme</a> pays you a share of every payment from customers you successfully introduce, during their first 12 months with us.
     </p>

@@ -132,6 +132,18 @@ $bootstrap-icons-font-dir: "./";
   }
 }
 
+.support-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($warning, 0.1);
+  border: 2px solid $warning;
+  color: $warning;
+}
+
 .highlight pre {
   background: transparent !important;
   @extend .mb-0;
