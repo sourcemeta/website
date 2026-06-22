@@ -300,7 +300,13 @@ against a JSON Schema before publishing. The Home Office maintains several JSON
 Schema repositories across its operational services, including
 [booktravel_schema](https://github.com/UKHomeOffice/booktravel_schema), which
 defines the contract between the Home Office's Book Travel service and
-third-party escort and travel providers handling immigration removals.
+third-party escort and travel providers handling immigration removals. The
+Driver and Vehicle Licensing Agency (DVLA) has publicly described how it has
+*["invested in tooling and processes that make heavy use of JSON
+Schema"](https://dvla.github.io/posts/2022-10-working-with-json-schema/)*,
+using it to describe its data models, generate human-friendly documentation,
+validate data, and code-generate Java and TypeScript representations of those
+models.
 
 ## JSON Schema across jurisdictions
 
@@ -376,7 +382,7 @@ Schema infrastructure on the public record:
 | Country | Evidence |
 |---|---|
 | 🇺🇸 United States | [api.data.gov](https://api.data.gov/), [Code.gov](https://code.gov) metadata schema (itself a JSON Schema), [NASA General Coordinates Network schemas](https://github.com/nasa-gcn/gcn-schema), [NASA CMR/UMM](https://github.com/nasa/Common-Metadata-Repository), [NIST OSCAL](https://github.com/usnistgov/OSCAL/releases/latest), [NCI GDC Data Dictionary](https://github.com/NCI-GDC/gdcdictionary), [GovInfo MCP](https://www.govinfo.gov/features/mcp-public-preview), [US Census Bureau MCP](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp), NIEM 6.0 [OASIS standard](https://www.oasis-open.org/2025/12/09/oasis-approves-two-niemopen-standards-to-advance-ai-ready-data-interoperability/) with [JSON Schema bindings](https://github.com/niemopen/niem-naming-design-rules/blob/main/doc/cmf-to-json-schema-guide.md) |
-| 🇬🇧 United Kingdom | [UK API Catalogue](https://github.com/co-cddo/api-catalogue), [GOV.UK Notify](https://www.notifications.service.gov.uk/), [Open Standards Board OpenAPI 3 recommendation](https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3), [GOV.UK content schemas](https://github.com/alphagov/publishing-api/tree/main/content_schemas), [UKAEA fusion-research schemas](https://github.com/ukaea/ukaea-metadata), [UK Home Office booktravel_schema](https://github.com/UKHomeOffice/booktravel_schema), UK GDS i.AI [Parliament MCP](https://github.com/i-dot-ai/parliament-mcp) and [Lex API](https://lex.lab.i.ai.gov.uk/api/openapi.json) |
+| 🇬🇧 United Kingdom | [UK API Catalogue](https://github.com/co-cddo/api-catalogue), [GOV.UK Notify](https://www.notifications.service.gov.uk/), [Open Standards Board OpenAPI 3 recommendation](https://www.gov.uk/government/publications/recommended-open-standards-for-government/describing-restful-apis-with-openapi-3), [GOV.UK content schemas](https://github.com/alphagov/publishing-api/tree/main/content_schemas), [UKAEA fusion-research schemas](https://github.com/ukaea/ukaea-metadata), [UK Home Office booktravel_schema](https://github.com/UKHomeOffice/booktravel_schema), [DVLA tooling and processes that "make heavy use of JSON Schema"](https://dvla.github.io/posts/2022-10-working-with-json-schema/), UK GDS i.AI [Parliament MCP](https://github.com/i-dot-ai/parliament-mcp) and [Lex API](https://lex.lab.i.ai.gov.uk/api/openapi.json) |
 | 🇫🇷 France | [schema.data.gouv.fr](https://schema.data.gouv.fr/) national multi-format schema registry, [data.gouv.fr MCP](https://www.data.gouv.fr/posts/experimentation-autour-dun-serveur-mcp-pour-datagouv), #1 on the OECD OURdata 2025 index |
 | 🇩🇪 Germany | [bundesAPI](https://github.com/bundesapi) and [bund.dev](https://bund.dev/) community-curated catalogue documenting 60+ German federal APIs in OpenAPI. On the official side, [gematik](https://github.com/gematik) (the national health-IT body majority-owned by the Federal Ministry of Health) publishes OpenAPI specs for the [e-prescription](https://github.com/gematik/api-erp), [electronic patient record](https://github.com/gematik/api-ePA), and other national health interfaces |
 | 🇮🇹 Italy | [api.gov.it](https://api.gov.it/en/catalogue) PDND catalogue (14,672 e-services across 9,398 entities), [schema.gov.it](https://schema.gov.it/) national semantic catalogue (JSON Schemas packaged as OpenAPI components), [AgID OAS Checker](https://italia.github.io/api-oas-checker/) zero-error validation gate |
