@@ -171,6 +171,14 @@ As Charlie Holland puts it, [*JSON Schema has become "the interface definition
 language for AI tools"*](https://www.chiply.dev/post-schema-languages).
 **A government MCP server is, on closer reading, a JSON Schema deployment.**
 
+We are not the only ones making this observation. When Kin Lane inventoried
+the API specifications stewarded by the [Linux
+Foundation](https://www.linuxfoundation.org), he concluded that [JSON Schema
+is the connective tissue across the whole
+catalogue](https://apievangelist.com/2026/06/30/the-linux-foundation-is-the-home-of-our-api-specifications/):
+OpenAPI, AsyncAPI, CloudEvents, and others all build on it, and *"JSON Schema
+is the substrate the other specifications are built on top of"*.
+
 Taken together, public-sector use of OpenAPI and MCP rank among the largest
 JSON Schema deployments in the world.
 

@@ -73,6 +73,18 @@ paths:
                     minLength: 1
 ```
 
+This layering is not an OpenAPI quirk. When [Kin
+Lane](https://apievangelist.com) inventoried every API specification stewarded
+by the Linux Foundation, he found that [JSON Schema is the connective tissue
+of the entire
+catalogue](https://apievangelist.com/2026/06/30/the-linux-foundation-is-the-home-of-our-api-specifications/):
+
+> The deeper I looked, the more one thread kept showing up underneath
+> everything else: JSON Schema. OpenAPI uses it. Arazzo and Overlay use it.
+> AsyncAPI uses it. CloudEvents ships a JSON Schema. OSV and SPDX lean on it.
+> The OpenAPI metaschema is JSON Schema. [...] JSON Schema is the substrate
+> the other specifications are built on top of.
+
 ## Let's measure how big the engine is
 
 We analysed 4,127 real-world API specifications from the
@@ -195,6 +207,12 @@ deserve their own infrastructure: correct implementations, a cohesive
 API-first registry, a governance model, a discovery mechanism, and tooling
 that understands them as semantic objects rather than as opaque sections
 within a YAML file.
+
+Kin Lane [arrives at the same
+conclusion](https://apievangelist.com/2026/06/30/the-linux-foundation-is-the-home-of-our-api-specifications/)
+from the standards side: *"there is no reason a CloudEvent's schema, an
+AsyncAPI message, and an OpenAPI body could not lean on the same JSON Schema
+tooling and the same registry patterns"*.
 
 The data says the schema layer is already most of your API. The question is
 whether you treat it that way.
