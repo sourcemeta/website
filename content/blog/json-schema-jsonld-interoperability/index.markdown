@@ -322,7 +322,7 @@ that hallucinates](https://arxiv.org/html/2411.14258v1) and the fix is to
 ground it in a graph, the pattern behind
 [GraphRAG](https://arxiv.org/abs/2404.16130).
 
-![France's national library publishes its entire catalogue as linked data. Every record, like this one for Victor Hugo, the 19th-century French novelist behind Les Misérables, is a node in a knowledge graph, downloadable as RDF and JSON-LD (highlighted). Source: https://data.bnf.fr/en/11907966/victor_hugo/, Bibliothèque nationale de France.](victor-hugo.webp)
+![France's national library publishes its entire catalogue as linked data. Every record, like this one for Victor Hugo, the 19th-century French novelist behind Les Misérables, is a node in a knowledge graph, downloadable as RDF and JSON-LD (highlighted). Source: [Bibliothèque nationale de France](https://data.bnf.fr/en/11907966/victor_hugo/).](victor-hugo.webp)
 
 None of them do this for tidiness. *They do it because the graph is where data
 turns into value*. We know that data is a valuable asset, but raw data is worth
@@ -365,7 +365,7 @@ Schema](https://json-schema.org) cannot say that `family_name` means
 [JSON-LD](https://json-ld.org) context cannot say that `family_name` is a
 required string conditional on the presence of `first_name`.
 
-![A real Thing Description from the W3C Web of Things standard (Example 2). Most of it is JSON Schema (`properties`, `type`), sprinkled with JSON-LD to add meaning (`@context`, and `@type: saref:LightSwitch` pointing at a semantic vocabulary). The two languages sit in one document but do not integrate: the schema keywords cannot see the semantic ones, or the other way round. Source: https://www.w3.org/TR/wot-thing-description11/ (W3C WoT Thing Description 1.1, Example 2).](wot-thing-description.webp)
+![A real Thing Description from the W3C Web of Things standard (Example 2). Most of it is JSON Schema (`properties`, `type`), sprinkled with JSON-LD to add meaning (`@context`, and `@type: saref:LightSwitch` pointing at a semantic vocabulary). The two languages sit in one document but do not integrate: the schema keywords cannot see the semantic ones, or the other way round. Source: [W3C WoT Thing Description 1.1, Example 2](https://www.w3.org/TR/wot-thing-description11/).](wot-thing-description.webp)
 
 Now picture closing that gap. For example, the [EU wallet
 schema](https://github.com/EWC-consortium/eudi-wallet-rulebooks-and-schemas)
@@ -492,7 +492,7 @@ drift from the other two. Even
 [Autodesk](https://www.research.autodesk.com/app/uploads/2023/03/TranslatingJSONSchemalogicsintoOWLaxioms.pdf_recQnFKTPMiScRn8N.pdf)
 took runs at this JSON Schema and JSON-LD interoperability problem.
 
-![How OGC's tooling builds the JSON-LD context: a static second pass walks the compiled schema tree through every `$ref`, `allOf`, `anyOf`, and `oneOf`, collecting mappings into one flat `@context`. In their own words, "the assembly is really schema traversal". It is re-creating evaluation at build time, and that is why it cannot follow a schema whose meaning depends on the data: with no instance to run against, a static walk has no way to know which `if`/`then`/`else` branch or `$dynamicRef` target applies. Source: https://ogcincubator.github.io/bblocks-docs/create/semantic-uplift (OGC Building Blocks, semantic uplift documentation).](ogc-context-assembly.webp)
+![How OGC's tooling builds the JSON-LD context: a static second pass walks the compiled schema tree through every `$ref`, `allOf`, `anyOf`, and `oneOf`, collecting mappings into one flat `@context`. In their own words, "the assembly is really schema traversal". It is re-creating evaluation at build time, and that is why it cannot follow a schema whose meaning depends on the data: with no instance to run against, a static walk has no way to know which `if`/`then`/`else` branch or `$dynamicRef` target applies. Source: [OGC Building Blocks, semantic uplift documentation](https://ogcincubator.github.io/bblocks-docs/create/semantic-uplift).](ogc-context-assembly.webp)
 
 ## Five ways to fall short
 
@@ -509,7 +509,7 @@ platform of services](https://www.sourcemeta.com/blog/g7-runs-on-json-schema/)
 described in OpenAPI and JSON Schema. It felt the collision before anyone else
 and set out to close it.
 
-![Italy's Core Person Vocabulary, one of the government RDF ontologies in its national semantic catalogue. It defines the concept of a Person, the same concept our example mapped, and is authored by the national statistics office (ISTAT) and digital agency (AgID). Running a whole network of these alongside a national JSON Schema API platform is why Italy hit the collision first. Source: https://schema.gov.it/lode/extract?url=https://w3id.org/italia/onto/CPV (schema.gov.it, Catalogo Nazionale della Semantica dei Dati).](italy-cpv-person-ontology.webp)
+![Italy's Core Person Vocabulary, one of the government RDF ontologies in its national semantic catalogue. It defines the concept of a Person, the same concept our example mapped, and is authored by the national statistics office (ISTAT) and digital agency (AgID). Running a whole network of these alongside a national JSON Schema API platform is why Italy hit the collision first. Source: [schema.gov.it, Catalogo Nazionale della Semantica dei Dati](https://schema.gov.it/lode/extract?url=https://w3id.org/italia/onto/CPV).](italy-cpv-person-ontology.webp)
 
 Even so, [Roberto Polli's REST API Linked Data Keywords IETF proposal for this
 problem](https://datatracker.ietf.org/doc/draft-polli-restapi-ld-keywords/)
@@ -566,7 +566,7 @@ rdf`](https://github.com/sourcemeta/jsonschema/blob/main/docs/rdf.markdown) at
 a schema and an instance, and get [JSON-LD](https://json-ld.org) back, exactly
 as we did above.
 
-![The ten `x-jsonld-*` keywords of the vocabulary, from the JSON Schema CLI documentation. Each annotates a subschema to map it into JSON-LD: `x-jsonld-id` for the predicate IRI a property maps to, `x-jsonld-type` for the node `@type`, `x-jsonld-self` to mint a node `@id` from instance values, and so on. Because they are plain `x-` extension keywords, annotated schemas stay valid for every other JSON Schema tool. Source: https://github.com/sourcemeta/jsonschema/blob/main/docs/rdf.markdown](annotation-vocabulary.webp)
+![The ten `x-jsonld-*` keywords of the vocabulary, from the JSON Schema CLI documentation. Each annotates a subschema to map it into JSON-LD: `x-jsonld-id` for the predicate IRI a property maps to, `x-jsonld-type` for the node `@type`, `x-jsonld-self` to mint a node `@id` from instance values, and so on. Because they are plain `x-` extension keywords, annotated schemas stay valid for every other JSON Schema tool. Source: [JSON Schema CLI RDF documentation](https://github.com/sourcemeta/jsonschema/blob/main/docs/rdf.markdown)](annotation-vocabulary.webp)
 
 But the command line is the small version of the idea. The same engine ships in
 [Sourcemeta One](https://one.sourcemeta.com/api/#rdf), our flagship schema
