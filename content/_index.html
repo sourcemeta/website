@@ -333,6 +333,16 @@ aliases = ["/products/std"]
           </tr>
 
           <tr>
+            <td class="fw-semibold">JSON-LD / RDF interoperability</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">schema formats limited to <a href="https://docs.confluent.io/platform/current/schema-registry/fundamentals/serdes-develop/index.html">Avro, Protobuf, and JSON Schema</a>, no linked data awareness</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.aws.amazon.com/glue/latest/webapi/API_CreateSchema.html">API limited to Avro, JSON Schema, and Protobuf</a>, no linked data awareness</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">no JSON-LD awareness across its <a href="https://github.com/Apicurio/apicurio-registry/blob/main/common/src/main/java/io/apicurio/registry/types/ArtifactType.java">nineteen artifact types</a>, and even JSON-LD indexing for agent discovery was <a href="https://github.com/Apicurio/apicurio-registry/issues/7136">rejected</a></small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">hosts a syntax schema for <code>.jsonld</code> files, but maintainers state the project is <a href="https://github.com/SchemaStore/schemastore/issues/552">"not related to schema.org or with JSON-LD at all"</a></small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/docs/api-reference/iglu/common-architecture/self-describing-jsons/">non-dereferenceable <code>iglu:</code> URIs</a> reference schemas for validation only, no semantic mapping or RDF output</small></td>
+            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted"><a href="https://one.sourcemeta.com/api/#rdf">promotes valid instances to JSON-LD / RDF</a> in a single pass, with <a href="{{< ref "/blog/json-schema-jsonld-interoperability" >}}">full support for conditional and dynamic keywords</a></small></td>
+          </tr>
+
+          <tr>
             <td class="fw-semibold">High performance, low resource usage</td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">JVM-based</small></td>
             <td class="text-center">—<br><small class="text-muted">fully managed and opaque to the user</small></td>
