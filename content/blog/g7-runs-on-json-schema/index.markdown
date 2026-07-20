@@ -344,6 +344,18 @@ schema](https://github.com/EWC-consortium/eudi-wallet-rulebooks-and-schemas/blob
 one of the 14 JSON Schemas (2020-12) underpinning the EUDI Wallet reference
 data model](eudi-legal-pid.webp)
 
+The pattern extends beyond the EU itself. Switzerland is not a member state
+and is not bound by eIDAS 2.0, yet its national e-ID, approved by referendum
+in September 2025, independently landed on the same substrate. The Swiss
+Confederation's [swiyu](https://www.eid.admin.ch/en) wallet [validates every
+credential type-metadata schema against the official JSON Schema 2020-12
+meta-schema](https://github.com/swiyu-admin-ch/eidch-ios-wallet/blob/main/Modules/Features/BITOpenID/Sources/BITOpenID/Domain/Validators/VcSdJwtSchemaValidator.swift),
+which it ships embedded in the app, and the [DID
+resolver](https://github.com/swiyu-admin-ch/didresolver) of its trust
+infrastructure validates DID log entries against [dedicated "e-ID-conform"
+JSON Schemas
+(2020-12)](https://github.com/swiyu-admin-ch/didresolver/blob/main/did_webvh/src/embed/jsonschema/did_log_jsonschema_v_1_0_eid_conform.json).
+
 In the United States,
 [NIEM (the National Information Exchange Model)](https://www.niem.gov/)
 plays an analogous role.
@@ -423,7 +435,20 @@ Standard](https://standard.open-contracting.org/latest/en/schema/).
 The single holdout is Korea (1st), where no public OpenAPI or JSON Schema
 evidence was found despite the country topping the OECD index.
 
-Beyond the OECD top 10 digital governments, the pattern continues. Sweden
+Beyond the OECD top 10 digital governments, the pattern continues.
+Switzerland, whose federal API guidelines already [mandate
+OpenAPI](https://github.com/swiss/api-guidelines), is now developing the
+e-government standards for its political system, covering parliamentary
+operations, political actors, and public consultations (eCH-0293 through
+eCH-0297), [schema-first on the Federal Chancellery's GitHub
+organisation](https://github.com/swiss/political-affairs-ech-group). The
+[eCH](https://www.ech.ch/) standards group's stated principle is that *["the
+data schemata are the primary
+artifacts"](https://github.com/swiss/political-affairs-ech-group/blob/main/README.md)*:
+every commit regenerates the JSON Schemas, published under government
+identifiers such as
+[`https://ch.paf.link/schema/operations`](https://github.com/swiss/political-affairs-ech-group/blob/main/ech-0293_operations/output/schema.json),
+alongside RDF artifacts derived from the same sources. Sweden
 coordinates the [EWC
 consortium](https://github.com/EWC-consortium/eudi-wallet-rulebooks-and-schemas/tree/main/data-schemas)
 behind the EUDI Wallet's JSON Schemas, and

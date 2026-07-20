@@ -469,7 +469,13 @@ rebuilt the schema language on top of Avro, while
 [LinkML](https://linkml.io/linkml/generators/jsonld-context.html) and the
 automotive industry's
 [Catena-X](https://catenax-ev.github.io/docs/next/standards/CX-0003-SAMMSemanticAspectMetaModel)
-generate JSON Schema from a separate RDF model you must author first. A simpler
+generate JSON Schema from a separate RDF model you must author first. This
+path has real public-sector uptake: Switzerland's
+[eCH](https://www.ech.ch/) e-government standards group authors the data
+standards for the Swiss political system in LinkML precisely so that [JSON
+Schema and OWL can be regenerated side by side on every
+commit](https://github.com/swiss/political-affairs-ech-group), further proof
+of how badly the two worlds need each other. A simpler
 language projects into RDF more cleanly, but simplicity is the price: you
 surrender the conditionals and constraints that are the reason to reach for
 JSON Schema at all, and that [no other mainstream schema language
