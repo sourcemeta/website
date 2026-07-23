@@ -401,11 +401,22 @@ schema for every entry in the catalogue, paired with a JSON-LD context.
 [Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/self-description/),
 Europe's flagship cloud-federation project, pairs a [JSON-LD](https://json-ld.org)
 self-description with a separate SHACL shape for every participant.
+[Beckn](https://beckn.io), the open-commerce protocol from the architects of
+India's Aadhaar and UPI, and the backbone of India's government-backed
+[ONDC](https://ondc.org/about-ondc/) network and its [200 million
+transactions](https://cxotoday.com/press-release/ondc-surpasses-200-million-transactions-with-the-last-100mn-coming-in-just-6-months/),
+goes further still: it [normatively
+requires](https://github.com/beckn/protocol-specifications-v2/blob/main/docs/Schema_Design_Guide.md)
+every one of the [300+ concepts in its schema
+repository](https://github.com/beckn/schemas) to ship four artefacts side by
+side, an OpenAPI envelope, a JSON Schema, a JSON-LD context, and an RDF
+vocabulary.
 [Adobe](https://github.com/adobe/xdm/blob/master/docs/introduction.md)
 specified its Experience Data Model in both grammars at once, then had to bolt
 on a ["Compatibility
 Mode"](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/api/appendix)
 that flattens the [JSON-LD](https://json-ld.org) namespacing out for its own platform.
+
 And the request to fix this at the source has sat [open on the JSON Schema
 issue tracker since April
 2017](https://github.com/json-schema-org/json-schema-vocabularies/issues/13).
@@ -488,7 +499,16 @@ Consortium's tooling](https://github.com/opengeospatial/ogc-na-tools) assembles
 the context from the schema at build time, and its own source carries a
 thirty-line comment about ["binding
 bubbling"](https://ogcincubator.github.io/bblocks-docs/create/semantic-uplift),
-where a referenced schema's mappings silently overwrite the parent's. Others
+where a referenced schema's mappings silently overwrite the parent's. India's
+[Beckn](https://beckn.io) walks the same path today: its [generator
+scripts](https://github.com/beckn/schemas/tree/main/tools) scrape property
+names out of a schema and map each one to a flat `beckn:` IRI, blind to
+[`$ref`](https://www.learnjsonschema.com/2020-12/core/ref/) (in one [typical
+concept](https://github.com/beckn/schemas/tree/main/schema/AckNoCallback/v2.0),
+four of the five terms in the published context sit behind references the
+generator cannot see), which is why the repository also carries scripts named
+`schema_parity_audit.py` and `identify-and-fix-missing-context-vocab.py` to
+patch the artefacts back into agreement. Others
 went sideways: [MuleSoft](https://github.com/mulesoft-labs/json-ld-schema)
 validated existing JSON-LD with JSON Schema before being archived at
 "pre-alpha", and [RML](https://rml.io/specs/rml/) and the AI-assisted
@@ -536,6 +556,7 @@ Against what a working solution actually needs, the pattern is stark:
 | MuleSoft, Salesforce (validate JSON-LD) | partial | no | [`$ref`](https://www.learnjsonschema.com/2020-12/core/ref/) only | no | no |
 | RML / MetaConfigurator (mapping) | no | no | no | no | yes |
 | Adobe XDM (maintain both by hand) | partial | no | no | no | no |
+| [Beckn / ONDC, India's DPI](https://github.com/beckn/schemas) (four parallel artefacts) | yes | no | no | no | no |
 | **Sourcemeta** | **yes** | **yes** | **yes** | **yes** | **yes** |
 
 After a decade of attempts, from academic prototypes to Adobe, Salesforce, and

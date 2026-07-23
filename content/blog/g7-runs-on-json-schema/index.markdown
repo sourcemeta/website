@@ -234,6 +234,35 @@ The Netherlands [announced in April
 building `schemas.overheid.nl`, a central register for reusable JSON Schemas
 and OpenAPI components.
 
+The registry pattern is not confined to the G7 or the OECD. India, whose
+Aadhaar and UPI made it the global reference case for digital public
+infrastructure, initiated [ONDC](https://ondc.org/about-ondc/), the open
+e-commerce network incorporated by the government in December 2021, which
+[crossed 200 million transactions in March
+2025](https://cxotoday.com/press-release/ondc-surpasses-200-million-transactions-with-the-last-100mn-coming-in-just-6-months/).
+ONDC runs on the [Beckn protocol](https://beckn.io), designed by the
+architects of Aadhaar and UPI themselves, and the Beckn ecosystem operates
+its own [schema registry](https://schema.beckn.io) of over 600 schema types,
+offered *["as a public infrastructure to enable interoperable value-exchange
+flows"](https://schema.beckn.io)*, with each concept published as an OpenAPI
+3.1 component alongside its [JSON Schema
+2020-12](https://www.learnjsonschema.com/2020-12/) document. The same
+protocol is carrying the model beyond India: the [ITU's GovStack
+e-marketplace building
+block](https://emarketplace.govstack.global/8-service-apis) was *["adapted
+from Beckn protocol APIs and
+schema"](https://emarketplace.govstack.global/8-service-apis)*, and
+Beckn-based networks are [live at national scale in Gambia and
+Nepal](https://beckn.io).
+
+![The Beckn schema registry entry for
+[DriverCandidateProfileResource](https://schema.beckn.io/DriverCandidateProfileResource),
+a driver recruitment concept from Beckn's transport-hiring domain. Every
+concept gets a persistent canonical IRI plus versioned developer URLs for
+each of its faces: the OpenAPI document (attributes.yaml), the JSON-LD
+context, and the RDF vocabulary. Source:
+[schema.beckn.io](https://schema.beckn.io/DriverCandidateProfileResource)](beckn-schema-registry.webp)
+
 ## The rise of national schema collections
 
 One tier down, individual agencies and research bodies operate their own
