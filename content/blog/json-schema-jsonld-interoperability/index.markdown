@@ -392,7 +392,24 @@ A decade later that tax is institutional. [W3C Verifiable Credentials
 2.0](https://www.w3.org/TR/vc-data-model-2.0/), the standard beneath the EU
 wallet, carries a [JSON-LD](https://json-ld.org) `@context` for meaning and a
 separate [`credentialSchema`](https://www.w3.org/TR/vc-json-schema/) for
-structure in every single credential. [GS1's
+structure in every single credential.
+[WE BUILD](https://github.com/webuild-consortium), one of the EU-co-funded
+Large Scale Pilots now building that wallet, shows where the tax lands. Its
+credential [JSON
+Schemas](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog)
+sit in one repository owned by one working group, while [a second
+group](https://github.com/webuild-consortium/wp4-semantics-group) hand-maintains
+the [SKOS terminology, OWL vocabulary, and JSON-LD
+context](https://github.com/webuild-consortium/wp4-semantics-group/blob/main/vocab/README.md)
+in another. Nothing in the schemas points at the vocabulary, so the mapping
+between them survives in a third artefact: a Markdown table in the
+[human-readable
+rulebook](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog/blob/main/rulebooks/rb-pid/README.md),
+under a column headed "Semantic Reference", recording that `family_name` means
+[`w3id.org/ebwv#familyName`](https://w3id.org/ebwv#familyName) while [the schema
+next
+door](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog/blob/main/data-schemas/sd-jwt/ds002-pid-sd-jwt.json)
+can only call it a string. [GS1's
 EPCIS](https://github.com/gs1/EPCIS), the global supply-chain standard, ships
 `EPCIS-JSON-Schema.json` and `epcis-context.jsonld` side by side in one
 repository. [FIWARE's Smart Data
