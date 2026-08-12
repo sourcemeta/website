@@ -388,51 +388,56 @@ data"](https://github.com/common-workflow-language/schema_salad):
 > human documentation, despite significant overlap of content and obvious
 > need for these documents to stay synchronized."
 
-A decade later that tax is institutional. [W3C Verifiable Credentials
-2.0](https://www.w3.org/TR/vc-data-model-2.0/), the standard beneath the EU
-wallet, carries a [JSON-LD](https://json-ld.org) `@context` for meaning and a
-separate [`credentialSchema`](https://www.w3.org/TR/vc-json-schema/) for
-structure in every single credential.
-[WE BUILD](https://github.com/webuild-consortium), one of the EU-co-funded
-Large Scale Pilots now building that wallet, shows where the tax lands. Its
-credential [JSON
-Schemas](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog)
-sit in one repository owned by one working group, while [a second
-group](https://github.com/webuild-consortium/wp4-semantics-group) hand-maintains
-the [SKOS terminology, OWL vocabulary, and JSON-LD
-context](https://github.com/webuild-consortium/wp4-semantics-group/blob/main/vocab/README.md)
-in another. Nothing in the schemas points at the vocabulary, so the mapping
-between them survives in a third artefact: a Markdown table in the
-[human-readable
-rulebook](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog/blob/main/rulebooks/rb-pid/README.md),
-under a column headed "Semantic Reference", recording that `family_name` means
-[`w3id.org/ebwv#familyName`](https://w3id.org/ebwv#familyName) while [the schema
-next
-door](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog/blob/main/data-schemas/sd-jwt/ds002-pid-sd-jwt.json)
-can only call it a string. [GS1's
-EPCIS](https://github.com/gs1/EPCIS), the global supply-chain standard, ships
-`EPCIS-JSON-Schema.json` and `epcis-context.jsonld` side by side in one
-repository. [FIWARE's Smart Data
-Models](https://smart-data-models.github.io/data-models/) keep a
-schema for every entry in the catalogue, paired with a JSON-LD context.
-[Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/self-description/),
-Europe's flagship cloud-federation project, pairs a [JSON-LD](https://json-ld.org)
-self-description with a separate SHACL shape for every participant.
-[Beckn](https://beckn.io), the open-commerce protocol from the architects of
-India's Aadhaar and UPI, and the backbone of India's government-backed
-[ONDC](https://ondc.org/about-ondc/) network and its [200 million
-transactions](https://cxotoday.com/press-release/ondc-surpasses-200-million-transactions-with-the-last-100mn-coming-in-just-6-months/),
-goes further still: it [normatively
-requires](https://github.com/beckn/protocol-specifications-v2/blob/main/docs/Schema_Design_Guide.md)
-every one of the [300+ concepts in its schema
-repository](https://github.com/beckn/schemas) to ship four artefacts side by
-side, an OpenAPI envelope, a JSON Schema, a JSON-LD context, and an RDF
-vocabulary.
-[Adobe](https://github.com/adobe/xdm/blob/master/docs/introduction.md)
-specified its Experience Data Model in both grammars at once, then had to bolt
-on a ["Compatibility
-Mode"](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/api/appendix)
-that flattens the [JSON-LD](https://json-ld.org) namespacing out for its own platform.
+A decade later that tax is institutional:
+
+- **[W3C Verifiable Credentials
+  2.0](https://www.w3.org/TR/vc-data-model-2.0/)**: the standard beneath the EU
+  wallet, carries a [JSON-LD](https://json-ld.org) `@context` for meaning and a
+  separate [`credentialSchema`](https://www.w3.org/TR/vc-json-schema/) for
+  structure in every single credential.
+- **[WE BUILD](https://github.com/webuild-consortium)**: one of the
+  EU-co-funded Large Scale Pilots now building that wallet, keeps its credential
+  [JSON
+  Schemas](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog)
+  in one repository owned by one working group, while [a second
+  group](https://github.com/webuild-consortium/wp4-semantics-group)
+  hand-maintains the [SKOS terminology, OWL vocabulary, and JSON-LD
+  context](https://github.com/webuild-consortium/wp4-semantics-group/blob/main/vocab/README.md)
+  in another. Nothing in the schemas points at the vocabulary, so the mapping
+  between them survives in a third artefact: a Markdown table in the
+  [human-readable
+  rulebook](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog/blob/main/rulebooks/rb-pid/README.md),
+  under a column headed "Semantic Reference", recording that `family_name`
+  means [`w3id.org/ebwv#familyName`](https://w3id.org/ebwv#familyName) while
+  [the schema next
+  door](https://github.com/webuild-consortium/webuild-attestation-rulebooks-catalog/blob/main/data-schemas/sd-jwt/ds002-pid-sd-jwt.json)
+  can only call it a string.
+- **[GS1's EPCIS](https://github.com/gs1/EPCIS)**: the global supply-chain
+  standard, ships `EPCIS-JSON-Schema.json` and `epcis-context.jsonld` side by
+  side in one repository.
+- **[FIWARE's Smart Data
+  Models](https://smart-data-models.github.io/data-models/)**: keep a schema
+  for every entry in the catalogue, paired with a JSON-LD context.
+- **[Gaia-X](https://docs.gaia-x.eu/technical-committee/architecture-document/22.10/self-description/)**:
+  Europe's flagship cloud-federation project, pairs a
+  [JSON-LD](https://json-ld.org) self-description with a separate SHACL shape
+  for every participant.
+- **[Beckn](https://beckn.io)**: the open-commerce protocol from the architects
+  of India's Aadhaar and UPI, and the backbone of India's government-backed
+  [ONDC](https://ondc.org/about-ondc/) network and its [200 million
+  transactions](https://cxotoday.com/press-release/ondc-surpasses-200-million-transactions-with-the-last-100mn-coming-in-just-6-months/),
+  goes further still: it [normatively
+  requires](https://github.com/beckn/protocol-specifications-v2/blob/main/docs/Schema_Design_Guide.md)
+  every one of the [300+ concepts in its schema
+  repository](https://github.com/beckn/schemas) to ship four artefacts side by
+  side, an OpenAPI envelope, a JSON Schema, a JSON-LD context, and an RDF
+  vocabulary.
+- **[Adobe](https://github.com/adobe/xdm/blob/master/docs/introduction.md)**:
+  specified its Experience Data Model in both grammars at once, then had to
+  bolt on a ["Compatibility
+  Mode"](https://experienceleague.adobe.com/en/docs/experience-platform/xdm/api/appendix)
+  that flattens the [JSON-LD](https://json-ld.org) namespacing out for its own
+  platform.
 
 And the request to fix this at the source has sat [open on the JSON Schema
 issue tracker since April
