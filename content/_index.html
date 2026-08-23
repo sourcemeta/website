@@ -343,6 +343,16 @@ aliases = ["/products/std"]
           </tr>
 
           <tr>
+            <td class="fw-semibold">Path-scoped authentication (API keys, JWT, SSO)</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/confluentinc/rest-utils/blob/master/core/src/main/java/io/confluent/rest/RestConfig.java">HTTP Basic only</a>, as per-subject RBAC and ACLs need the <a href="https://docs.confluent.io/platform/current/confluent-security-plugins/schema-registry/introduction.html">Schema Registry Security Plugin</a>, a "commercial component of Confluent Platform"</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.aws.amazon.com/glue/latest/dg/schema-registry.html">IAM only</a>, so every consumer needs an AWS account</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/Apicurio/apicurio-registry/blob/main/app/src/main/java/io/apicurio/registry/auth/RoleBasedAccessController.java">three instance-wide roles</a> plus owner-only rules, and an <a href="https://github.com/Apicurio/apicurio-registry/blob/main/app/src/main/java/io/apicurio/registry/auth/OidcAuthenticationStrategy.java">external identity provider is mandatory</a></small></td>
+            <td class="text-center">—<br><small class="text-muted">public community catalog, nothing to gate</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/snowplow-incubator/iglu-server/blob/master/src/main/scala/com/snowplowanalytics/iglu/server/middleware/PermissionMiddleware.scala">UUID API keys</a> scoped by vendor prefix, no JWT or sign-in</small></td>
+            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted">Enterprise: <a href="https://one.sourcemeta.com/configuration/#authentication">API keys, JWT, and OIDC sign-in</a> on any collection, page, or route, with nothing stored</small></td>
+          </tr>
+
+          <tr>
             <td class="fw-semibold">High performance, low resource usage</td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">JVM-based</small></td>
             <td class="text-center">—<br><small class="text-muted">fully managed and opaque to the user</small></td>
