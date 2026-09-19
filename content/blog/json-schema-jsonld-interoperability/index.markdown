@@ -394,7 +394,25 @@ A decade later that tax is institutional:
   2.0](https://www.w3.org/TR/vc-data-model-2.0/)**: the standard beneath the EU
   wallet, carries a [JSON-LD](https://json-ld.org) `@context` for meaning and a
   separate [`credentialSchema`](https://www.w3.org/TR/vc-json-schema/) for
-  structure in every single credential.
+  structure in every single credential. It takes [a whole
+  appendix](https://www.w3.org/TR/vc-data-model-2.0/#differences-between-contexts-types-and-credentialschemas)
+  to hold the two apart, a `credentialSchema` defining "the contents and
+  structure of a set of claims" while a `@context` is "best used only for
+  conveying the semantics and term definitions of the data", and it takes the
+  two "used in combination" before "both producers and consumers can be more
+  confident about the expected contents and data types". Nothing links them,
+  so the companion specification can only [advise the
+  author](https://www.w3.org/TR/vc-json-schema/#relationship-to-verifiable-credential-type-property):
+  "It is advised to associate all properties that have a semantic mapping with
+  a property in a credential schema." That advice is the entire binding, and
+  implementations show what it is worth.
+  [Credo](https://github.com/openwallet-foundation/credo-ts), the OpenWallet
+  Foundation's wallet framework, ships the whole JSON-LD stack down to RDF
+  canonicalisation and [nineteen hand-authored context
+  documents](https://github.com/openwallet-foundation/credo-ts/blob/main/packages/core/src/modules/vc/jsonld/contexts/defaultContexts.ts),
+  while `credentialSchema` is [modelled as an `id` and a
+  `type`](https://github.com/openwallet-foundation/credo-ts/blob/main/packages/core/src/modules/vc/models/credential/W3cCredentialSchema.ts)
+  that it never fetches or evaluates.
 - **[WE BUILD](https://github.com/webuild-consortium)**: one of the
   EU-co-funded Large Scale Pilots now building that wallet, keeps its credential
   [JSON
@@ -530,10 +548,27 @@ concept](https://github.com/beckn/schemas/tree/main/schema/AckNoCallback/v2.0),
 four of the five terms in the published context sit behind references the
 generator cannot see), which is why the repository also carries scripts named
 `schema_parity_audit.py` and `identify-and-fix-missing-context-vocab.py` to
-patch the artefacts back into agreement. Others
-went sideways: [MuleSoft](https://github.com/mulesoft-labs/json-ld-schema)
-validated existing JSON-LD with JSON Schema before being archived at
-"pre-alpha", and [RML](https://rml.io/specs/rml/) and the AI-assisted
+patch the artefacts back into agreement.
+
+The credential world built the same thing and stopped in the same place:
+[`schemasToContext`](https://github.com/transmute-industries/verifiable-data/blob/main/packages/jsonld-schema/src/schemasToContext.ts),
+from [Transmute](https://transmute.industries), which holds an editor's seat on
+[the VC JSON Schema specification](https://www.w3.org/TR/vc-json-schema/),
+reads `$linkedData` annotations off a schema's properties and flattens them
+into a context, and that design is the ecosystem's convention: [Hedera's
+Guardian](https://github.com/hashgraph/guardian) vendors the file itself, and
+the [W3C CCG traceability
+vocabulary](https://github.com/w3c-ccg/traceability-vocab/blob/main/packages/traceability-schemas/scripts/openapi-to-context.js)
+builds its context from its own copy of the same design. Each reads a single
+level of `properties` and resolves no
+[`$ref`](https://www.learnjsonschema.com/2020-12/core/ref/), leaving the caller
+to hand over every subschema up front, and Transmute's source marks where it
+stops with a commented-out stub: `// Need to handle anyOf and oneOf better...`.
+
+Others went sideways:
+[MuleSoft](https://github.com/mulesoft-labs/json-ld-schema) validated existing
+JSON-LD with JSON Schema before being archived at "pre-alpha", and
+[RML](https://rml.io/specs/rml/) and the AI-assisted
 [MetaConfigurator](https://arxiv.org/abs/2606.07094) add a third artefact to
 drift from the other two. Even
 [Adobe](https://github.com/adobe/xdm/blob/master/docs/introduction.md) and
@@ -573,6 +608,7 @@ Against what a working solution actually needs, the pattern is stark:
 |---|:---:|:---:|:---:|:---:|:---:|
 | Polli draft (embed context) | yes | no | no | no | no |
 | OGC (generate context) | yes | no | partial | no | no |
+| [Transmute, W3C CCG traceability](https://github.com/transmute-industries/verifiable-data/blob/main/packages/jsonld-schema/src/schemasToContext.ts) (generate context) | yes | no | no | no | no |
 | Schema Salad (new language) | no | no | no | no | partial |
 | LinkML / Catena-X, automotive (separate model) | no | no | no | no | no |
 | MuleSoft, Salesforce (validate JSON-LD) | partial | no | [`$ref`](https://www.learnjsonschema.com/2020-12/core/ref/) only | no | no |
