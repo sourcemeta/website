@@ -142,6 +142,19 @@ full LLM JSON Schema coverage and already supports far more of JSON Schema
 than the major providers do, allowing users to make use of JSON Schema on
 arbitrary models without feeling the compatibility pain.
 
+Worth noting that this problem is specific to autoregressive generation. A
+newer class of models sidesteps it entirely: non-autoregressive *decision*
+models that return a typed decision in a single forward pass instead of
+generating text. There is no token stream to constrain, so nothing needs a
+grammar. And yet the contract is still JSON Schema.
+[Laya](https://github.com/NandhaKishorM/laya), an open-weight (Apache-2.0)
+model of this kind, compiles [*"a JSON schema (or a pydantic
+model)"*](https://github.com/NandhaKishorM/laya/blob/4aa6761be8173de4ce6d92c31b3e40b6eaf59a7c/laya/structured.py)
+into its own typed questions, accepting only a flat subset that rejects
+arrays, nested objects, and `$ref` recursion. Even when the hard part goes
+away, JSON Schema is what a new architecture reaches for to let developers
+declare the shape of an answer.
+
 ## Tool calling, and how MCP unified it
 
 LLMs are most powerful when they can connect to other systems: query databases,
