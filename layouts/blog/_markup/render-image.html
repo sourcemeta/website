@@ -1,7 +1,7 @@
 {{- $alt := .PlainText -}}
 {{- $caption := .Text -}}
 {{- $source := .Destination -}}
-{{- with .PageInner.Resources.Get .Destination -}}
+{{- with .Page.Resources.Get .Destination -}}
 {{- $source = .Permalink -}}
 {{- end -}}
 <figure>

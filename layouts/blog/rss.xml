@@ -14,7 +14,7 @@
     <title>{{ .Title }}</title>
     <link>{{ $link }}</link>
     <description>{{ .Site.Params.description }}</description>
-    <language>{{ .Site.Language.Locale }}</language>
+    <language>{{ .Site.LanguageCode }}</language>
     <copyright>{{ .Site.Copyright }}</copyright>
     <docs>https://www.rssboard.org/rss-specification</docs>
     <generator>Hugo</generator>
