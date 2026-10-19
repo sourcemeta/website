@@ -9,7 +9,7 @@
       {{ range .RegularPages }}
       <article class="border-top py-4">
         <h2 class="fw-bold h3 mb-3"><a href="{{ .Permalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h2>
-        <p class="fw-light text-muted">{{ .Summary | plainify | htmlUnescape | truncate 300 }}</p>
+        <p class="fw-light text-muted">{{ trim (.Summary | plainify | htmlUnescape) " \n" | truncate 300 }}</p>
         <div class="d-flex justify-content-between align-items-center gap-3">
           {{ with index .Site.Data.authors (.Params.author | default "") }}
           <div class="d-flex align-items-center gap-2">
