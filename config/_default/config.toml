@@ -1,5 +1,6 @@
 languageCode = 'en-us'
 title = 'The JSON Schema Registry | Sourcemeta One'
+copyright = 'Copyright (c) 2024-2026 Sourcemeta OÜ'
 staticDir = [ './vendor/bootstrap-icons/font/fonts', './static' ]
 
 [Params]

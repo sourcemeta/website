@@ -1,4 +1,4 @@
 +++
 title = "Sourcemeta Blog"
-outputs = ["rss"]
+outputs = [ "html", "rss" ]
 +++

@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main class="border-top">
+  <div class="container mt-5 mb-5">
+    <div class="post">
+      <h1 class="visually-hidden">{{ .Title }}</h1>
+      {{ with .OutputFormats.Get "rss" }}
+      <p class="mb-4"><a href="{{ .Permalink }}" class="text-decoration-none fw-light"><i class="bi bi-rss me-1"></i> Subscribe to the feed</a></p>
+      {{ end }}
+      {{ range .RegularPages }}
+      <article class="border-top py-4">
+        <h2 class="fw-bold h3 mb-3"><a href="{{ .Permalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h2>
+        <p class="fw-light text-muted">{{ .Summary | plainify | htmlUnescape | truncate 300 }}</p>
+        <div class="d-flex justify-content-between align-items-center gap-3">
+          {{ with index .Site.Data.authors (.Params.author | default "") }}
+          <div class="d-flex align-items-center gap-2">
+            <img src="{{ .image }}" alt="{{ .name }}" width="32" height="32" class="rounded-circle flex-shrink-0">
+            <div class="small fw-semibold">{{ .name }}</div>
+          </div>
+          {{ end }}
+          <div class="text-muted small text-end flex-shrink-0">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            &middot; {{ .ReadingTime }} min read
+          </div>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</main>
+{{ end }}

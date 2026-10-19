@@ -1,0 +1,49 @@
+{{- $pages := .RegularPages -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- $home := strings.TrimSuffix "/" .Site.BaseURL -}}
+{{- $link := $home -}}
+{{- with .OutputFormats.Get "html" -}}
+{{- $link = .Permalink -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>{{ .Title }}</title>
+    <link>{{ $link }}</link>
+    <description>{{ .Site.Params.description }}</description>
+    <language>{{ .Site.Language.Locale }}</language>
+    <copyright>{{ .Site.Copyright }}</copyright>
+    <docs>https://www.rssboard.org/rss-specification</docs>
+    <generator>Hugo</generator>
+    <image>
+      <url>{{ printf "%s/icon-512x512.png" $home }}</url>
+      <title>{{ .Title }}</title>
+      <link>{{ $link }}</link>
+    </image>
+    {{- with $pages }}
+    <lastBuildDate>{{ (index .ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{- end }}
+    {{- with .OutputFormats.Get "rss" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end }}
+    {{- range $pages }}
+    {{- $content := .Content | replaceRE `(src|href)="/([^/])` (printf `${1}="%s/${2}` $home) }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- with index .Site.Data.authors (.Params.author | default "") }}
+      <dc:creator>{{ .name }}</dc:creator>
+      {{- end }}
+      {{- with .Resources.GetMatch "*.webp" }}
+      <enclosure url="{{ .Permalink }}" length="{{ len .Content }}" type="{{ .MediaType.Type }}" />
+      {{- end }}
+      <description>{{ $content | transform.XMLEscape | safeHTML }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

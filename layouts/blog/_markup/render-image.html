@@ -1,7 +1,11 @@
 {{- $alt := .PlainText -}}
 {{- $caption := .Text -}}
+{{- $source := .Destination -}}
+{{- with .PageInner.Resources.Get .Destination -}}
+{{- $source = .Permalink -}}
+{{- end -}}
 <figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+  <img src="{{ $source | safeURL }}" alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }}>
   {{ with $caption }}
   <figcaption>{{ . | safeHTML }}</figcaption>
   {{ end }}
