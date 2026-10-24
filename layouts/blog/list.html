@@ -3,9 +3,13 @@
   <div class="container mt-5 mb-5">
     <div class="post">
       <h1 class="visually-hidden">{{ .Title }}</h1>
-      {{ with .OutputFormats.Get "rss" }}
-      <p class="mb-4"><a href="{{ .Permalink }}" class="text-decoration-none fw-light"><i class="bi bi-rss me-1"></i> Subscribe to the feed</a></p>
-      {{ end }}
+      <p class="mb-4">
+        {{ with .OutputFormats.Get "rss" }}
+        <a href="{{ .Permalink }}" class="text-decoration-none fw-light"><i class="bi bi-rss me-1"></i> Subscribe to the feed</a>
+        <span class="mx-3">&middot;</span>
+        {{ end }}
+        <a href="{{ .Site.Params.newsletterURL }}" class="text-decoration-none fw-light"><i class="bi bi-newspaper me-1"></i> Subscribe to the newsletter</a>
+      </p>
       {{ range .RegularPages }}
       <article class="border-top py-4">
         <h2 class="fw-bold h3 mb-3"><a href="{{ .Permalink }}" class="text-decoration-none text-body">{{ .Title }}</a></h2>
