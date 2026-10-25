@@ -113,6 +113,14 @@ while Anthropic does the opposite.
 The meme has evolved. Yesterday's pain was begging for valid JSON responses.
 Today, we beg that a valid JSON Schema is actually accepted by every provider.
 
+> This is the gap our [JSON Schema
+> CLI](https://github.com/sourcemeta/jsonschema) tries to close. [`jsonschema
+> llm`](https://github.com/sourcemeta/jsonschema/blob/main/docs/llm.markdown)
+> takes the schema you already have, however many files it spans, whatever
+> dialect it is on, in JSON or in YAML, prepares whatever the provider will
+> actually accept, and validates what comes back against the schema you wrote
+> rather than the copy that went out.
+
 ## LLM output constraining is hard
 
 This isn't JSON Schema's fault. Constraining an LLM's output to a schema at the
