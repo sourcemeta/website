@@ -313,6 +313,16 @@ aliases = ["/products/std"]
           </tr>
 
           <tr>
+            <td class="fw-semibold">Supports the OpenAPI Schema Object dialects</td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://github.com/confluentinc/schema-registry/blob/master/json-schema-provider/src/main/java/io/confluent/kafka/schemaregistry/json/SpecificationVersion.java">recognises the official dialect URIs alone</a>, any other <code>$schema</code> is silently read as Draft 7</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.aws.amazon.com/glue/latest/dg/schema-registry.html">Draft 04, 06, 07 only</a>, via <a href="https://github.com/everit-org/json-schema">Everit</a></small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">whole <a href="https://github.com/Apicurio/apicurio-registry/blob/v3.3.3/schema-util/openapi/src/main/java/io/apicurio/registry/openapi/rules/validity/OpenApiContentValidator.java">OpenAPI documents</a> are a separate artifact type checked as OpenAPI, while a <a href="https://github.com/Apicurio/apicurio-registry/blob/v3.3.3/schema-util/json/src/main/java/io/apicurio/registry/json/rules/validity/JsonSchemaVersion.java">Schema Object dialect is unknown</a> to its JSON Schema support and read as Draft 7</small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">validation <a href="https://github.com/SchemaStore/schemastore/blob/master/cli.js">errors on any dialect outside its six official ones</a>, and <a href="https://github.com/SchemaStore/schemastore/blob/master/CONTRIBUTING.md">recommends draft-07</a></small></td>
+            <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.snowplow.io/docs/fundamentals/schemas/">Draft 04 only</a>, no other dialect is recognised</small></td>
+            <td class="text-center bg-success-subtle border-start border-end border-3 border-primary"><i class="bi bi-check-lg text-success"></i><br><small class="text-muted"><a href="https://spec.openapis.org/oas/v3.0.4.html#schema-object">3.0</a>, <a href="https://spec.openapis.org/oas/v3.1.0.html#schema-object">3.1</a> and <a href="https://spec.openapis.org/oas/v3.2.0.html#schema-object">3.2</a> Schema Objects are <a href="https://one.sourcemeta.com/configuration/#collections">first-class dialects</a>, validated, linted, and health scored like every other schema</small></td>
+          </tr>
+
+          <tr>
             <td class="fw-semibold">Serves schemas upgraded to newer dialects on demand</td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted">every version served in the dialect it was registered in, compatibility checks only</small></td>
             <td class="text-center bg-danger bg-opacity-10"><i class="bi bi-x-lg text-danger"></i><br><small class="text-muted"><a href="https://docs.aws.amazon.com/glue/latest/dg/schema-registry.html">Draft 04, 06, 07 only</a>, served as registered</small></td>
