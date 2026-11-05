@@ -11,6 +11,10 @@
     {{- $rawDescription := "" -}}
     {{- if .IsHome -}}
       {{- $rawDescription = .Site.Params.Description -}}
+    {{- else if $isBlogPost -}}
+      {{- $rawDescription = .Description | default (.Summary | plainify | htmlUnescape) | default .Site.Params.Description -}}
+    {{- else if and .IsSection (eq .Section "blog") -}}
+      {{- $rawDescription = .Description | default "Read Sourcemeta’s articles on JSON Schema, OpenAPI, and schema governance, with research and practical examples for API teams." -}}
     {{- else -}}
       {{- $rawDescription = .Description | default (.Summary | plainify) | default .Site.Params.Description -}}
     {{- end -}}
@@ -19,9 +23,10 @@
       {{- $description = printf "%s…" (substr $description 0 199) -}}
     {{- end -}}
     {{- $url := .Permalink -}}
-    {{- $image := printf "%sscreenshot.webp" .Site.BaseURL -}}
-    {{- $imageWidth := 2592 -}}
-    {{- $imageHeight := 1191 -}}
+    {{- $defaultImage := .Site.Home.Resources.Get "screenshot.webp" -}}
+    {{- $image := $defaultImage.Permalink -}}
+    {{- $imageWidth := $defaultImage.Width -}}
+    {{- $imageHeight := $defaultImage.Height -}}
     {{- if $isBlogPost -}}
       {{- $cover := "" -}}
       {{- with .Resources.GetMatch "*.webp" -}}{{- $cover = . -}}{{- end -}}
