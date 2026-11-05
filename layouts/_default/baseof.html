@@ -23,9 +23,10 @@
       {{- $description = printf "%s…" (substr $description 0 199) -}}
     {{- end -}}
     {{- $url := .Permalink -}}
-    {{- $image := printf "%sscreenshot.webp" .Site.BaseURL -}}
-    {{- $imageWidth := 2592 -}}
-    {{- $imageHeight := 1191 -}}
+    {{- $defaultImage := .Site.Home.Resources.Get "screenshot.webp" -}}
+    {{- $image := $defaultImage.Permalink -}}
+    {{- $imageWidth := $defaultImage.Width -}}
+    {{- $imageHeight := $defaultImage.Height -}}
     {{- if $isBlogPost -}}
       {{- $cover := "" -}}
       {{- with .Resources.GetMatch "*.webp" -}}{{- $cover = . -}}{{- end -}}
