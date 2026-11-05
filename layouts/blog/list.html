@@ -2,7 +2,7 @@
 <main class="border-top">
   <div class="container mt-5 mb-5">
     <div class="post">
-      <h1 class="visually-hidden">{{ .Title }}</h1>
+      <h1 class="fw-bold display-5 mb-4">{{ .Title }}</h1>
       <p class="mb-4">
         {{ with .OutputFormats.Get "rss" }}
         <a href="{{ .Permalink }}" class="text-decoration-none fw-light"><i class="bi bi-rss me-1"></i> Subscribe to the feed</a>

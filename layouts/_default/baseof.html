@@ -10,7 +10,11 @@
     {{- $title := cond .IsHome .Site.Title .Title -}}
     {{- $rawDescription := "" -}}
     {{- if .IsHome -}}
-      {{- $rawDescription = .Site.Params.Description -}}
+      {{- $rawDescription = .Description | default .Site.Params.Description -}}
+    {{- else if $isBlogPost -}}
+      {{- $rawDescription = .Description | default (.Summary | plainify | htmlUnescape) | default .Site.Params.Description -}}
+    {{- else if and .IsSection (eq .Section "blog") -}}
+      {{- $rawDescription = .Description | default "Read Sourcemeta’s articles on JSON Schema, OpenAPI, and schema governance, with research and practical examples for API teams." -}}
     {{- else -}}
       {{- $rawDescription = .Description | default (.Summary | plainify) | default .Site.Params.Description -}}
     {{- end -}}

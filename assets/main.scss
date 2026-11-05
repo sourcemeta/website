@@ -73,6 +73,10 @@ $bootstrap-icons-font-dir: "./";
 }
 
 @include media-breakpoint-up(lg) {
+  .home-hero-title {
+    @include font-size(map-get($display-font-sizes, 2));
+  }
+
   .w-lg-75 {
     max-width: 75%;
   }
