@@ -1,11 +1,23 @@
 {{- $alt := .PlainText -}}
 {{- $caption := .Text -}}
 {{- $source := .Destination -}}
-{{- with .Page.Resources.Get .Destination -}}
-{{- $source = .Permalink -}}
+{{- $image := .Page.Resources.Get .Destination -}}
+{{- if $image -}}
+  {{- $source = $image.Permalink -}}
+{{- else if hasPrefix $source "/blog/" -}}
+  {{- $path := (urls.Parse $source).Path -}}
+  {{- with site.GetPage (path.Dir $path) -}}
+    {{- $image = .Resources.Get (path.Base $path) -}}
+  {{- end -}}
+{{- end -}}
+{{- $dimensions := dict -}}
+{{- with $image -}}
+  {{- if in (slice "image/webp" "image/png" "image/jpeg") .MediaType.Type -}}
+    {{- $dimensions = dict "width" .Width "height" .Height -}}
+  {{- end -}}
 {{- end -}}
 <figure>
-  <img src="{{ $source | safeURL }}" alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }}>
+  <img src="{{ $source | safeURL }}" alt="{{ $alt }}"{{ with $dimensions }} width="{{ .width }}" height="{{ .height }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}>
   {{ with $caption }}
   <figcaption>{{ . | safeHTML }}</figcaption>
   {{ end }}
