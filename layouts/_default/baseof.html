@@ -10,7 +10,7 @@
     {{- $title := cond .IsHome .Site.Title .Title -}}
     {{- $rawDescription := "" -}}
     {{- if .IsHome -}}
-      {{- $rawDescription = .Description | default .Site.Params.Description -}}
+      {{- $rawDescription = .Site.Params.Description -}}
     {{- else if $isBlogPost -}}
       {{- $rawDescription = .Description | default (.Summary | plainify | htmlUnescape) | default .Site.Params.Description -}}
     {{- else if and .IsSection (eq .Section "blog") -}}
