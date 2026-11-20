@@ -53,12 +53,12 @@ Once a Referral becomes an Eligible Referral, **all subsequent dealings with the
 
 ## 6. Referral Fees
 
-We will pay you a referral fee (the "**Referral Fee**") where an Eligible Referral becomes a paying customer for the Sourcemeta Services.
+We will pay you a referral fee (the "**Referral Fee**") where an Eligible Referral becomes a paying customer for the Sourcemeta Services. The Referral Fee is paid by us to you. The invoices we issue to the Referred Organisation for the Sourcemeta Services are separate, and are not your responsibility.
 
 - **Amount:** 20% of each payment (excluding taxes) made by the Referred Organisation to us for the Sourcemeta Services during the 12 months following the Referred Organisation's first payment to us.
 - **When earned:** as the Referred Organisation makes each qualifying payment in full.
-- **When paid:** within 30 days of each Referral Fee being earned, against a valid invoice from you.
-- **Currency and taxes:** the Referral Fee is stated exclusive of any applicable taxes. **You are solely responsible for any taxes arising on the Referral Fee**, and for issuing a compliant invoice. We may withhold amounts where required by law.
+- **When paid:** within 30 days of each Referral Fee being earned, against a valid invoice issued to the applicable Sourcemeta entity (see Section 10). You may invoice through a third party acting on your behalf, such as an umbrella employment or self-invoicing service, as long as the invoice is validly issued and identifies you as the Partner. You do not need to register a business in order to take part in the Programme.
+- **Currency and taxes:** the Referral Fee is stated exclusive of any applicable taxes. **You are solely responsible for any taxes arising on the Referral Fee.** We may withhold amounts where required by law.
 
 No Referral Fee is payable for any Referral that does not become an Eligible Referral, or where the Referred Organisation does not become a paying customer of the Sourcemeta Services.
 
